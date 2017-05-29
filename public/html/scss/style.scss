@@ -1,0 +1,83 @@
+/* ********************** */
+// @import '../images/css/sprite';
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+@import 'vendors/slick-theme';
+@import 'vendors/object-fit-polyfill';
+
+/* helpers */
+@import 'helpers/variables';
+
+/* base */
+@import 'base/fonts';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/grid';
+@import 'base/buttons';
+
+/* components */
+@import 'components/header';
+@import 'components/footer';
+/* vendors */
+/* ********************** */
+body
+{
+	min-width: 1200px;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:after,
+.row:after
+{
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+.float-left
+{
+	float: left;
+}
+
+.float-right
+{
+	float: right;
+}
+
+.float-none
+{
+	float: none;
+}
+
+.text-center
+{
+	text-align: center;
+}
+
+.text-left
+{
+	text-align: left;
+}
+
+.text-right
+{
+	text-align: right;
+}
+
+.full-table
+{
+	width: 100% !important;
+}

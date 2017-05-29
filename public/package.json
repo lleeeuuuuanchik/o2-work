@@ -1,0 +1,36 @@
+{
+  "name": "stas",
+  "version": "1.0.1",
+  "description": "Gulp project for work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leshiy",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-cli": "^1.2.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-globbing": "^0.1.9",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-file-include": "^0.13.7",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-install": "^0.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-svg-sprite": "^1.3.6",
+    "gulp-uglify": "^2.0.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp.spritesmith": "^6.3.0",
+    "imagemin-pngquant": "^4.2.2"
+  },
+  "dependencies": {
+    "gulp-sass": "^2.3.2",
+    "gulp": "^3.9.1"
+  }
+}
