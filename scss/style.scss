@@ -3,12 +3,9 @@
 @import 'vendors/slick';
 @import 'vendors/slick-theme';
 @import 'vendors/slick-theme';
-@import 'vendors/object-fit-polyfill';
-
-/* helpers */
-@import 'helpers/variables';
 
 /* base */
+@import 'base/variables';
 @import 'base/fonts';
 @import 'base/normalize';
 @import 'base/typography';
@@ -19,7 +16,9 @@
 @import 'components/header';
 @import 'components/footer';
 /* vendors */
-/* ********************** */
+@import 'vendors/font-awesome.min';
+@import 'vendors/slick-theme';
+@import 'vendors/slick';
 body
 {
 	min-width: 1200px;
