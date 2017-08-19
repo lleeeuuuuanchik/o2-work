@@ -1,0 +1,241 @@
+//buttons
+.button
+{
+	border-radius: 3px;
+	font-size: 14px;
+	color: black;
+	line-height: 16px;
+	width: 240px;
+	height: 56px;
+	border: 1px solid black;
+	transform: translateY(0px);
+	transition: all 0.2s;
+	display: inline-block;
+}
+.button:hover
+{
+	transform: translateY(-4px);
+	transition: all 0.2s;
+	border-color: rgba(black, 0.5);
+}
+//inputs
+.input
+{
+	background: #FFFFFF;
+	border: 1px solid #DFE4EA;
+	border-radius: 3px;
+	font-size: 12px;
+	color: #334D66;
+	width: 240px;
+	height: 48px;
+	padding-left: 16px;
+	transition: border 0.3s;
+	&.error
+	{
+		position: relative;
+		border: 2px solid #D0021B;
+		color: #D0021B;
+	}
+}
+::-webkit-input-placeholder {color:#96A7BB;}
+::-moz-placeholder          {color:#96A7BB;}/* Firefox 19+ */
+:-moz-placeholder           {color:#96A7BB;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#96A7BB;}
+input:hover
+{
+	border: 2px solid #96A7BB;
+	font-size: 12px;
+	transition: border 0.3s;
+}
+input:focus
+{
+	border: 2px solid #398FE6;
+	font-size: 12px;
+	transition: border 0.3s;
+}
+input:focus:hover
+{
+	border: 2px solid #9FCFFF;
+}
+//checkboxes
+.checkbox-label
+{
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	font-size: 14px;
+	color: #334D66;
+	cursor: pointer;
+}
+.checkbox
+{
+	visibility: hidden;
+	position: absolute;
+}
+.checkbox:not(checked) + span
+{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #CFDAE6;
+	border-radius: 2px;
+	position: absolute;
+	left: 0;
+	transition: border 0.3s;
+}
+.checkbox:checked + span
+{
+	background: red;
+    border: 1px solid #D23268;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background 0.3s;
+}
+
+.checkbox:checked:hover + span
+{
+	background: rgba(red, 0.5);
+	transition: background 0.3s;
+	border: 1px solid rgba(#D23268, 0.5);
+}
+.checkbox:not(checked):hover + span
+{
+	border: 2px solid #96A7BB;
+	transition: border 0.3s;
+}
+//radios
+.radio-label
+{
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	font-size: 14px;
+	color: #334D66;
+	cursor: pointer;
+}
+.radio
+{
+	visibility: hidden;
+	position: absolute;
+}
+.radio:not(checked) + span
+{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #CFDAE6;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	transition: border 0.3s;
+}
+.radio:checked + span
+{
+	background: red;
+    border: 1px solid #D23268;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background 0.3s;
+}
+.radio:checked:hover + span
+{
+	background: rgba(red, 0.5);
+	transition: background 0.3s;
+	border: 1px solid rgba(#D23268, 0.5);
+}
+.radio:not(checked):hover + span
+{
+	border: 2px solid #96A7BB;
+	transition: border 0.3s;
+}
+//bread-crumbs
+.bread-crumbs__list
+{
+	li
+	{
+		float: left;
+		margin-right: 31px;
+		a
+		{
+			font-size: 14px;
+			color: #398FE6;
+			line-height: 16px;
+			border-bottom: 1px solid rgba(#398FE6,0.10);
+			position: relative;
+			&:after
+			{
+				font-family: 'FontAwesome';
+				position: absolute;
+				display: inline-block;
+				content: "\f054";
+				width: 4px;
+				height: 4px;
+				margin-left: 13px;
+				top: 0px;
+				color: #9DABB3;
+				font-size: 8px;
+			}
+			&:hover
+			{
+				border-bottom: 1px solid transparent;
+			}
+		}
+		span
+		{
+			font-size: 14px;
+			color: #9DABB3;
+			line-height: 16px;	
+		}
+	}
+}
+//popups
+.overlay
+{
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(black, 0.6);
+	position: fixed;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+	z-index: 4;
+	&._show
+	{
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.3s;
+	}
+}
+.popup
+{
+	position: absolute;
+	width: 300px;
+	height: 500px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 5vh;
+	background-color: white;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: all 0.3s;
+	z-index: 5;
+	&._show
+	{
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0px);
+		transition: all 0.3s;
+	}
+}
+.popup-close
+{
+	position: absolute;
+	right: 5px;
+	top: 4px;
+	font-size: 14px;
+	display: inline-block;
+}

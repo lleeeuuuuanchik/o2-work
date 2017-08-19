@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	@@include('./inc/components/pagehead.html')
+</head>
+<body>
+	@@include('./inc/components/header.html')
+		<section class="standart-components">
+			<div class="container" style="padding-top: 30px;">
+				<div class="bread-crumbs">
+					<div class="container">
+						<ul class="bread-crumbs__list clearfix">
+							<li>
+								<a href="#">Проект</a>
+							</li>
+							<li>
+								<span>Стандартные компонеты</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="components" style="padding-top: 70px;">
+					<div class="buttons" style="margin-bottom: 50px;">
+						<button class="button">
+							Стандартная кнопка
+						</button>
+					</div>
+					<div class="inputs" style="margin-bottom: 50px;">
+						<input placeholder="Стандартный инпут" type="text" class="input">
+						<input placeholder="ALARM" type="text" class="input error">
+					</div>
+					<div class="checkboxes" style="margin-bottom: 50px;">
+						<label class="checkbox-label">
+							<input type="checkbox" class="checkbox">
+							<span></span>
+							стандартный чекбокс
+						</label>
+						<label class="checkbox-label">
+							<input type="checkbox" class="checkbox">
+							<span></span>
+							стандартный чекбокс
+						</label>
+						<label class="checkbox-label">
+							<input type="checkbox" class="checkbox">
+							<span></span>
+							стандартный чекбокс
+						</label>
+					</div>
+					<div class="radios" style="margin-bottom: 50px;">
+						<label class="radio-label">
+							<input type="radio" name="radio" class="radio">
+							<span></span>
+							стандартный радио
+						</label>
+						<label class="radio-label">
+							<input type="radio" name="radio" class="radio">
+							<span></span>
+							стандартный радио
+						</label>
+						<label class="radio-label">
+							<input type="radio" name="radio" class="radio">
+							<span></span>
+							стандартный радио
+						</label>
+					</div>
+					<div class="for-popup" style="margin-bottom: 50px;">
+						<button onclick="o2.popups.showPopup('.popup');" class="button">
+							Открыть попап
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	@@include('./inc/components/footer.html')
+	<div onclick="o2.popups.closePopup();" class="overlay _overlay">
+		<div onclick="event.stopPropagation();" class="popup _standartPopup">
+			<h2 style="text-align: center; margin-top: 50px;">Это попап</h2>
+			<div onclick="o2.popups.closePopup();" class="popup-close _popupClose">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+			<input style="margin-bottom: 20px;" placeholder="Стандартный инпут" type="text" class="input">
+			<label style="margin-bottom: 20px;" class="checkbox-label">
+				<input style="margin-bottom: 20px;" type="checkbox" class="checkbox">
+				<span></span>
+				стандартный чекбокс
+			</label>
+			<label style="margin-bottom: 20px;" class="checkbox-label">
+				<input type="checkbox" class="checkbox">
+				<span></span>
+				стандартный чекбокс
+			</label>
+			<button type="submit" class="button">
+				Стандартная кнопка
+			</button>
+		</div>
+	</div>
+</body>
+</html>
