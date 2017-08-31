@@ -1790,6 +1790,51 @@ input:focus:hover {
   font-size: 14px;
   display: inline-block; }
 
+.descr404 {
+  text-align: center; }
+
+.block404 {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.title404 {
+  font-size: 300px;
+  text-align: center; }
+
+.descr404__title {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
+
+.descr404__page-not-found {
+  color: #919AA3;
+  margin-bottom: 5px; }
+
+.descr404__small-text {
+  font-size: 15px;
+  margin-bottom: 30px; }
+
+.descr404__button:hover {
+  background-color: #fff;
+  color: #ff3b31;
+  border-color: #ff3b31;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+
+.descr404__button {
+  display: inline-block;
+  width: 100%;
+  max-width: 225px;
+  border: 1px solid transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 17px 0;
+  text-decoration: none;
+  background-color: red;
+  cursor: pointer; }
+
 /* components */
 /* vendors */
 @font-face {
