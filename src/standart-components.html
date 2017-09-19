@@ -20,14 +20,43 @@
 					</div>
 				</div>
 				<div class="components" style="padding-top: 70px;">
+					<div class="component-title" style="margin-bottom: 20px;">
+						Кнопки
+					</div>
 					<div class="buttons" style="margin-bottom: 50px;">
 						<button class="button">
 							Стандартная кнопка
 						</button>
+						<a href="" class="button">
+							Стандартная кнопка тегом a
+						</a>
+						<button class="button">
+							<div class="button-svg">
+								@@include('./inc/svg/cart.html')
+							</div>
+							Кнопка с иконкой
+						</button>
+						<button class="button">
+							Кнопка с иконкой
+							<div class="button-svg">
+								@@include('./inc/svg/cart.html')
+							</div>
+						</button>
+					</div>
+					<div class="component-title" style="margin-bottom: 20px;">
+						Инпут
+					</div>
+					<div class="inputs" style="margin-bottom: 50px;height:50px;">
+						<input placeholder="Стандартный инпут" type="text" class="input" style="margin-right: 20px;">
+					</div>
+					<div class="component-title" style="margin-bottom: 20px;">
+						Инпут с классом "error"
 					</div>
 					<div class="inputs" style="margin-bottom: 50px;">
-						<input placeholder="Стандартный инпут" type="text" class="input">
-						<input placeholder="ALARM" type="text" class="input error">
+						<input placeholder="ALERT" type="text" class="input error">
+					</div>
+					<div class="component-title" style="margin-bottom: 20px;">
+						Чекбоксы
 					</div>
 					<div class="checkboxes" style="margin-bottom: 50px;">
 						<label class="checkbox-label">
@@ -46,6 +75,9 @@
 							стандартный чекбокс
 						</label>
 					</div>
+					<div class="component-title" style="margin-bottom: 20px;">
+						Радио
+					</div>
 					<div class="radios" style="margin-bottom: 50px;">
 						<label class="radio-label">
 							<input type="radio" name="radio" class="radio">
@@ -62,6 +94,12 @@
 							<span></span>
 							стандартный радио
 						</label>
+					</div>
+					<div class="component-title" style="margin-bottom: 20px;">
+						Маска телефона класс "_phone-mask"
+					</div>
+					<div class="inputs" style="margin-bottom: 50px;height:50px;">
+						<input placeholder="+7 (495) 558-24-53" type="text" class="input _phone-mask" style="margin-right: 20px;">
 					</div>
 					<div class="for-popup" style="margin-bottom: 50px;">
 						<button onclick="o2.popups.showPopup('.popup');" class="button">

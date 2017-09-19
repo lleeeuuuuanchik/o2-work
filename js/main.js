@@ -19,7 +19,7 @@ var o2 =
 	 */
 	init: function()
 	{
-
+		this.makePhoneMask();
 	},
 	popups:
 	{
@@ -33,5 +33,9 @@ var o2 =
 			$('._overlay').removeClass('_show');
 			$('.popup').removeClass('_show');
 		},
+	},
+	makePhoneMask: function()
+	{
+		$('._phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
 	},
 }

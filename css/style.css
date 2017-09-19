@@ -700,7 +700,12 @@ th {
 /*  Общая типографика для всех страниц. здесь описываются общие свойства для текстовых блоков  */
 body {
   font-family: "PT Sans", sans-serif;
-  min-width: 320px; }
+  min-width: 320px;
+  margin-bottom: 100px; }
+
+html {
+  position: relative;
+  min-height: 100%; }
 
 ul {
   padding: 0;
@@ -1561,9 +1566,10 @@ hr {
           border-radius: 3px;
   font-size: 14px;
   color: black;
-  line-height: 16px;
+  line-height: 57px;
   width: 240px;
   height: 56px;
+  text-align: center;
   border: 1px solid black;
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
@@ -1571,6 +1577,11 @@ hr {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   display: inline-block; }
+
+.button-svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 3px 5px 0 5px; }
 
 .button:hover {
   -webkit-transform: translateY(-4px);
@@ -1589,11 +1600,10 @@ hr {
   color: #334D66;
   width: 240px;
   height: 48px;
-  padding-left: 16px;
-  -webkit-transition: border 0.3s;
-  transition: border 0.3s; }
+  padding-left: 16px; }
   .input.error {
     position: relative;
+    margin-left: -1px;
     border: 2px solid #D0021B;
     color: #D0021B; }
 
@@ -1613,18 +1623,20 @@ hr {
 
 input:hover {
   border: 2px solid #96A7BB;
-  font-size: 12px;
-  -webkit-transition: border 0.3s;
-  transition: border 0.3s; }
+  margin-top: 0px;
+  margin-left: -1px;
+  font-size: 12px; }
 
 input:focus {
   border: 2px solid #398FE6;
-  font-size: 12px;
-  -webkit-transition: border 0.3s;
-  transition: border 0.3s; }
+  margin-top: 0px;
+  margin-left: -1px;
+  font-size: 12px; }
 
 input:focus:hover {
-  border: 2px solid #9FCFFF; }
+  border: 2px solid #9FCFFF;
+  margin-top: 0px;
+  margin-left: -1px; }
 
 .checkbox-label {
   display: inline-block;
@@ -1993,6 +2005,16 @@ input:focus:hover {
     display: none; } }
 
 /* components */
+footer {
+  background-color: gray;
+  background: #192633;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; }
+  footer p {
+    color: white; }
+
 /* vendors */
 @font-face {
   font-family: 'FontAwesome';

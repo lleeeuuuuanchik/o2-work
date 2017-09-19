@@ -4,6 +4,12 @@ body
 {
 	font-family: $accent-font;
 	min-width: 320px;
+	margin-bottom: 100px;
+}
+html
+{
+	position: relative;
+	min-height: 100%;
 }
 
 ul

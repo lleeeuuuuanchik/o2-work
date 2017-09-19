@@ -4,13 +4,20 @@
 	border-radius: 3px;
 	font-size: 14px;
 	color: black;
-	line-height: 16px;
+	line-height: 57px;
 	width: 240px;
 	height: 56px;
+	text-align: center;
 	border: 1px solid black;
 	transform: translateY(0px);
 	transition: all 0.2s;
 	display: inline-block;
+}
+.button-svg
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 3px 5px 0 5px;
 }
 .button:hover
 {
@@ -29,10 +36,10 @@
 	width: 240px;
 	height: 48px;
 	padding-left: 16px;
-	transition: border 0.3s;
 	&.error
 	{
 		position: relative;
+		margin-left: -1px;
 		border: 2px solid #D0021B;
 		color: #D0021B;
 	}
@@ -44,18 +51,22 @@
 input:hover
 {
 	border: 2px solid #96A7BB;
+	margin-top: 0px;
+	margin-left: -1px;
 	font-size: 12px;
-	transition: border 0.3s;
 }
 input:focus
 {
 	border: 2px solid #398FE6;
+	margin-top: 0px;
+	margin-left: -1px;
 	font-size: 12px;
-	transition: border 0.3s;
 }
 input:focus:hover
 {
 	border: 2px solid #9FCFFF;
+	margin-top: 0px;
+	margin-left: -1px;
 }
 //checkboxes
 .checkbox-label
