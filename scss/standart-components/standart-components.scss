@@ -29,17 +29,18 @@
 .input
 {
 	background: #FFFFFF;
-	border: 1px solid #DFE4EA;
+	box-shadow: 0px 0px 1px 1px  #DFE4EA;
 	border-radius: 3px;
 	font-size: 12px;
 	color: #334D66;
 	width: 240px;
 	height: 48px;
 	padding-left: 16px;
+	border: none;
+	transition: all 0.3s;
 	&.error
 	{
 		position: relative;
-		margin-left: -1px;
 		border: 2px solid #D0021B;
 		color: #D0021B;
 	}
@@ -48,25 +49,11 @@
 ::-moz-placeholder          {color:#96A7BB;}/* Firefox 19+ */
 :-moz-placeholder           {color:#96A7BB;}/* Firefox 18- */
 :-ms-input-placeholder      {color:#96A7BB;}
-input:hover
-{
-	border: 2px solid #96A7BB;
-	margin-top: 0px;
-	margin-left: -1px;
-	font-size: 12px;
-}
 input:focus
 {
-	border: 2px solid #398FE6;
 	margin-top: 0px;
-	margin-left: -1px;
 	font-size: 12px;
-}
-input:focus:hover
-{
-	border: 2px solid #9FCFFF;
-	margin-top: 0px;
-	margin-left: -1px;
+	box-shadow: 0px 0px 2px 2px  #9FCFFF
 }
 //checkboxes
 .checkbox-label
@@ -249,4 +236,58 @@ input:focus:hover
 	top: 4px;
 	font-size: 14px;
 	display: inline-block;
+}
+
+//custom placeholder
+.custom-input
+{
+	width: 240px;
+	position: relative;
+	display: block;
+	input
+	{
+		background-color: #fafafa;
+		box-shadow: 0px 0px 1px 1px #DFE4EA;
+		border: none;
+		border-radius: 3px;
+		height: 66px;
+		letter-spacing: 0.1px;
+		padding-left: 18px;
+		padding-top: 14px;
+		font-size: 16px;
+		color: rgba (0, 0, 0, 0.87);
+		width: 100%;
+		padding-right: 18px;
+		background-color: #ffffff;
+		transition: all 0.3s;
+		&.error
+		{
+			border: 1px solid #ec231a;
+			box-shadow: none;
+		}
+		&:hover
+		{
+			border: none;
+		}
+		&:focus
+		{
+			box-shadow: 0px 0px 2px 2px  #9FCFFF;
+
+		}
+	}
+}
+.custom-input__placeholder
+{
+	position: absolute;
+	color: rgba(0, 0, 0, 0.45);
+	left: 20px;
+    top: 24px;
+    transition: all 0.3s;
+	&.onFocus
+	{
+		left: 20px;
+		top: 14px;
+		font-size: 12px;
+		transition: all 0.3s;
+	}
 }

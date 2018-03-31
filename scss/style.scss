@@ -1,8 +1,7 @@
 /* ********************** */
-// @import '../images/css/sprite';
-@import 'vendors/slick';
-@import 'vendors/slick-theme';
-@import 'vendors/slick-theme';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import '../node_modules/slick-carousel/slick/slick-theme.scss';
+@import 'vendors/font-awesome.min.scss';
 
 /* base */
 @import 'base/variables';
@@ -11,6 +10,8 @@
 @import 'base/typography';
 @import 'base/grid';
 @import 'base/buttons';
+
+//standart-components
 @import 'standart-components/standart-components.scss';
 @import 'standart-components/404.scss';
 @import 'standart-components/filter.scss';
@@ -18,10 +19,8 @@
 /* components */
 @import 'components/header';
 @import 'components/footer';
-/* vendors */
-@import 'vendors/font-awesome.min';
-@import 'vendors/slick-theme';
-@import 'vendors/slick';
+
+
 body
 {
 	min-width: 1200px;

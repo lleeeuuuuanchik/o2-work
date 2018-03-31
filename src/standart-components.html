@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	@@include('./inc/components/pagehead.html')
+	@@include('./components/pagehead.html')
 </head>
 <body>
-	@@include('./inc/components/header.html')
+	@@include('./components/header.html')
 		<section class="standart-components">
 			<div class="container" style="padding-top: 30px;">
 				<div class="bread-crumbs">
@@ -32,14 +32,14 @@
 						</a>
 						<button class="button">
 							<div class="button-svg">
-								@@include('./inc/svg/cart.html')
+								@@include('./svg/cart.html')
 							</div>
 							Кнопка с иконкой
 						</button>
 						<button class="button">
 							Кнопка с иконкой
 							<div class="button-svg">
-								@@include('./inc/svg/cart.html')
+								@@include('./svg/cart.html')
 							</div>
 						</button>
 					</div>
@@ -107,9 +107,15 @@
 						</button>
 					</div>
 				</div>
+				<label class="custom-input">
+					<div class="custom-input__placeholder">Фамилия, имя и отчество</div>
+					<input class="wer" type="text" onfocus="o2.customPlaceholder.customPlaceholder(this)" onblur="o2.customPlaceholder.customPlaceholderHide(this)">
+				</label>
 			</div>
+
+
 		</section>
-	@@include('./inc/components/footer.html')
+	@@include('./components/footer.html')
 	<div onclick="o2.popups.closePopup();" class="overlay _overlay">
 		<div onclick="event.stopPropagation();" class="popup _standartPopup">
 			<h2 style="text-align: center; margin-top: 50px;">Это попап</h2>

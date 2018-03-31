@@ -1,8 +1,8 @@
 var gulp		  = require('gulp'),
-	sass		  = require('gulp-sass'),
+	sass          = require('gulp-sass');
 	browserSync   = require('browser-sync'),
 	concat	      = require('gulp-concat'),
-	uglify	      = require('gulp-uglifyjs'),
+	uglify	      = require('gulp-uglify')
 	cssnano	      = require('gulp-cssnano'),
 	rename	      = require('gulp-rename'),
 	del		      = require('del'),
@@ -10,7 +10,6 @@ var gulp		  = require('gulp'),
 	pngquant	  = require('imagemin-pngquant'),
 	cache		  = require('gulp-cache'),
 	autoprefixer  = require('gulp-autoprefixer'),
-	svgSprite	  = require("gulp-svg-sprite"),
 	spritesmith   = require('gulp.spritesmith'),
 	fileinclude   = require('gulp-file-include');
 
@@ -23,14 +22,19 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}))
 });
 
+
 // таск для сжатия и объединения js файлов
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
-		'js/vendors/jquery-2.2.2.min.js',
-		'js/vendors/jquery.formstyler.min.js',
-		'js/vendors/input-mask.min.js',
-		'js/vendors/slick.min.js',
-		'js/vendors/object-fit-polyfill.js',
+		'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/jquery.formstyler/node_modules/jquery/dist/jquery.min.js',
+		'node_modules/slick-carousel/slick/slick.min.js',
+		'node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js',
+		// 'js/vendors/jquery.formstyler.min.js',
+		
+		// 'js/vendors/input-mask.min.js',
+		// 'js/vendors/slick.min.js',
+		// 'js/vendors/object-fit-polyfill.js',
 		'js/main.js',
 		])
 		.pipe(concat('main.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -70,11 +74,11 @@ gulp.task('sprite', function () {
 });
 
 // таск для создания спрайтов из svg картинок
-gulp.task('svg:build', function () {
-	return gulp.src('images/svg/*.svg')
-		.pipe(svgSprite(svgSpriteConfig))
-		.pipe(gulp.dest("."));
-});
+// gulp.task('svg:build', function () {
+// 	return gulp.src('images/svg/*.svg')
+// 		.pipe(svgSprite(svgSpriteConfig))
+// 		.pipe(gulp.dest("."));
+// });
 
 // fileinclude - простейший шабланизатор
 gulp.task('fileinclude', function()
@@ -93,7 +97,7 @@ gulp.task('browser-sync', function() {
 		server: {
 			baseDir: './'
 		},
-		notify: false
+		notify: false,
 	})
 });
 

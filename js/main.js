@@ -38,4 +38,22 @@ var o2 =
 	{
 		$('._phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
 	},
+
+
+	// custom placeholder
+	customPlaceholder:
+	{
+		customPlaceholder: function(instance)
+		{
+			$(instance).prev().addClass('onFocus')
+		},
+		customPlaceholderHide: function(instance)
+		{
+			if($(instance).val() != "")
+				return false
+			$(instance).prev().toggleClass('onFocus')
+		},
+	}
+
+	
 }
