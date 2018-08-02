@@ -1,17 +1,16 @@
-var gulp		  = require('gulp'),
-	sass          = require('gulp-sass');
-	browserSync   = require('browser-sync'),
-	concat	      = require('gulp-concat'),
-	uglify	      = require('gulp-uglify')
-	cssnano	      = require('gulp-cssnano'),
-	rename	      = require('gulp-rename'),
-	del		      = require('del'),
-	imagemin	  = require('gulp-imagemin'),
-	pngquant	  = require('imagemin-pngquant'),
-	cache		  = require('gulp-cache'),
-	autoprefixer  = require('gulp-autoprefixer'),
-	spritesmith   = require('gulp.spritesmith'),
-	fileinclude   = require('gulp-file-include');
+var gulp 		 = require('gulp'),
+	sass         = require('gulp-sass');
+	browserSync  = require('browser-sync'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify')
+	cssnano      = require('gulp-cssnano'),
+	rename       = require('gulp-rename'),
+	del          = require('del'),
+	image        = require('gulp-image'),
+	pngquant     = require('imagemin-pngquant'),
+	cache        = require('gulp-cache'),
+	autoprefixer = require('gulp-autoprefixer'),
+	fileinclude  = require('gulp-file-include');
 
 // таск для компиляции scss в css
 gulp.task('sass', function() {
@@ -31,7 +30,7 @@ gulp.task('scripts', function() {
 		'node_modules/slick-carousel/slick/slick.min.js',
 		'node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js',
 		// 'js/vendors/jquery.formstyler.min.js',
-		
+
 		// 'js/vendors/input-mask.min.js',
 		// 'js/vendors/slick.min.js',
 		// 'js/vendors/object-fit-polyfill.js',
@@ -104,14 +103,14 @@ gulp.task('browser-sync', function() {
 // таск следит за изменениями файлов и вызывает другие таски
 gulp.task('watch', function() {
 	gulp.watch('scss/**/*.scss',['sass']);
-	gulp.watch(['src/*.html','src/inc/**/*.html'],['fileinclude']);
+	gulp.watch(['src/*.html','src/**/*.html'],['fileinclude']);
 	gulp.watch(['js/vendors/*.js', 'js/main.js', 'js/modules/*.js'],['scripts']);
-	gulp.watch('inc/*.html', browserSync.reload);
+	gulp.watch('src/*.html', browserSync.reload);
 	gulp.watch('**/*.html', browserSync.reload);
 	gulp.watch('js/*.js', browserSync.reload);
 });
 
-// таск сжимает картинки без потери качества 
+// таск сжимает картинки без потери качества
 gulp.task('img', function() {
 	return gulp.src('images/**/*') // откуда брать картинки
 	.pipe(cache(imagemin({
@@ -123,5 +122,5 @@ gulp.task('img', function() {
 	.pipe(gulp.dest('dist/img')) // куда класть сжатые картинки
 });
 
-// основной таск, который запускает вспомогательные 
+// основной таск, который запускает вспомогательные
 gulp.task('default', ['browser-sync','watch', 'sass', 'fileinclude', 'scripts']);
