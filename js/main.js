@@ -12,7 +12,7 @@ $(document).ready(function()
  * основной объект
  * @type {object}
  */
-var o2 = 
+var o2 =
 {
 	/**
 	 * вызов функций, которые должны запускаться при загрузке страницы
@@ -56,6 +56,4 @@ var o2 =
 			$(instance).prev().toggleClass('onFocus')
 		},
 	}
-
-	
 }
