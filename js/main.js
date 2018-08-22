@@ -27,11 +27,13 @@ var o2 =
 		{
 			$('._overlay').addClass('_show');
 			$(popup).addClass('_show');
+			$('body').css('overflow', 'hidden');
 		},
 		closePopup: function(popup)
 		{
 			$('._overlay').removeClass('_show');
 			$(popup).removeClass('_show');
+			$('body').css('overflow', 'visible');
 		},
 	},
 	makePhoneMask: function()
