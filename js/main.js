@@ -29,10 +29,10 @@ var o2 =
 			$(popup).addClass('_show');
 			$('body').css('overflow', 'hidden');
 		},
-		closePopup: function(popup)
+		closePopup: function()
 		{
 			$('._overlay').removeClass('_show');
-			$(popup).removeClass('_show');
+			$('.popup').removeClass('_show');
 			$('body').css('overflow', 'visible');
 		},
 	},
