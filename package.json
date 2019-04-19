@@ -1,6 +1,6 @@
 {
   "name": "project",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gulp project for work",
   "main": "index.js",
   "scripts": {
@@ -9,30 +9,39 @@
   "author": "o2",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "browser-sync": "^2.18.13",
     "del": "^2.2.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-cache": "^1.0.2",
-    "gulp-clean-css": "^3.9.4",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache": "^1.1.1",
+    "gulp-cheerio": "^0.6.3",
     "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-css-globbing": "^0.2.2",
     "gulp-cssnano": "^2.1.3",
-    "gulp-file-include": "^2.0.1",
-    "gulp-image": "^4.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
     "gulp-install": "^1.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "3.0.0",
+    "gulp-svg-symbols": "^3.2.3",
+    "gulp-svgmin": "^2.1.0",
     "gulp-uglify": "^3.0.0",
-    "gulp.spritesmith": "^6.9.0",
-    "imagemin-pngquant": "^5.1.0",
+    "gulp-uglify-es": "^1.0.4",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^6.0.0",
+    "imagemin-zopfli": "^6.0.0",
     "node-sass": "^4.8.3"
   },
   "dependencies": {
-    "inputmask": "^3.3.11",
-    "jquery": "^3.3.1",
-    "jquery.formstyler": "^1.7.5-repackage",
-    "slick-carousel": "^1.8.1"
+    "jquery": "^3.3.1"
   }
 }

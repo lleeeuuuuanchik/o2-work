@@ -1,33 +1,11 @@
 @font-face {
-    font-family: 'a_lcdnovaregular';
-    src: url('../fonts/a_lcdnova-webfont.eot');
-    src: url('../fonts/a_lcdnova-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/a_lcdnova-webfont.woff2') format('woff2'),
-         url('../fonts/a_lcdnova-webfont.woff') format('woff'),
-         url('../fonts/a_lcdnova-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'a_lcdnovaregular';
+	src: url('../fonts/a_lcdnova-webfont.eot');
+	src: url('../fonts/a_lcdnova-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/a_lcdnova-webfont.woff2') format('woff2'),
+		 url('../fonts/a_lcdnova-webfont.woff') format('woff'),
+		 url('../fonts/a_lcdnova-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
-// @font-face {
-//   font-family: 'fontawesome';
-//   src: url('../fonts/fontawesome-webfont.eot');
-//   src: url('../fonts/fontawesome-webfont.woff2') format('woff2'),
-//        url('../fonts/fontawesome-webfont.woff') format('woff'),
-//        url('../fonts/fontawesome-webfont.ttf') format('truetype'),
-//        url('../fonts/fontawesome-webfont.svg#fontawesome-webfont') format('svg'),
-//        url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-// шаблон
-// @font-face {
-//   font-family: '';
-//   src: url('../fonts/.eot');
-//   src: url('../fonts/.woff2') format('woff2'),
-//        url('../fonts/.woff') format('woff'),
-//        url('../fonts/.ttf') format('truetype'),
-//        url('../fonts/.svg#') format('svg'),
-//        url('../fonts/.eot?#iefix') format('embedded-opentype');
-//   font-weight: normal;
-//   font-style: normal;
-// }

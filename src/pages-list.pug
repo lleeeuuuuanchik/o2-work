@@ -1,0 +1,50 @@
+extends layouts/default.pug
+
+block inlineStyles
+	style(type='text/css').
+		.pages-item {
+			padding-bottom: 20px;
+			margin-bottom: 40px;
+			border-bottom: 2px solid rgb(0,0,0, 0.2);
+		}
+		.pages-item:last-child {
+			margin-bottom: 0;
+			border: none;
+		}
+		.pages-item__link {
+			font-size: 18px;
+			color: #191C21;
+			border-bottom: 1px solid #191C21;
+			text-transform: uppercase;
+		}
+		.pages-item__descr {
+			margin-top: 8px;
+			margin-bottom: 0;
+		}
+		.pages-header {
+			padding-top: 100px;
+			padding-bottom: 40px;
+		}
+
+block header
+
+block content
+	.container(style='max-width: 800px; min-height: 100vh; padding-bottom: 50px;')
+
+		h1.h1-style.pages-header Страницы верстки проекта "название проекта"
+
+		.pages
+			.pages-item
+				a.pages-item__link(href='#') Главная
+				p.pages-item__descr main-page. "штука-нейм" заработает, когда будет "другая штука-нейм"
+
+			.pages-item
+				a.pages-item__link(href='#') Детальная
+				p.pages-item__descr При скролле добавляются картиночки, контент настраивается из админки
+
+			.pages-item
+				a.pages-item__link(href='#') Контакты
+				p.pages-item__descr
+					| Координаты офисов будут задавать из админки, для примера вставили несколько точек
+
+block footer

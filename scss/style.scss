@@ -1,29 +1,30 @@
 /* ********************** */
-@import '../node_modules/slick-carousel/slick/slick.scss';
-@import '../node_modules/slick-carousel/slick/slick-theme.scss';
-@import 'vendors/font-awesome.min.scss';
-
+@import 'svg-symbols';
 /* base */
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/normalize';
 @import 'base/typography';
-@import 'base/grid';
-@import 'base/buttons';
+@import 'base/controls';
 
-//standart-components
-@import 'standart-components/standart-components.scss';
-@import 'standart-components/404.scss';
-@import 'standart-components/filter.scss';
+/* layouts */
+@import 'layouts/default';
+@import 'layouts/index';
 
-/* components */
-@import 'components/header';
-@import 'components/footer';
-
+/* blocks */
+@import 'blocks/header';
+@import 'blocks/footer';
 
 body
 {
-	min-width: 1200px;
+	min-width: 375px;
+}
+.dropdown-arrow
+{
+	path
+	{
+		stroke: green;
+	}
 }
 
 * {
@@ -40,45 +41,34 @@ body
 	box-sizing: border-box;
 }
 
-.clearfix:after,
-.row:after
+svg > use { fill: none; }
+
+// прячем svg спрайт, но не скрываем т.к. display: none; ломает градиенты и т.д
+.svg-symbol
 {
-	content: " ";
-	display: table;
-	clear: both;
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
 }
 
-.float-left
+.container
 {
-	float: left;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.float-right
+@media (max-width: 1200px)
 {
-	float: right;
-}
-
-.float-none
-{
-	float: none;
-}
-
-.text-center
-{
-	text-align: center;
-}
-
-.text-left
-{
-	text-align: left;
-}
-
-.text-right
-{
-	text-align: right;
-}
-
-.full-table
-{
-	width: 100% !important;
+	.container
+	{
+		max-width: 1140px;
+	}
 }
