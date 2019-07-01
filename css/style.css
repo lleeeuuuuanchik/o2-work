@@ -2,96 +2,6 @@
 
 /* ********************** */
 
-.asia-exchg {
-  width: 48px;
-  height: 48px;
-}
-
-.banner-arrow {
-  width: 21px;
-  height: 21px;
-}
-
-.dvc {
-  width: 300px;
-  height: 49px;
-}
-
-.europe-exchg {
-  width: 45px;
-  height: 46px;
-}
-
-.featured {
-  width: 16px;
-  height: 16px;
-}
-
-.global-exchg {
-  width: 52px;
-  height: 48px;
-}
-
-.iconexpand {
-  width: 36px;
-  height: 36px;
-}
-
-.index-slider-next {
-  width: 16px;
-  height: 16px;
-}
-
-.index-slider-prev {
-  width: 16px;
-  height: 16px;
-}
-
-.index-telegram {
-  width: 85px;
-  height: 74px;
-}
-
-.input-error {
-  width: 16px;
-  height: 16px;
-}
-
-.ipo1 {
-  width: 185px;
-  height: 85px;
-}
-
-.ipo2 {
-  width: 208px;
-  height: 40px;
-}
-
-.ipo3 {
-  width: 152px;
-  height: 84px;
-}
-
-.ipo4 {
-  width: 185px;
-  height: 36px;
-}
-
-.ipo5 {
-  width: 210px;
-  height: 54px;
-}
-
-.itiglobal {
-  width: 27px;
-  height: 31px;
-}
-
-.moscow-exchg {
-  width: 48px;
-  height: 48px;
-}
-
 .partners1 {
   width: 300px;
   height: 49px;
@@ -127,11 +37,6 @@
   height: 48px;
 }
 
-.sprite-102da090 {
-  width: 200px;
-  height: 98px;
-}
-
 .sprite-23aee52a {
   width: 200px;
   height: 139px;
@@ -142,14 +47,14 @@
   height: 98px;
 }
 
-.sprite-aa32ec8f {
-  width: 200px;
-  height: 70px;
-}
-
 .sprite-d2e0e642 {
   width: 200px;
   height: 98px;
+}
+
+.svg {
+  width: 350px;
+  height: 248px;
 }
 
 .tlg {

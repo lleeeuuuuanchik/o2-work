@@ -1,0 +1,18 @@
+{# index.twig #}
+
+{% block footer %}
+	<header>
+		<p>
+			header moterfucker
+		</p>
+		<ul>
+			{% if benefits %}
+				миша педор
+			{% endif %}
+
+			{% for value in benefits %}
+				<li>{{ value }}</li>
+			{% endfor %}
+		</ul>
+	</header>
+{% endblock %}

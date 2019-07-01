@@ -14,8 +14,8 @@ var gulp             = require('gulp'),
 	imageminZopfli   = require('imagemin-zopfli'),
 	imageminMozjpeg  = require('imagemin-mozjpeg'),
 	imageminGiflossy = require('imagemin-giflossy'),
-	pug              = require('gulp-pug'),
 	plumber          = require('gulp-plumber'),
+	twig             = require('gulp-twig'),
 	gulpif           = require('gulp-if'),
 	svgmin           = require('gulp-svgmin'),
 	htmlbeautify     = require('gulp-html-beautify'),
@@ -180,14 +180,14 @@ gulp.task('htmlbeautify', () => {
 		.pipe(gulp.dest('./'));
 });
 
-// компиляция pug файлов
-gulp.task('pug', () => {
-	return gulp.src("./src/*.pug")
-		.pipe(plumber())
-		.pipe(pug())
-		.pipe(htmlbeautify())
-		.pipe(gulp.dest("./"))
-		.pipe(browserSync.reload({stream: true}))
+gulp.task('twig', function () {
+	return gulp.src(['./src/*.twig'])
+	// Stay live and reload on error
+	.pipe(plumber())
+	.pipe(twig())
+	.pipe(htmlbeautify())
+	.pipe(gulp.dest("./"))
+	.pipe(browserSync.reload({stream: true}))
 });
 
 // таск для обновления страницы
@@ -211,10 +211,10 @@ gulp.task('browser-sync', () => {
 // таск следит за изменениями файлов и вызывает другие таски
 gulp.task('watch', function() {
 	gulp.watch('scss/**/*.scss', gulp.parallel('sass'));
-	gulp.watch('src/**/*.pug', gulp.parallel('pug'));
+	gulp.watch('src/**/*.twig', gulp.parallel('twig'));
 	gulp.watch(['js/vendors/*.js', 'js/main.js', 'js/modules/*.js'], gulp.parallel('scripts'));
 	gulp.watch(['img/svg-for-min/*'], {events: ['all']}, gulp.series('svg-min', 'svg-sprite'));
-	gulp.watch('img/svg-for-sprite/*', {events: ['all']}, gulp.series('svg-sprite', 'pug'));
+	gulp.watch('img/svg-for-sprite/*', {events: ['all']}, gulp.series('svg-sprite', 'twig'));
 	gulp.watch('./*.html', gulp.parallel(() => { browserSync.reload(); }));
 	gulp.watch('js/*.js', gulp.parallel(() => { browserSync.reload(); }));
 	gulp.watch('img/*', gulp.parallel(() => { browserSync.reload(); }));
@@ -246,7 +246,7 @@ gulp.task('img', () => {
 });
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'svg-sprite', 'sass', 'pug', 'scripts-build', 'img', () => { console.log('builded');}))
+gulp.task('build', gulp.series('svg-min', 'svg-sprite', 'sass', 'twig', 'scripts-build', 'img', () => { console.log('builded');}))
 
 // основной таск, который запускает вспомогательные
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'pug', 'svg-min', 'svg-sprite', 'scripts', () => { console.log('dev start');}));
+gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'svg-sprite', 'scripts', () => { console.log('dev start');}));
