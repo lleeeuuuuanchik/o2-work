@@ -37,6 +37,7 @@ gulp.task('sass', () => {
 // файлы для сборки
 var jsFiles = [
 	'node_modules/jquery/dist/jquery.min.js',
+	'js/vendors/*.js',
 	'js/main.js',
 ];
 
@@ -44,7 +45,9 @@ var jsFiles = [
 gulp.task('scripts', () => {
 	return gulp.src(jsFiles)
 		.pipe(concat('main.min.js'))
-		.pipe(gulp.dest('js')); // Выгружаем в папку app/js
+		.pipe(gulp.dest('js'))
+		.pipe(browserSync.reload({stream: true}))
+
 });
 
 gulp.task('clean', function () {
@@ -208,13 +211,13 @@ gulp.task('browser-sync', () => {
 // таск следит за изменениями файлов и вызывает другие таски
 gulp.task('watch', function() {
 	gulp.watch('scss/**/*.scss', gulp.parallel('sass'));
-	gulp.watch(['src/*.pug','src/**/*.pug'], gulp.parallel('pug'));
+	gulp.watch('src/**/*.pug', gulp.parallel('pug'));
 	gulp.watch(['js/vendors/*.js', 'js/main.js', 'js/modules/*.js'], gulp.parallel('scripts'));
 	gulp.watch(['img/svg-for-min/*'], {events: ['all']}, gulp.series('svg-min', 'svg-sprite'));
 	gulp.watch('img/svg-for-sprite/*', {events: ['all']}, gulp.series('svg-sprite', 'pug'));
 	gulp.watch('./*.html', gulp.parallel(() => { browserSync.reload(); }));
-	gulp.watch('js/*.js', browserSync.reload);
-	gulp.watch('img/*', browserSync.reload);
+	gulp.watch('js/*.js', gulp.parallel(() => { browserSync.reload(); }));
+	gulp.watch('img/*', gulp.parallel(() => { browserSync.reload(); }));
 });
 
 // таск сжимает картинки без потери качества
