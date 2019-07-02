@@ -222,26 +222,28 @@ gulp.task('watch', function() {
 
 // таск сжимает картинки без потери качества
 gulp.task('img', () => {
-	return gulp.src('img/**') // откуда брать картинки
-	.pipe(cache(imagemin([
-		//png
-		pngquant({
-			speed: 1,
-			quality: [0.3, 0.5] //lossy settings
-		}),
-		imageminZopfli({
-			more: true
-			// iterations: 50 // very slow but more effective
-		}),
-		//jpg lossless
-		imagemin.jpegtran({
-			progressive: true
-		}),
-		//jpg very light lossy, use vs jpegtran
-		imageminMozjpeg({
-			quality: 85
-		})
-	])))
+	return gulp.src(['img/*.png', 'img/*.jpg']) // откуда брать картинки
+	.pipe(cache(
+		imagemin([
+			//png
+			pngquant({
+				speed: 1,
+				quality: 80 //lossy settings
+			}),
+			imageminZopfli({
+				more: true,
+				iterations: 50 // very slow but more effective
+			}),
+			//jpg lossless
+			imagemin.jpegtran({
+				progressive: true
+			}),
+			//jpg very light lossy, use vs jpegtran
+			imageminMozjpeg({
+				quality: 85
+			})
+		])
+	))
 	.pipe(gulp.dest('img/')) // куда класть сжатые картинки
 });
 
