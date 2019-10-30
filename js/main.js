@@ -19,41 +19,10 @@ var o2 =
 	 */
 	init: function()
 	{
-		this.makePhoneMask();
-	},
-	popups:
-	{
-		showPopup: function(popup)
-		{
-			$('._overlay').addClass('_show');
-			$(popup).addClass('_show');
-			$('body').css('overflow', 'hidden');
-		},
-		closePopup: function()
-		{
-			$('._overlay').removeClass('_show');
-			$('.popup').removeClass('_show');
-			$('body').css('overflow', 'visible');
-		},
-	},
-	makePhoneMask: function()
-	{
-		$('._phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
-	},
+		console.log('стартовый шаблон');
+		var item = 'alahsssa sadsf';
 
-
-	// custom placeholder
-	customPlaceholder:
-	{
-		customPlaceholder: function(instance)
-		{
-			$(instance).prev().addClass('onFocus')
-		},
-		customPlaceholderHide: function(instance)
-		{
-			if($(instance).val() != "")
-				return false
-			$(instance).prev().toggleClass('onFocus')
-		},
-	}
+		var object = { item };
+		console.log(object);
+	},
 }
