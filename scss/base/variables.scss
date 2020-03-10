@@ -1,16 +1,24 @@
 /*  Переменные со шрифтами  */
-$accent-font: 'PT Sans', sans-serif;
-
+$accent-font: 'Roboto-mono', sans-serif;
 
 /*  Переменные с гарнитурами шрифтов  */
-$pt-bold: 700;
+$thin:					100;
+$light:					300;
+$regular:				normal;
+$medium:				500;
+$bold:					bold;
 
+/* Настройки оснвоно шрифта */
+$mainFontSize: 			13px;
+$mainLineHeight:		17px;
+$mainFontColor:			#000;
+$mainFontWeight:		$regular;
 
-/*  Основные цвета  */
-$accent-color: #f4b600;
-$secondary-color: #6a7678;
-
+/* Основные цвета */
+$accent-color:			#f4b600;
+$secondary-color: 		#6a7678;
 
 /* Разрешения */
-$tablet: 1024px;
-$mobile: 768px;
+$tablet:				1024px;
+$mobile-sm:				768px;
+$mobile-xs:				475px;

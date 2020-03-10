@@ -1,0 +1,32 @@
+{#
+	При вставка данного компонента можно передать
+	доп. классы в параметре "classList"
+ #}
+<div class="g-tabs _tabs-container {{ classList }}">
+	<ul class="g-tabs__menu">
+		<li class="g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1)">
+			<a class="g-tabs__link" href="javascript:void(0);">Active</a>
+		</li>
+		<li class="g-tabs__item" onclick="o2.gTabs.open(this, 2)">
+			<a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+		</li>
+		<li class="g-tabs__item" onclick="o2.gTabs.open(this, 3)">
+			<a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+		</li>
+		<li class="g-tabs__item" onclick="o2.gTabs.open(this, 4)">
+			<a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+		</li>
+	</ul>
+	<div class="g-tab g-tab_open" data-tab-id="1">
+		<div class="g-tab__content">Tab 1 content</div>
+	</div>
+	<div class="g-tab" data-tab-id="2">
+		<div class="g-tab__content">Tab 2 content</div>
+	</div>
+	<div class="g-tab" data-tab-id="3">
+		<div class="g-tab__content">Tab 3 content</div>
+	</div>
+	<div class="g-tab" data-tab-id="4">
+		<div class="g-tab__content">Tab 4 content</div>
+	</div>
+</div>

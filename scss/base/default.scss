@@ -1,0 +1,53 @@
+.container
+{
+	max-width: 1212px;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 16px;
+	padding-left: 16px;
+	position: relative;
+}
+.section
+{
+	padding-top: 30px;
+	padding-bottom: 60px;
+	border-bottom: 1px solid rgba(103, 115, 135, 0.1);
+}
+@media (max-width: 1200px)
+{
+	.container
+	{
+		max-width: 1032px;
+	}
+}
+@media (max-width: 1052px)
+{
+	.container
+	{
+		padding-left: 14px;
+		padding-right: 14px;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+@media (max-width: $mobile-sm)
+{
+	.devider
+	{
+		display: block;
+	}
+	.container
+	{
+		padding-left: 16px;
+		padding-right: 16px;
+		width: 100%;
+	}
+}
+@media (max-width: $mobile-xs)
+{
+	.devider_catalog
+	{
+		top: 100px;
+	}
+}

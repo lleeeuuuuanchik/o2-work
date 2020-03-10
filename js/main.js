@@ -1,5 +1,4 @@
 "use strict"
-
 /**
  * инициализация всех инициализаций
  */
@@ -10,19 +9,39 @@ $(document).ready(function()
 
 /**
  * основной объект
- * @type {object}
  */
-var o2 =
+const o2 =
 {
 	/**
 	 * вызов функций, которые должны запускаться при загрузке страницы
 	 */
-	init: function()
+	init()
 	{
 		console.log('стартовый шаблон');
-		var item = 'alahsssa sadsf';
+		this.gTabs = O2_TABS;
+		this.gSelect = O2_SELECT;
+		this.gRangeSlider = O2_RANGE_SLIDER;
 
-		var object = { item };
-		console.log(object);
+		this.gRangeSlider.init();
+	},
+	/**
+	* отслеживание клика вне блока
+	*/
+	clickOutside(element, callback)
+	{
+		const outsideChecker = (event) =>
+		{
+			const container = $(element);
+
+			if (!container.is(event.target) && container.has(event.target).length === 0)
+			{
+				document.removeEventListener('click', outsideChecker);
+				callback();
+			}
+		};
+
+		document.addEventListener('click', outsideChecker);
+
+		return outsideChecker;
 	},
 }

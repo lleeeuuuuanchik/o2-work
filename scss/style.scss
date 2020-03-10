@@ -1,46 +1,64 @@
-/* ********************** */
 @import 'svg-symbols';
+
+/* mixins */
+@import 'base/mixins.scss';
+
+/* vendors */
+@import 'vendors/no-ui-slider';
+@import 'vendors/slick-theme';
+@import 'vendors/slick.scss';
+
 /* base */
-@import 'base/variables';
 @import 'base/fonts';
+@import 'base/variables';
 @import 'base/normalize';
 @import 'base/typography';
 @import 'base/controls';
+@import 'base/default';
 
-/* layouts */
-@import 'layouts/default';
-@import 'layouts/index';
+/* pages */
+@import 'pages/index';
 
 /* blocks */
 @import 'blocks/header';
 @import 'blocks/footer';
-
-body
-{
-	min-width: 375px;
-}
-.dropdown-arrow
-{
-	path
-	{
-		stroke: green;
-	}
-}
+@import 'blocks/g-tabs';
+@import 'blocks/g-select';
+@import 'blocks/g-range-slider';
 
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	outline: 0;
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 }
-
-*:before,
-*:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+html {
+	line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+	@media (max-width: $tablet) {
+		font-size: 13px;
+	}
+	@media (max-width: $mobile-sm) {
+		font-size: 12px;
+	}
+	@media (max-width: $mobile-xs) {
+		font-size: 12px;
+	}
 }
-
+body
+{
+	min-width: 375px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 svg > use { fill: none; }
 
 // прячем svg спрайт, но не скрываем т.к. display: none; ломает градиенты и т.д
@@ -54,21 +72,4 @@ svg > use { fill: none; }
 	padding: 0 !important;
 	position: absolute !important;
 	width: 1px !important;
-}
-
-.container
-{
-	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-@media (max-width: 1200px)
-{
-	.container
-	{
-		max-width: 1140px;
-	}
 }

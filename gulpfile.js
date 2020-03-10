@@ -36,15 +36,22 @@ gulp.task('sass', () => {
 
 // файлы для сборки
 var jsFiles = [
-	'node_modules/jquery/dist/jquery.min.js',
-	'js/vendors/*.js',
+	'js/vendors/jquery-3.4.1.min.js',
+	'js/vendors/lazyload.min.js',
+	'js/vendors/no-ui-slider.min.js',
+	'js/vendors/slick-1.9.min.js',
+	'js/vendors/imask.min.js',
+	'js/modules/*.js',
 	'js/main.js',
 ];
 
 // таск для объединения js файлов
 gulp.task('scripts', () => {
+	process.env.NODE_ENV = "release";
 	return gulp.src(jsFiles)
+		.pipe(babel())
 		.pipe(concat('main.min.js'))
+		// .pipe(uglify()) // Сжимаем JS файл
 		.pipe(gulp.dest('js'))
 		.pipe(browserSync.reload({stream: true}))
 
@@ -150,10 +157,9 @@ gulp.task('svg-sprite', function() {
 
 // таск для сборки, транспалирования и сжатия скриптов
 gulp.task('scripts-build', () => {
+	process.env.NODE_ENV = "release";
 	return gulp.src(jsFiles)
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		})) // транспалируем из es6
+		.pipe(babel()) // транспалируем из es6
 		.pipe(concat('main.min.js'))
 		.pipe(uglify()) // Сжимаем JS файл
 		.pipe(gulp.dest('js')); // Выгружаем в папку app/js

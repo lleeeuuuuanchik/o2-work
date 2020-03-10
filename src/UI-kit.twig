@@ -1,0 +1,31 @@
+{# ui-kit.twig #}
+{% extends "layouts/layout.twig" %}
+
+{% block page %}
+	<div class="ui-kit">
+		<section class="section select" style="padding-bottom: 274px;">
+			<div class="container">
+				<h2 class="section__title tab__title">
+					Select
+				</h2>
+				{% include "./blocks/g-select.twig" %}
+			</div>
+		</section>
+		<section class="section select" style="padding-bottom: 274px;">
+			<div class="container">
+				<h2 class="section__title tab__title">
+					Range slider
+				</h2>
+				{% include "./blocks/g-range-slider.twig"  with {fieldName: "namge", type: "range", min: 100, max: 1000, from: 200, to: 800} %}
+			</div>
+		</section>
+		<section class="section tab">
+			<div class="container">
+				<h2 class="section__title tab__title">
+					Tab
+				</h2>
+				{% include "./blocks/g-tabs.twig" %}
+			</div>
+		</section>
+	</div>
+{% endblock %}

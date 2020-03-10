@@ -1,0 +1,66 @@
+.g-range-slider
+{
+	min-height: 1px;
+}
+.noUi-target
+{
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	height: 3px;
+	background-color: grey;
+	padding: 0 5px;
+}
+.noUi-horizontal
+{
+	.noUi-handle
+	{
+		width: 15px;
+		height: 15px;
+		border: 3px solid #fff;
+		border-radius: 100%;
+		background-color: green;
+		top: -6px;
+		left: -5px;
+		box-shadow: none;
+		&:before,
+		&:after
+		{
+			display: none;
+		}
+	}
+	.noUi-connects
+	{
+		border-radius: 0;
+		width: 100%;
+	}
+	.noUi-connect
+	{
+		background-color: green;
+	}
+	.noUi-touch-area
+	{
+		cursor: pointer;
+	}
+}
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle
+{
+	right: -5px;
+}
+.g-range-slider-labels
+{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 14px;
+	font-size: 14px;
+	font-weight: 500;
+	color: black;
+}
+[disabled] .noUi-handle,
+[disabled].noUi-handle,
+[disabled].noUi-target
+{
+	background-color: white;
+	border-color: white;
+	cursor: default;
+}
