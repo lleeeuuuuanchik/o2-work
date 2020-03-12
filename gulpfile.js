@@ -20,8 +20,8 @@ var gulp             = require('gulp'),
 
 // таск для компиляции scss в css
 gulp.task('sass', () => {
-	return gulp.src('src/scss/style.scss')
-	.pipe(sass().on('error', sass.logError))
+	return gulp.src('src/assets/scss/style.scss')
+	.pipe(sass({includePaths: ['src/']}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], {cascade: true}))
 	.pipe(gcmq())
 	.pipe(gulp.dest('pages'))
@@ -29,7 +29,7 @@ gulp.task('sass', () => {
 });
 
 // файлы для сборки
-var jsFiles = ['src/**/*.js'];
+var jsFiles = ['src/assets/js/*.js', 'src/**/*.js'];
 
 // таск для объединения js файлов
 gulp.task('scripts', () => {
@@ -46,10 +46,10 @@ gulp.task('scripts', () => {
 gulp.task('scripts-build', () => {
 	process.env.NODE_ENV = "release";
 	return gulp.src(jsFiles)
-		.pipe(babel()) // транспалируем из es6
+		.pipe(babel())
 		.pipe(concat('main.min.js'))
-		.pipe(uglify()) // Сжимаем JS файл
-		.pipe(gulp.dest('pages')); // Выгружаем в папку app/js
+		.pipe(uglify())
+		.pipe(gulp.dest('pages'));
 });
 
 // приводим впорядок скомпилированный код после pug-a
@@ -75,7 +75,7 @@ gulp.task('htmlbeautify', () => {
 gulp.task('twig', function () {
 	return gulp.src(['./src/*.twig'])
 	.pipe(plumber())
-	.pipe(twig())
+	.pipe(twig({base:'./src/'}))
 	.pipe(htmlbeautify())
 	.pipe(gulp.dest("pages/",))
 	.pipe(browserSync.reload({stream: true}))
@@ -117,57 +117,57 @@ gulp.task('img', () => {
 
 gulp.task('svg-min', () => {
 	return gulp.src('src/assets/svg/*.svg')
-		.pipe(
-			svgmin(file => {
-				const { relative } = file
-				const prefix = path.basename(relative, path.extname(relative))
-				return {
-					js2svg: {pretty: true, },
-					plugins: [
-						{cleanupIDs: { prefix: '${prefix}-' + Math.floor(Math.random() * (100 - 10)) + 10 }, },
-						{removeDoctype: true, },
-						{removeXMLProcInst: true, },
-						{removeViewBox: false },
-						{removeTitle: true, },
-						{removeDesc: { removeAny: true }, },
-						{convertTransform: {}, },
-					],
+	.pipe(
+		svgmin(file => {
+			const { relative } = file
+			const prefix = path.basename(relative, path.extname(relative))
+			return {
+				js2svg: {pretty: true, },
+				plugins: [
+					{cleanupIDs: { prefix: '${prefix}-' + Math.floor(Math.random() * (100 - 10)) + 10 }, },
+					{removeDoctype: true, },
+					{removeXMLProcInst: true, },
+					{removeViewBox: false },
+					{removeTitle: true, },
+					{removeDesc: { removeAny: true }, },
+					{convertTransform: {}, },
+				],
+			}
+		})
+	)
+	.pipe(
+		cheerio({
+			run: ($, file) => {
+				const $clipPath = $('clipPath')
+				const $mask = $('mask')
+				let $defs = $('defs')
+				const hasClipPath = $clipPath.length > 0
+				const hasMask = $mask.length > 0
+				const hasDefs = $defs.length > 0
+
+				if (!hasClipPath && !hasMask) return
+
+				if (!hasDefs) {
+					$defs = $('<defs></defs>')
+					$defs.prependTo('svg')
 				}
-			})
-		)
-		.pipe(
-			cheerio({
-				run: ($, file) => {
-					const $clipPath = $('clipPath')
-					const $mask = $('mask')
-					let $defs = $('defs')
-					const hasClipPath = $clipPath.length > 0
-					const hasMask = $mask.length > 0
-					const hasDefs = $defs.length > 0
 
-					if (!hasClipPath && !hasMask) return
+				function copyToDefs(i, el) {
+					const $el = $(el)
+					const $clone = $el.clone()
+					$clone.appendTo($defs)
+					$el.remove()
+				}
 
-					if (!hasDefs) {
-						$defs = $('<defs></defs>')
-						$defs.prependTo('svg')
-					}
-
-					function copyToDefs(i, el) {
-						const $el = $(el)
-						const $clone = $el.clone()
-						$clone.appendTo($defs)
-						$el.remove()
-					}
-
-					if (hasClipPath) $clipPath.each(copyToDefs)
-						if (hasMask) $mask.each(copyToDefs)
-				},
-				parserOptions: {
-					xmlMode: true,
-				},
-			})
-		)
-		.pipe(gulp.dest('pages/svg'))
+				if (hasClipPath) $clipPath.each(copyToDefs)
+					if (hasMask) $mask.each(copyToDefs)
+			},
+			parserOptions: {
+				xmlMode: true,
+			},
+		})
+	)
+	.pipe(gulp.dest('pages/svg'));
 })
 
 // сборка проекта
