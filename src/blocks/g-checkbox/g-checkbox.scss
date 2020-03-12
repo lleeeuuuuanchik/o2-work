@@ -1,0 +1,79 @@
+.g-checkbox
+{
+	position: relative;
+	font-size: 0;
+	display: block;
+}
+.g-checkbox__input
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	visibility: hidden;
+	opacity: 0;
+	&:enabled
+	{
+		// включен
+		& ~ .g-checkbox__body
+		{
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			.g-checkbox__box { border-color: rgba(103, 115, 135, 0.4); }
+			.g-checkbox__text { color: #c2c7cf; }
+		}
+		// включен, но не выбран
+		&:not(:checked)
+		{
+			& ~ .g-checkbox__body:hover .g-checkbox__box
+			{
+				background-position: center center;
+				background-image: url(./svg/checkhover.svg);
+				background-repeat: no-repeat;
+				border-color: #191C21;
+			}
+		}
+		// включен и выбран
+		&:checked
+		{
+			&~ .g-checkbox__body .g-checkbox__box
+			{
+				border: 2px solid #191C21;
+				background-position: center center;
+				background-image: url(./svg/checked.svg);
+				background-repeat: no-repeat;
+			}
+			&~ .g-checkbox__body .g-checkbox__text { color: #191C21; }
+		}
+		// состояние фокуса
+		&:focus ~ .g-checkbox__body .g-checkbox__box { outline: 2px solid grey; }
+		&:hover ~ .g-checkbox__body .g-checkbox__text { color: #191C21; }
+	}
+	// выключен и выбран
+	&:disabled:checked ~ .g-checkbox__body .g-checkbox__box,
+	&:disabled:checked ~ .g-checkbox__body .g-checkbox__text
+	{
+		border-color: rgba(103, 115, 135, 0.4);
+		color: #c2c7cf;
+	}
+}
+// базовые стили для выключенного состояния
+.g-checkbox__box
+{
+	width: 20px;
+	height: 20px;
+	border: 1px solid rgba(103, 115, 135, 0.4);
+	display: inline-block;
+	vertical-align: top;
+}
+.g-checkbox__text
+{
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: top;
+	color: #c2c7cf;
+	margin-left: 10px;
+}

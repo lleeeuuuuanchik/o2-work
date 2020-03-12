@@ -8,7 +8,7 @@
 				<h2 class="section__title">
 					Select
 				</h2>
-				{% include "./blocks/g-select.twig" %}
+				{% include "./blocks/g-select/g-select.twig" %}
 			</div>
 		</section>
 		<section class="section range-slider">
@@ -16,7 +16,7 @@
 				<h2 class="section__title">
 					Range slider
 				</h2>
-				{% include "./blocks/g-range-slider.twig"  with {fieldName: "namge", type: "single", min: 100, max: 1000, from: 0, to: 800} %}
+				{% include "./blocks/g-range-slider/g-range-slider.twig"  with {fieldName: "namge", type: "single", min: 100, max: 1000, from: 0, to: 800} %}
 			</div>
 		</section>
 		<section class="section input">
@@ -24,7 +24,7 @@
 				<h2 class="section__title">
 					Input
 				</h2>
-				{% include "./blocks/g-input.twig" %}
+				{% include "./blocks/g-input/g-input.twig" %}
 			</div>
 		</section>
 		<section class="section icon-input">
@@ -32,7 +32,7 @@
 				<h2 class="section__title tab__title">
 					Input with icon
 				</h2>
-				{% include "./blocks/g-icon-input.twig" %}
+				{% include "./blocks/g-icon-input/g-icon-input.twig" %}
 			</div>
 		</section>
 		<section class="section checkbox">
@@ -40,7 +40,7 @@
 				<h2 class="section__title">
 					Checkbox
 				</h2>
-				{% include "./blocks/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
+				{% include "./blocks/g-checkbox/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
 			</div>
 		</section>
 		<section class="section radio">
@@ -48,8 +48,8 @@
 				<h2 class="section__title">
 					Radio
 				</h2>
-				{% include "./blocks/g-radio.twig" with { "name": "radio1", "labelText":"Нет"} %}
-				{% include "./blocks/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
+				{% include "./blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Нет"} %}
+				{% include "./blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
 			</div>
 		</section>
 		<section class="section tab">
@@ -57,7 +57,7 @@
 				<h2 class="section__title tab__title">
 					Tab
 				</h2>
-				{% include "./blocks/g-tabs.twig" %}
+				{% include "./blocks/g-tabs/g-tabs.twig" %}
 			</div>
 		</section>
 		<section class="section data-picker">
@@ -65,7 +65,7 @@
 				<h2 class="section__title">
 					Date picker
 				</h2>
-				{% include "./blocks/g-date-picker.twig" %}
+				{% include "./blocks/g-date-picker/g-date-picker.twig" %}
 			</div>
 		</section>
 	</div>

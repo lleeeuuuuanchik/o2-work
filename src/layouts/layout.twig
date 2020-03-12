@@ -12,17 +12,16 @@
 	<meta name="HandheldFriendly" content="true"/>
 	<meta charset="utf-8">
 	<meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0" />
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 	<!--[if lt IE 9]>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
 	<![endif]-->
 	<title>index</title>
 </head>
 <body>
-	{% include "../blocks/header.twig" %}
+	{% include "../blocks/header/header.twig" %}
 	{% block page %}{% endblock %}
-	{% include "../blocks/footer.twig" %}
-	{% include "../../img/svg-symbols.svg" %}
-	<script type="text/javascript" src="js/main.min.js" defer="" async=""></script>
+	{% include "../blocks/footer/footer.twig" %}
+	<script type="text/javascript" src="./main.min.js" defer="" async=""></script>
 </body>
 </html>

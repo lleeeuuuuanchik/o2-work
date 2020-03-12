@@ -1,0 +1,53 @@
+/* mixins */
+@import 'base/mixins.scss';
+
+/* base */
+@import 'base/fonts';
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/default';
+
+/* pages */
+@import 'pages/ui-kit';
+
+/* blocks */
+@import '../blocks/footer/footer';
+@import '../blocks/g-tabs/g-tabs';
+@import '../blocks/g-select/g-select';
+@import '../blocks/g-range-slider/g-range-slider';
+@import '../blocks/g-checkbox/g-checkbox';
+@import '../blocks/g-radio/g-radio';
+@import '../blocks/g-input/g-input';
+@import '../blocks/g-icon-input/g-icon-input';
+@import '../blocks/g-date-picker/g-date-picker';
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+html {
+	line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+	@media (max-width: $tablet)
+	{
+		font-size: 13px;
+	}
+	@media (max-width: $mobile-sm)
+	{
+		font-size: 12px;
+	}
+	@media (max-width: $mobile-xs)
+	{
+		font-size: 12px;
+	}
+}

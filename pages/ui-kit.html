@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--[if IE 6]>		<html id="section-reco_main" class="nojs ie6 ieb7 ieb8 ieb9 ieb10 split1 nosplit5 platform-PC platform-notouch"><![endif]-->
+    <!--[if IE 7]>		<html id="section-reco_main" class="nojs iea6 ie7 ieb8 ieb9 ieb10 split1 nosplit5 platform-PC platform-notouch"><![endif]-->
+    <!--[if IE 8]>		<html id="section-reco_main" class="nojs iea6 iea7 ie8 ieb9 ieb10 split1 nosplit5 platform-PC platform-notouch"><![endif]-->
+    <!--[if IE 9]>		<html id="section-reco_main" class="nojs iea6 iea7 iea8 ie9 ieb10 split1 nosplit5 platform-PC platform-notouch"><![endif]-->
+    <meta name="viewport" content="width=device-width">
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta charset="utf-8">
+    <meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+	<![endif]-->
+    <title>index</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="container">
+            <p>
+                This is header
+            </p>
+        </div>
+    </header>
+    <div class="ui-kit">
+        <section class="section select" style="padding-bottom: 274px;">
+            <div class="container">
+                <h2 class="section__title">
+                    Select
+                </h2>
+                <div class="g-select">
+                    <div class="g-select__selected" onclick="o2.gSelect.selectState.selectDropdownToggle();">
+                        <div class="g-select__selected-name _selected-item-name">Belgium</div>
+                        <div class="g-select__arrow">
+                            <svg role="img" class="arrod-down">
+                                <use xlink:href="#arrod-down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="g-select-list">
+                        <ul class="g-select-list__items">
+                            <li class="g-select-list__item g-select-list__item_active" onclick="o2.gSelect.selectState.markSelectedItem(this);">Australia</li>
+                            <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Argentina</li>
+                            <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Belgium</li>
+                            <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Canada</li>
+                            <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Italy</li>
+                            <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">New Zealand</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section range-slider">
+            <div class="container">
+                <h2 class="section__title">
+                    Range slider
+                </h2>
+
+                <div class="g-range-slider-wr price-slider">
+                    <div class="g-range-slider price-slider">
+                        <div class="g-range-slider-trigger _range-trigger" data-field-name="namge" data-type="single" data-min="100" data-max="1000" data-from="0" data-to="800"></div>
+                        <input type="hidden" class="g-range-slider-input" name="namge-min">
+                        <input type="hidden" class="g-range-slider-input" name="namge-max">
+                        <div class="g-range-slider-labels">
+                            <div class="g-range-slider-labels__item">
+                                <span class="g-range-slider-labels_from">0</span>
+                            </div>
+                            <div class="g-range-slider-labels__item">
+                                <span class="g-range-slider-labels_to">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section input">
+            <div class="container">
+                <h2 class="section__title">
+                    Input
+                </h2>
+
+                <label class="g-input">
+                    <input name="name" type="text" class="g-input__input" value="" placeholder="Placeholder">
+                    <div class="g-input__sub g-input__sub_error">Error: invalid name</div>
+                </label>
+            </div>
+        </section>
+        <section class="section icon-input">
+            <div class="container">
+                <h2 class="section__title tab__title">
+                    Input with icon
+                </h2>
+
+                <label class="g-icon-input">
+                    <input name="name" type="text" class="g-icon-input__input" value="" placeholder="Placeholder">
+                    <div class="g-icon-input__sub g-input__sub_error">Error: invalid name</div>
+                    <div class="g-icon-input__img">
+                        <svg role="img" class="search">
+                            <use xlink:href="#search"></use>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section class="section checkbox">
+            <div class="container">
+                <h2 class="section__title">
+                    Checkbox
+                </h2>
+                <label class="g-checkbox">
+                    <input type="checkbox" name="check" class="g-checkbox__input">
+                    <div class="g-checkbox__body">
+                        <span class="g-checkbox__box"></span>
+                        <span class="g-checkbox__text">Checkbox</span>
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section class="section radio">
+            <div class="container">
+                <h2 class="section__title">
+                    Radio
+                </h2>
+                <label class="g-radio">
+                    <input type="radio" name="radio1" class="g-radio__input">
+                    <div class="g-radio__body">
+                        <span class="g-radio__box"></span>
+                        <span class="g-radio__text">Нет</span>
+                    </div>
+                </label> <label class="g-radio">
+                    <input type="radio" name="radio1" class="g-radio__input">
+                    <div class="g-radio__body">
+                        <span class="g-radio__box"></span>
+                        <span class="g-radio__text">Да</span>
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section class="section tab">
+            <div class="container">
+                <h2 class="section__title tab__title">
+                    Tab
+                </h2>
+
+                <div class="g-tabs _tabs-container ">
+                    <ul class="g-tabs__menu">
+                        <li class="g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1)">
+                            <a class="g-tabs__link" href="javascript:void(0);">Active</a>
+                        </li>
+                        <li class="g-tabs__item" onclick="o2.gTabs.open(this, 2)">
+                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                        </li>
+                        <li class="g-tabs__item" onclick="o2.gTabs.open(this, 3)">
+                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                        </li>
+                        <li class="g-tabs__item" onclick="o2.gTabs.open(this, 4)">
+                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                        </li>
+                    </ul>
+                    <div class="g-tab g-tab_open" data-tab-id="1">
+                        <div class="g-tab__content">Tab 1 content</div>
+                    </div>
+                    <div class="g-tab" data-tab-id="2">
+                        <div class="g-tab__content">Tab 2 content</div>
+                    </div>
+                    <div class="g-tab" data-tab-id="3">
+                        <div class="g-tab__content">Tab 3 content</div>
+                    </div>
+                    <div class="g-tab" data-tab-id="4">
+                        <div class="g-tab__content">Tab 4 content</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section data-picker">
+            <div class="container">
+                <h2 class="section__title">
+                    Date picker
+                </h2>
+                <div class="g-date-picker">
+                    date
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>
+                This is footer
+            </p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./main.min.js" defer="" async=""></script>
+</body>
+
+</html>
