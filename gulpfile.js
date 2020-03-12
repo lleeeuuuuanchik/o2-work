@@ -41,6 +41,8 @@ var jsFiles = [
 	'js/vendors/no-ui-slider.min.js',
 	'js/vendors/slick-1.9.min.js',
 	'js/vendors/imask.min.js',
+	'js/vendors/daterangepicker.js',
+	'js/vendors/moment.min.js',
 	'js/modules/*.js',
 	'js/main.js',
 ];

@@ -5,18 +5,51 @@
 	<div class="ui-kit">
 		<section class="section select" style="padding-bottom: 274px;">
 			<div class="container">
-				<h2 class="section__title tab__title">
+				<h2 class="section__title">
 					Select
 				</h2>
 				{% include "./blocks/g-select.twig" %}
 			</div>
 		</section>
-		<section class="section select" style="padding-bottom: 274px;">
+		<section class="section range-slider">
 			<div class="container">
-				<h2 class="section__title tab__title">
+				<h2 class="section__title">
 					Range slider
 				</h2>
-				{% include "./blocks/g-range-slider.twig"  with {fieldName: "namge", type: "range", min: 100, max: 1000, from: 200, to: 800} %}
+				{% include "./blocks/g-range-slider.twig"  with {fieldName: "namge", type: "single", min: 100, max: 1000, from: 0, to: 800} %}
+			</div>
+		</section>
+		<section class="section input">
+			<div class="container">
+				<h2 class="section__title">
+					Input
+				</h2>
+				{% include "./blocks/g-input.twig" %}
+			</div>
+		</section>
+		<section class="section icon-input">
+			<div class="container">
+				<h2 class="section__title tab__title">
+					Input with icon
+				</h2>
+				{% include "./blocks/g-icon-input.twig" %}
+			</div>
+		</section>
+		<section class="section checkbox">
+			<div class="container">
+				<h2 class="section__title">
+					Checkbox
+				</h2>
+				{% include "./blocks/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
+			</div>
+		</section>
+		<section class="section radio">
+			<div class="container">
+				<h2 class="section__title">
+					Radio
+				</h2>
+				{% include "./blocks/g-radio.twig" with { "name": "radio1", "labelText":"Нет"} %}
+				{% include "./blocks/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
 			</div>
 		</section>
 		<section class="section tab">
@@ -25,6 +58,14 @@
 					Tab
 				</h2>
 				{% include "./blocks/g-tabs.twig" %}
+			</div>
+		</section>
+		<section class="section data-picker">
+			<div class="container">
+				<h2 class="section__title">
+					Date picker
+				</h2>
+				{% include "./blocks/g-date-picker.twig" %}
 			</div>
 		</section>
 	</div>

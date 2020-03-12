@@ -1,0 +1,60 @@
+.g-icon-input
+{
+	display: block;
+	max-width: 354px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.g-icon-input__input
+{
+	width: 100%;
+	font-size: rem(13);
+	line-height: rem(17);
+	font-weight: $regular;
+	color: #191C21;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 42px;
+	padding-right: 18px;
+	border: 1px solid #a3a4a6;
+	transition: .2s;
+	&:hover { border-color: #191C21; }
+	&:focus { border: 2px solid #191C21; }
+}
+.g-icon-input-icon__input
+{
+	padding-left: 42px;
+}
+.g-icon-input__sub_error
+{
+	display: none;
+	font-size: rem(10);
+	line-height: rem(13);
+	font-weight: $regular;
+	color: #D01246;
+}
+.g-icon-input__img
+{
+	position: absolute;
+	line-height: 0;
+	width: 14px;
+	height: 15px;
+	top: 50%;
+	left: 16px;
+	transform: translateY(-50%);
+	svg
+	{
+		widht: 100%;
+		fill: #677387;
+	}
+}
+.g-icon-input_error
+{
+	.g-icon-input__input { border: 2px solid #D01246; }
+	.g-icon-input__sub_error
+	{
+		display: block;
+		position: absolute;
+		bottom: -15px;
+	}
+}

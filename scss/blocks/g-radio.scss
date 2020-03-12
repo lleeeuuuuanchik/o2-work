@@ -1,0 +1,96 @@
+.g-radio
+{
+	position: relative;
+	font-size: 0;
+	display: inline-block;
+}
+.g-radio__input
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	visibility: hidden;
+	opacity: 0;
+	&:enabled
+	{
+		// включен
+		& ~ .g-radio__body
+		{
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			.g-radio__box {border-color: #c2c7cf; }
+			.g-radio__text {color: #c2c7cf; }
+		}
+		// включен, но не выбран
+		&:not(:checked)
+		{
+			& ~ .g-radio__body:hover .g-radio__box {
+				border-color: rgba(25, 28, 33, 0.7);
+				&:before
+				{
+					content:'';
+					display: block;
+					border-radius: 10px;
+					width: 10px;
+					height: 10px;
+					background: #f0f1f3;
+					position: relative;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
+		// включен и выбран
+		&:checked ~ .g-radio__body .g-radio__box{
+			border-color: rgba(25, 28, 33, 0.7);
+			border-width: 2px;
+		}
+		&:checked 
+		{
+			&~ .g-radio__body .g-radio__box:before
+			{
+				content:'';
+				display: block;
+				border-radius: 10px;
+				width: 10px;
+				height: 10px;
+				background: rgba(25, 28, 33, 0.7);
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			&~ .g-radio__body .g-radio__text { color: #191C21; }
+		}
+		// состояние фокуса
+		&:hover ~ .g-radio__body .g-radio__text{color: #000000}
+	}
+	// выключен и выбран
+	&:disabled:checked ~ .g-radio__body .g-radio__box
+	{
+		border-color: pink;
+		background-color: gray;
+	}
+}
+// базовые стили для выключенного состояния
+.g-radio__box
+{
+	width: 20px;
+	height: 20px;
+	border: 1px solid grey;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 100%;
+}
+.g-radio__text
+{
+	font-size: rem(13);
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}

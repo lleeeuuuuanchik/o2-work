@@ -7,6 +7,7 @@
 @import 'vendors/no-ui-slider';
 @import 'vendors/slick-theme';
 @import 'vendors/slick.scss';
+@import 'vendors/daterangepicker';
 
 /* base */
 @import 'base/fonts';
@@ -25,6 +26,11 @@
 @import 'blocks/g-tabs';
 @import 'blocks/g-select';
 @import 'blocks/g-range-slider';
+@import 'blocks/g-checkbox';
+@import 'blocks/g-radio';
+@import 'blocks/g-input';
+@import 'blocks/g-icon-input';
+@import 'blocks/g-date-picker';
 
 * {
 	-webkit-box-sizing: border-box;
@@ -59,7 +65,8 @@ body
 	flex-direction: column;
 	justify-content: space-between;
 }
-svg > use { fill: none; }
+// svg > use { fill: #c2c2c2; }
+svg { fill: #000; }
 
 // прячем svg спрайт, но не скрываем т.к. display: none; ломает градиенты и т.д
 .svg-symbol

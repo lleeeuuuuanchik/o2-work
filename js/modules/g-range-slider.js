@@ -9,12 +9,13 @@ const O2_RANGE_SLIDER = {
 			const slider = noUiSlider.create(element, {
 				start: [dataParams.from, dataParams.to],
 				connect: true,
+				tooltips: true,
 				step: 1,
 				range:
 				{
 					'min': dataParams.min,
 					'max': dataParams.max
-				},
+				}
 			});
 			if (type == 'single')
 				$(element).find('.noUi-origin').first().attr('disabled', true);

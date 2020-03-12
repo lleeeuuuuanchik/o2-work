@@ -1,16 +1,37 @@
 
 $icon-arrod-down-width: 13px;
 $icon-arrod-down-height: 8px;
+$icon-checked-width: 10px;
+$icon-checked-height: 8px;
+$icon-checkhover-width: 10px;
+$icon-checkhover-height: 8px;
 $icon-icon-width: 16px;
 $icon-icon-height: 14px;
+$icon-search-width: 17px;
+$icon-search-height: 17px;
 
 .arrod-down {
   width: $icon-arrod-down-width;
   height: $icon-arrod-down-height;
 }
 
+.checked {
+  width: $icon-checked-width;
+  height: $icon-checked-height;
+}
+
+.checkhover {
+  width: $icon-checkhover-width;
+  height: $icon-checkhover-height;
+}
+
 .icon {
   width: $icon-icon-width;
   height: $icon-icon-height;
+}
+
+.search {
+  width: $icon-search-width;
+  height: $icon-search-height;
 }
 
