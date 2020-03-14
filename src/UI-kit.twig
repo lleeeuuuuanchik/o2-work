@@ -3,7 +3,7 @@
 
 {% block page %}
 	<div class="ui-kit">
-		<section class="section select" style="padding-bottom: 274px;">
+		<section class="section">
 			<div class="container">
 				<h2 class="section__title">
 					Select
@@ -11,7 +11,7 @@
 				{% include "./blocks/g-select/g-select.twig" %}
 			</div>
 		</section>
-		<section class="section range-slider">
+		<section class="section">
 			<div class="container">
 				<h2 class="section__title">
 					Range slider
@@ -19,7 +19,7 @@
 				{% include "./blocks/g-range-slider/g-range-slider.twig"  with {fieldName: "namge", type: "single", min: 100, max: 1000, from: 0, to: 800} %}
 			</div>
 		</section>
-		<section class="section input">
+		<section class="section">
 			<div class="container">
 				<h2 class="section__title">
 					Input
@@ -27,9 +27,9 @@
 				{% include "./blocks/g-input/g-input.twig" %}
 			</div>
 		</section>
-		<section class="section icon-input">
+		<section class="section">
 			<div class="container">
-				<h2 class="section__title tab__title">
+				<h2 class="section__title">
 					Input with icon
 				</h2>
 				{% include "./blocks/g-icon-input/g-icon-input.twig" %}
@@ -43,7 +43,7 @@
 				{% include "./blocks/g-checkbox/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
 			</div>
 		</section>
-		<section class="section radio">
+		<section class="section">
 			<div class="container">
 				<h2 class="section__title">
 					Radio
@@ -52,20 +52,31 @@
 				{% include "./blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
 			</div>
 		</section>
-		<section class="section tab">
+		<section class="section">
 			<div class="container">
-				<h2 class="section__title tab__title">
+				<h2 class="section__title">
 					Tab
 				</h2>
 				{% include "./blocks/g-tabs/g-tabs.twig" %}
 			</div>
 		</section>
-		<section class="section data-picker" style="padding-bottom: 324px;">
+		<section class="section">
 			<div class="container">
 				<h2 class="section__title">
 					Date picker
 				</h2>
 				{% include "./blocks/g-date-picker/g-date-picker.twig" %}
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<h2 class="section__title">
+					Adaptive
+				</h2>
+				<p>
+					Используем гриды
+					<a href="https://youtu.be/-fDqBEjfzGo">https://youtu.be/-fDqBEjfzGo</a>
+				</p>
 			</div>
 		</section>
 	</div>

@@ -39,16 +39,4 @@ html
 	line-height: $mainLineHeight;
 	font-size: $mainFontSize;
 	color: $mainFontColor;
-	@media (max-width: $tablet)
-	{
-		font-size: 13px;
-	}
-	@media (max-width: $mobile-sm)
-	{
-		font-size: 12px;
-	}
-	@media (max-width: $mobile-xs)
-	{
-		font-size: 12px;
-	}
 }

@@ -607,13 +607,12 @@ a:focus {
 }
 
 .container {
-  max-width: 1212px;
+  max-width: 1220px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 16px;
-  padding-left: 16px;
   position: relative;
+  padding: 0 20px;
 }
 
 /* pages */
@@ -628,25 +627,8 @@ p {
   border-bottom: 1px solid rgba(103, 115, 135, 0.1);
 }
 
-.h1-style {
-  font-size: 32px;
-  line-height: 32px;
-  margin: 0;
-  letter-spacing: 0.9px;
-}
-
-.h2-style {
-  font-size: 30px;
-  font-family: "Roboto-mono", sans-serif;
-  color: #232323;
-}
-
-.h3-style {
-  font-size: 20px;
-  color: #f4b600;
-  letter-spacing: 0;
-  line-height: 25px;
-  margin: 0;
+.section:hover {
+  background: rgba(103, 115, 135, 0.05);
 }
 
 .section__title {
@@ -2097,44 +2079,5 @@ html {
 
   .daterangepicker .drp-calendar.left {
     clear: none !important;
-  }
-}
-
-@media (max-width: 1200px) {
-  .container {
-    max-width: 1032px;
-  }
-}
-
-@media (max-width: 1052px) {
-  .container {
-    padding-left: 14px;
-    padding-right: 14px;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-    width: 100%;
-  }
-
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 475px) {
-  html {
-    font-size: 12px;
   }
 }

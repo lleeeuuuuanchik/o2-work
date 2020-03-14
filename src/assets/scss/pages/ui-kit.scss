@@ -4,31 +4,8 @@ p{ font-weight: bold;}
 	padding-top: 30px;
 	padding-bottom: 60px;
 	border-bottom: 1px solid rgba(103, 115, 135, 0.1);
+	&:hover{background: rgba(103, 115, 135, 0.05);}
 }
-.h1-style
-{
-	font-size: 32px;
-	line-height: 32px;
-	margin: 0;
-	letter-spacing: 0.9px;
-}
-
-.h2-style
-{
-	font-size: 30px;
-	font-family: $accent-font;
-	color: #232323;
-}
-
-.h3-style
-{
-	font-size: 20px;
-	color: $accent-color;
-	letter-spacing: 0;
-	line-height: 25px;
-	margin: 0;
-}
-
 .section__title
 {
 	font-family: rem(16);

@@ -1,33 +1,9 @@
 .container
 {
-	max-width: 1212px;
+	max-width: $widescreen;
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 16px;
-	padding-left: 16px;
 	position: relative;
-}
-@media (max-width: 1200px)
-{
-	.container {max-width: 1032px; }
-}
-@media (max-width: 1052px)
-{
-	.container
-	{
-		padding-left: 14px;
-		padding-right: 14px;
-		width: 100%;
-		max-width: 100%;
-	}
-}
-@media (max-width: $mobile-sm)
-{
-	.container
-	{
-		padding-left: 16px;
-		padding-right: 16px;
-		width: 100%;
-	}
+	padding:0 20px;
 }
