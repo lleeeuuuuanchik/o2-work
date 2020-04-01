@@ -4,6 +4,21 @@
 	max-width: 354px;
 	position: relative;
 	margin-bottom: 10px;
+
+	&.g-input--error
+	{
+		input
+		{
+			display: inline-block;
+			border-color: #D01246;
+		}
+		.g-input__sub
+		{
+			display: block;
+			position: absolute;
+			bottom: -20px;
+		}
+	}
 }
 .g-input__input
 {
@@ -15,14 +30,22 @@
 	padding: 12px 18px;
 	border: 1px solid #a3a4a6;
 	transition: .2s;
+
 	&:hover { border-color: #191C21; }
-	&:focus { border: 2px solid #191C21; }
+
+	&:focus
+	{
+		border: 2px solid #191C21;
+		margin: -1px
+	}
+
+	&::placeholder{color: rgba(25, 28, 33, 0.4)}
 }
 .g-input-icon__input
 {
 	padding-left: 42px;
 }
-.g-input__sub_error
+.g-input__sub
 {
 	display: none;
 	font-size: rem(10);

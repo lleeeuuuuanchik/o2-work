@@ -19,6 +19,7 @@ const o2 =
 	{
 		this.gRangeSlider.init();
 		this.gDatePicker.init();
+		this.innputMask.init()
 	},
 	/**
 	* отслеживание клика вне блока

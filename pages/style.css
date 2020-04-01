@@ -735,6 +735,7 @@ p {
 
 .g-select_opened .g-select__selected {
   border: 2px solid #191C21;
+  margin: -1px;
 }
 
 .g-select_opened .g-select__arrow {
@@ -809,7 +810,7 @@ p {
   transform: translateY(-10px);
   visibility: hidden;
   opacity: 0;
-  z-index: 1;
+  z-index: 2;
   scrollbar-width: none;
   /* for mozila */
 }
@@ -1481,6 +1482,17 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-bottom: 10px;
 }
 
+.g-input.g-input--error input {
+  display: inline-block;
+  border-color: #D01246;
+}
+
+.g-input.g-input--error .g-input__sub {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+}
+
 .g-input__input {
   width: 100%;
   font-size: 1rem;
@@ -1500,13 +1512,30 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .g-input__input:focus {
   border: 2px solid #191C21;
+  margin: -1px;
+}
+
+.g-input__input::-webkit-input-placeholder {
+  color: rgba(25, 28, 33, 0.4);
+}
+
+.g-input__input::-moz-placeholder {
+  color: rgba(25, 28, 33, 0.4);
+}
+
+.g-input__input::-ms-input-placeholder {
+  color: rgba(25, 28, 33, 0.4);
+}
+
+.g-input__input::placeholder {
+  color: rgba(25, 28, 33, 0.4);
 }
 
 .g-input-icon__input {
   padding-left: 42px;
 }
 
-.g-input__sub_error {
+.g-input__sub {
   display: none;
   font-size: 0.76923rem;
   line-height: 1rem;
@@ -1570,6 +1599,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .g-icon-input__input:focus {
   border: 2px solid #191C21;
+  margin: -1px;
 }
 
 .g-icon-input-icon__input {

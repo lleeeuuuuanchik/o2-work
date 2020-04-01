@@ -25,6 +25,7 @@
 					Input
 				</h2>
 				{% include "./blocks/g-input/g-input.twig" %}
+				{% include "./blocks/g-input/g-input.twig" with {mod: "g-input--error"} %}
 			</div>
 		</section>
 		<section class="section">
@@ -33,6 +34,14 @@
 					Input with icon
 				</h2>
 				{% include "./blocks/g-icon-input/g-icon-input.twig" %}
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<h2 class="section__title">
+					Input masked
+				</h2>
+			{% include 'blocks/g-masked-input/g-masked-input.twig' %}
 			</div>
 		</section>
 		<section class="section checkbox">

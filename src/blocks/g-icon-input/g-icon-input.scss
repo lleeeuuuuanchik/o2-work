@@ -19,7 +19,11 @@
 	border: 1px solid #a3a4a6;
 	transition: .2s;
 	&:hover { border-color: #191C21; }
-	&:focus { border: 2px solid #191C21; }
+	&:focus
+	{
+		border: 2px solid #191C21;
+		margin: -1px;
+	}
 }
 .g-icon-input-icon__input
 {
