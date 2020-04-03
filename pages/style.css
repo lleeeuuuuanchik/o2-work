@@ -759,15 +759,22 @@ li.L9 {
   display: inline-block;
 }
 
-.g-select_opened .g-select__selected {
-  border: 2px solid #191C21;
-  margin: -1px;
+.g-select__error {
+  position: absolute;
+  color: #D01246;
+  font-size: 10px;
+  margin-top: 2px;
+  display: none;
 }
 
-.g-select_opened .g-select__arrow {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+.g-select--error .g-select__error {
+  display: block;
+}
+
+.g-select--error .g-select__selected,
+.g-select--error .g-select__selected:hover {
+  border: 1px solid #D01246;
+  outline: 1px solid #D01246;
 }
 
 .g-select__selected {
@@ -817,7 +824,7 @@ li.L9 {
   height: 100%;
 }
 
-.g-select-list {
+.g-select__list {
   position: absolute;
   width: 100%;
   max-height: 230px;
@@ -841,12 +848,12 @@ li.L9 {
   /* for mozila */
 }
 
-.g-select-list::-webkit-scrollbar {
+.g-select__list::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
-.g-select-list__item {
+.g-select__item {
   font-size: 1rem;
   line-height: 1.30769rem;
   font-weight: normal;
@@ -856,20 +863,31 @@ li.L9 {
   cursor: pointer;
 }
 
-.g-select-list__item_active {
+.g-select__item--active {
   font-weight: bold;
 }
 
-.g-select-list__item:hover {
+.g-select__item:hover {
   background: rgba(103, 115, 135, 0.1);
 }
 
-.g-select_opened .g-select-list {
+.g-select--opened .g-select__list {
   -webkit-transform: translateY(16px);
   -ms-transform: translateY(16px);
   transform: translateY(16px);
   visibility: visible;
   opacity: 1;
+}
+
+.g-select--opened .g-select__selected {
+  border: 1px solid #191C21;
+  outline: 1px solid #191C21;
+}
+
+.g-select--opened .g-select__arrow {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /*! nouislider - 14.0.2 - 6/28/2019 */
@@ -2202,6 +2220,9 @@ p {
   border: none;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  -moz-tab-size: 25px;
+  -o-tab-size: 25px;
+  tab-size: 25px;
 }
 
 .ui-kit__tabs-item.g-tabs__item {

@@ -50,23 +50,48 @@
 
                     <div class="g-tab g-tab_open" data-tab-id="1.2">
                         <div class="g-tab__content">
-                            <div class="g-select">
-                                <div class="g-select__selected" onclick="o2.gSelect.selectState.selectDropdownToggle();">
-                                    <div class="g-select__selected-name _selected-item-name">Belgium</div>
+                            <div class="g-select _select">
+                                <input type="hidden" class="_selected-value" />
+                                <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+                                    <div class="g-select__selected-name _selected-text">Выберите страну</div>
                                     <div class="g-select__arrow">
                                         <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="g-select-list">
-                                    <ul class="g-select-list__items">
-                                        <li class="g-select-list__item g-select-list__item_active" onclick="o2.gSelect.selectState.markSelectedItem(this);">Australia</li>
-                                        <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Argentina</li>
-                                        <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Belgium</li>
-                                        <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Canada</li>
-                                        <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">Italy</li>
-                                        <li class="g-select-list__item" onclick="o2.gSelect.selectState.markSelectedItem(this);">New Zealand</li>
+                                <div class="g-select__error">Error: обязательное поле</div>
+                                <div class="g-select__list _options">
+                                    <ul class="g-select__items">
+                                        <li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+                                        <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+                                        <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+                                        <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+                                        <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+                                        <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="g-select g-select--error _select">
+                                <input type="hidden" class="_selected-value" />
+                                <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+                                    <div class="g-select__selected-name _selected-text">Выберите страну</div>
+                                    <div class="g-select__arrow">
+                                        <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="g-select__error">Error: обязательное поле</div>
+                                <div class="g-select__list _options">
+                                    <ul class="g-select__items">
+                                        <li data-value="code-Australia" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+                                        <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+                                        <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+                                        <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+                                        <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+                                        <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,22 +100,26 @@
                     <div class="g-tab" data-tab-id="1.3">
                         <div class="g-tab__content">
                             <pre class="prettyprint lang-html ui-kit__pretty">
-&lt;div class=&quot;g-select&quot;&gt;
-	&lt;div class=&quot;g-select__selected&quot; onclick=&quot;o2.gSelect.selectState.selectDropdownToggle();&quot;&gt;
-		&lt;div class=&quot;g-select__selected-name _selected-item-name&quot;&gt;Belgium&lt;/div&gt;
+&lt;div class=&quot;g-select _select&quot;&gt;
+	&lt;input type=&quot;hidden&quot; class=&quot;_selected-value&quot; /&gt;
+	&lt;div class=&quot;g-select__selected&quot; onclick=&quot;o2.gSelect.toggle(this)&quot;&gt;
+		&lt;div class=&quot;g-select__selected-name _selected-text&quot;&gt;Выберите страну&lt;/div&gt;
+		&lt;div class=&quot;g-select__arrow&quot;&gt;
+			{% include &quot;/assets/svg/arrod-down.svg&quot; %}
+		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;g-select-list&quot;&gt;
-		&lt;ul class=&quot;g-select-list__items&quot;&gt;
-			&lt;li class=&quot;g-select-list__item g-select-list__item_active&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;Australia&lt;/li&gt;
-			&lt;li class=&quot;g-select-list__item&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;Argentina&lt;/li&gt;
-			&lt;li class=&quot;g-select-list__item&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;Belgium&lt;/li&gt;
-			&lt;li class=&quot;g-select-list__item&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;Canada&lt;/li&gt;
-			&lt;li class=&quot;g-select-list__item&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;Italy&lt;/li&gt;
-			&lt;li class=&quot;g-select-list__item&quot; onclick=&quot;o2.gSelect.selectState.markSelectedItem(this);&quot;&gt;New Zealand&lt;/li&gt;
+	&lt;div class=&quot;g-select__error&quot;&gt;Error: обязательное поле&lt;/div&gt;
+	&lt;div class=&quot;g-select__list _options&quot;&gt;
+		&lt;ul class=&quot;g-select__items&quot;&gt;
+			&lt;li data-value=&quot;code-Australia&quot; class=&quot;g-select__item _option g-select__item--active&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Australia&lt;/li&gt;
+			&lt;li data-value=&quot;code-Argentina&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Argentina&lt;/li&gt;
+			&lt;li data-value=&quot;code-Belgium&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Belgium&lt;/li&gt;
+			&lt;li data-value=&quot;code-Canada&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Canada&lt;/li&gt;
+			&lt;li data-value=&quot;code-Italy&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Italy&lt;/li&gt;
+			&lt;li data-value=&quot;code-New Zealand&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;New Zealand&lt;/li&gt;
 		&lt;/ul&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
-							</pre>
+&lt;/div&gt;							</pre>
                         </div>
                     </div>
                 </div>

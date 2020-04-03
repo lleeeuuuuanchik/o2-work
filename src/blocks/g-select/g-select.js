@@ -1,62 +1,78 @@
 o2.gSelect =
 {
-	selectState:
+	/**
+	 * ссылка на обработчик клика вне блока
+	 */
+	outListeners: [],
+
+	/**
+	 * Открывает нужную выпадашку
+	 * @$select - jQuery объект для селекта
+	 */
+	open($select)
 	{
-		/**
-		* открыт ли список
-		*/
-		isOpen: false,
-
-		/**
-		* ссылка на обработчик клика вне блока
-		*/
-		clickOutsideListener: null,
-
-		/**
-		* открытие/закрытие списка
-		*/
-		selectDropdownToggle()
-		{
-			if (!this.isOpen)
-			{
-				this.clickOutsideListener = o2.clickOutside($('.g-select'), () =>
-				{
-					o2.gSelect.selectState.selectDropdownToggle()
-				});
-
-				$('.g-select').addClass('g-select_opened');
-				this.isOpen = true;
-			}
-			else
-			{
-				$('.g-select').removeClass('g-select_opened');
-				document.removeEventListener('click', this.clickOutsideListener);
-				this.isOpen = false;
-			}
-		},
-
-		/**
-		* устанавливаем название выбранного города
-		*/
-		setSelectedItemName(instance)
-		{
-			$('.g-select').find('._selected-item-name').html($(instance).html());
-		},
-
-		/**
-		* выбор города в шапке
-		*/
-		markSelectedItem(instance)
-		{
-			$('.g-select-list__item').each((index, element) =>
-			{
-				if ($(element).hasClass('g-select-list__item_active'))
-					$(element).removeClass('g-select-list__item_active');
-			})
-			$(instance).addClass('g-select-list__item_active');
-
-			this.setSelectedItemName(instance);
-			o2.gSelect.selectState.selectDropdownToggle()
-		}
+		this.close();
+		$select.addClass('g-select--opened');
+		let listner = o2.clickOutside($select, () => {
+			this.close();
+		});
+		this.outListeners.push(listner);
 	},
+
+	/**
+	 * Закрывает все выпадашки
+	 */
+	close()
+	{
+		$('._select').removeClass('g-select--opened');
+		for(let listner of this.outListeners)
+			document.removeEventListener('click', listner);
+		this.outListeners = [];
+	},
+
+	/**
+	 * открытие/закрытие списка
+	 */
+	toggle(instance)
+	{
+		let $select = $(instance).parents('._select')
+		if (!$select.hasClass('g-select--opened'))
+			this.open($select);
+		else
+			this.close();
+	},
+
+	/**
+	 * устанавливаем название выбранного города
+	 * которое просто выводится
+	 */
+	setName($select,name)
+	{
+		$select.find('._selected-text').html(name);
+	},
+
+	/**
+	 * устанавливаем значение выбранного элемента которые передеаются в форму
+	 */
+	setSelectedValue($select,selectedValue)
+	{
+		$select.find('._selected-value').val(selectedValue);
+	},
+
+	/**
+	 * выбор города в шапке
+	 */
+	selecttItem(instance)
+	{
+		let $select = $(instance).parents('._select');
+		$select.removeClass('g-select--error');
+		$select.find('._option').removeClass('g-select__item--active');
+		$(instance).addClass('g-select__item--active');
+		let name = $(instance).text(),
+			selectedValue = $(instance).data('value');
+
+		this.setName($select,name);
+		this.setSelectedValue($select,selectedValue);
+		this.close();
+	}
 };
