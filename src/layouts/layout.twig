@@ -18,10 +18,11 @@
 	<![endif]-->
 	<title>index</title>
 </head>
-<body>
+<body onload="PR.prettyPrint()">
 	{% include "../blocks/header/header.twig" %}
 	{% block page %}{% endblock %}
 	{% include "../blocks/footer/footer.twig" %}
 	<script type="text/javascript" src="./main.min.js" defer="" async=""></script>
+
 </body>
 </html>

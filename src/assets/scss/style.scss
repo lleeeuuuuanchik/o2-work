@@ -7,11 +7,10 @@
 @import 'base/normalize';
 @import 'base/typography';
 @import 'base/default';
-
-/* pages */
-@import 'pages/ui-kit';
+@import 'base/prettify';
 
 /* blocks */
+@import 'blocks/g-button/g-button';
 @import 'blocks/footer/footer';
 @import 'blocks/g-tabs/g-tabs';
 @import 'blocks/g-select/g-select';
@@ -22,6 +21,9 @@
 @import 'blocks/g-icon-input/g-icon-input';
 @import 'blocks/g-date-picker/g-date-picker';
 @import 'blocks/g-slider/g-slider';
+
+/* pages */
+@import 'pages/ui-kit';
 
 * {
 	-webkit-box-sizing: border-box;

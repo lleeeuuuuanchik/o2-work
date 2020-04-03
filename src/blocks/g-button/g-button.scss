@@ -1,0 +1,14 @@
+.g-button
+{
+	font-size: 15px;
+	line-height: 18px;
+	color: #fff;
+	background-color: #191C21;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	cursor: pointer;
+	padding-right: 71px;
+	padding-left: 71px;
+
+	&:hover{background-color: rgba(103, 115, 135, 0.7);}
+}
