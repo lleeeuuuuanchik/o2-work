@@ -147,41 +147,35 @@
                     <div class="g-tab g-tab_open" data-tab-id="1.2">
                         <div class="g-tab__content">
 
-                            <div class="g-range-slider-wr price-slider">
-                                <div class="g-range-slider price-slider">
-                                    <div class="g-range-slider-trigger _range-trigger" data-field-name="namge" data-type="single" data-min="100" data-max="1000" data-from="0" data-to="800"></div>
-                                    <input type="hidden" class="g-range-slider-input" name="namge-min">
-                                    <input type="hidden" class="g-range-slider-input" name="namge-max">
-                                    <div class="g-range-slider-labels">
-                                        <div class="g-range-slider-labels__item">
-                                            <span class="g-range-slider-labels_from">0</span>
-                                        </div>
-                                        <div class="g-range-slider-labels__item">
-                                            <span class="g-range-slider-labels_to">0</span>
-                                        </div>
-                                    </div>
+                            <div class="g-range-slider _range-slider-wrap">
+                                <div class="_range-slider" data-min="100" data-max="10000" data-start="1000,7000"></div>
+                                <input type="hidden" class="_min">
+                                <input type="hidden" class="_max">
+                                <div class="g-range-slider__labels">
+                                    <div class="_label-from">0</div>
+                                    <div class="_label-to">0</div>
+                                </div>
+                            </div> <br />
+
+                            <div class="g-range-slider _range-slider-wrap">
+                                <div class="_range-slider" data-min="1000" data-max="10000" data-start="2000"></div>
+                                <input type="hidden" class="_min">
+                                <input type="hidden" class="_max">
+                                <div class="g-range-slider__labels">
+                                    <div class="_label-from">0</div>
+                                    <div class="_label-to">0</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="g-tab" data-tab-id="1.3">
                         <div class="g-tab__content">
-                            <pre class="prettyprint lang-html ui-kit__pretty">
-&lt;div class=&quot;g-range-slider-wr price-slider&quot;&gt;
-	&lt;div class=&quot;g-range-slider price-slider&quot;&gt;
-		&lt;div class=&quot;g-range-slider-trigger _range-trigger&quot; data-field-name=&quot;&quot; data-type=&quot;&quot; data-min=&quot;&quot; data-max=&quot;&quot; data-from=&quot;&quot; data-to=&quot;&quot;&gt;&lt;/div&gt;
-		&lt;input type=&quot;hidden&quot; class=&quot;g-range-slider-input&quot; name=&quot;-min&quot;&gt;
-		&lt;input type=&quot;hidden&quot; class=&quot;g-range-slider-input&quot; name=&quot;-max&quot;&gt;
-		&lt;div class=&quot;g-range-slider-labels&quot;&gt;
-			&lt;div class=&quot;g-range-slider-labels__item&quot;&gt;
-				&lt;span class=&quot;g-range-slider-labels_from&quot;&gt;0&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;g-range-slider-labels__item&quot;&gt;
-				&lt;span class=&quot;g-range-slider-labels_to&quot;&gt;0&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+                            <pre class="prettyprint lang-twig ui-kit__pretty">
+// промежуток
+{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 100, max: 10000, start: [1000,7000]} %}
+
+// одно значение
+{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 1000, max: 10000, start: [2000]} %}
 							</pre>
                         </div>
                     </div>

@@ -1,24 +1,20 @@
 {#
+	https://refreshless.com/nouislider/
 	Входные парметры блока:
-	* fieldName: "namge"
-	* type: 'range(с двумя ползунками)' или 'single(с одним ползунком)'
 	* min: минимальное значение слайдера
 	* max: максимальное значение слайдера
-	* for: стартовое начальное значение слайдера
-	* to: стартовое конечное значение слайдера
+	* start: стартовое начальное значение слайдера
  #}
-<div class="g-range-slider-wr price-slider">
-	<div class="g-range-slider price-slider">
-		<div class="g-range-slider-trigger _range-trigger" data-field-name="{{fieldName}}" data-type="{{type}}" data-min="{{min}}" data-max="{{max}}" data-from="{{from}}" data-to="{{to}}"></div>
-		<input type="hidden" class="g-range-slider-input" name="{{fieldName}}-min">
-		<input type="hidden" class="g-range-slider-input" name="{{fieldName}}-max">
-		<div class="g-range-slider-labels">
-			<div class="g-range-slider-labels__item">
-				<span class="g-range-slider-labels_from">0</span>
-			</div>
-			<div class="g-range-slider-labels__item">
-				<span class="g-range-slider-labels_to">0</span>
-			</div>
-		</div>
+<div class="g-range-slider _range-slider-wrap">
+	<div class="_range-slider"
+		data-min="{{min}}"
+		data-max="{{max}}"
+		data-start="{{start}}"
+	></div>
+	<input type="hidden" class="_min">
+	<input type="hidden" class="_max">
+	<div class="g-range-slider__labels">
+		<div class="_label-from">0</div>
+		<div class="_label-to">0</div>
 	</div>
 </div>
