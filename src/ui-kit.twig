@@ -1,0 +1,437 @@
+{# ui-kit.twig #}
+{% extends "layouts/layout.twig" %}
+
+{% block page %}
+	<div class="ui-kit">
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Select
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-select/g-select.twig" %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-select _select&quot;&gt;
+	&lt;input type=&quot;hidden&quot; class=&quot;_selected-value&quot; /&gt;
+	&lt;div class=&quot;g-select__selected&quot; onclick=&quot;o2.gSelect.toggle(this)&quot;&gt;
+		&lt;div class=&quot;g-select__selected-name _selected-text&quot;&gt;Выберите страну&lt;/div&gt;
+		&lt;div class=&quot;g-select__arrow&quot;&gt;
+			{{ '{% include &quot;/assets/svg/arrod-down.svg&quot; %}' }}
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;g-select__error&quot;&gt;Error: обязательное поле&lt;/div&gt;
+	&lt;div class=&quot;g-select__list _options&quot;&gt;
+		&lt;ul class=&quot;g-select__items&quot;&gt;
+			&lt;li data-value=&quot;code-Australia&quot; class=&quot;g-select__item _option g-select__item--active&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Australia&lt;/li&gt;
+			&lt;li data-value=&quot;code-Argentina&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Argentina&lt;/li&gt;
+			&lt;li data-value=&quot;code-Belgium&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Belgium&lt;/li&gt;
+			&lt;li data-value=&quot;code-Canada&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Canada&lt;/li&gt;
+			&lt;li data-value=&quot;code-Italy&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;Italy&lt;/li&gt;
+			&lt;li data-value=&quot;code-New Zealand&quot; class=&quot;g-select__item _option&quot; onclick=&quot;o2.gSelect.selecttItem(this)&quot;&gt;New Zealand&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Range slider
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 100, max: 10000, start: [1000,7000]} %}
+							<br/>
+							{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 1000, max: 10000, start: [2000]} %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-twig ui-kit__pretty">
+// промежуток
+{{ '{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 100, max: 10000, start: [1000,7000]} %}' }}
+
+// одно значение
+{{ '{% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 1000, max: 10000, start: [2000]} %}' }}
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Input with icon
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-icon-input/g-icon-input.twig" %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;label class=&quot;g-input g-icon-input&quot;&gt;
+	&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-icon-input__input&quot; value=&quot;&quot; placeholder=&quot;Placeholder&quot;&gt;
+	&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
+	&lt;div class=&quot;g-icon-input__img&quot;&gt;
+		% include &quot;/assets/svg/search.svg&quot; %
+	&lt;/div&gt;
+&lt;/label&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Input masked
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include 'blocks/g-masked-input/g-masked-input.twig' %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;label class=&quot;g-input {{mod}}&quot;&gt;
+	&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input g-input__input--masked&quot; value=&quot;&quot; placeholder=&quot;+7(___)___-__-__&quot; autocomplete=&quot;off&quot;&gt;
+	&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
+&lt;/label&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Checkbox
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-checkbox/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;label class=&quot;g-checkbox&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;{{ name }}&quot; class=&quot;g-checkbox__input&quot;&gt;
+	&lt;div class=&quot;g-checkbox__body&quot;&gt;
+		&lt;span class=&quot;g-checkbox__box&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;g-checkbox__text&quot;&gt;{{ labelText }}&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/label&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Radio
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Нет"} %}
+							{% include "./blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-tab__content&quot;&gt;
+	&lt;label class=&quot;g-radio&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; class=&quot;g-radio__input&quot;&gt;
+		&lt;div class=&quot;g-radio__body&quot;&gt;
+			&lt;span class=&quot;g-radio__box&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;g-radio__text&quot;&gt;Нет&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/label&gt;
+		&lt;label class=&quot;g-radio&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; class=&quot;g-radio__input&quot;&gt;
+		&lt;div class=&quot;g-radio__body&quot;&gt;
+			&lt;span class=&quot;g-radio__box&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;g-radio__text&quot;&gt;Да&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Checkbox
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-checkbox/g-checkbox.twig" with { "name": "check", "labelText":"Checkbox" } %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;label class=&quot;g-checkbox&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;{{ name }}&quot; class=&quot;g-checkbox__input&quot;&gt;
+	&lt;div class=&quot;g-checkbox__body&quot;&gt;
+		&lt;span class=&quot;g-checkbox__box&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;g-checkbox__text&quot;&gt;{{ labelText }}&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/label&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="ui-kit__wrapper">
+					<h2 class="section__title">
+						Tab
+					</h2>
+				</div>
+				{% include "./blocks/g-tabs/g-tabs.twig" %}
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Date picker
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include "./blocks/g-date-picker/g-date-picker.twig" %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-date-picker&quot;&gt;
+	&lt;input type=&quot;text&quot; name=&quot;birthday&quot; placeholder=&quot;Select date&quot; value=&quot;&quot; /&gt;
+&lt;/div&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<h2 class="section__title">
+					Adaptive
+				</h2>
+				<p>
+					Используем гриды
+					<a href="https://youtu.be/-fDqBEjfzGo">https://youtu.be/-fDqBEjfzGo</a>
+				</p>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Slider
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include 'blocks/g-slider/g-slider.twig' %}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-slider&quot;&gt;
+	'{'% for i in 0..9 %'}'
+	&lt;div class=&quot;g-slider__item-wr&quot;&gt;
+		&lt;div class=&quot;g-slider__item&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	'{'% endfor %'}'
+&lt;/div&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+			<section class="section">
+			<div class="container">
+				<div class="_tabs-container">
+					<div class="ui-kit__wrapper">
+						<h2 class="section__title">
+							Button
+						</h2>
+						<div class="g-tabs">
+							<ul class="ui-kit__tabs-menu">
+								<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+									<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+								</li>
+								<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+									<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="g-tab g-tab_open" data-tab-id="1.2">
+						<div class="g-tab__content">
+							{% include 'blocks/g-button/g-button.twig' with {mod: "g-button_test"}%}
+						</div>
+					</div>
+					<div class="g-tab" data-tab-id="1.3">
+						<div class="g-tab__content">
+							<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;button class=&quot;g-button '{'mod'}'&quot;&gt;Button Text&lt;/button&gt;
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}
