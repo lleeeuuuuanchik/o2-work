@@ -1,0 +1,40 @@
+<section class="section">
+	<div class="container">
+		<div class="_tabs-container">
+			<div class="ui-kit__wrapper">
+				<h2 class="section__title">
+					Slider
+				</h2>
+				<div class="g-tabs">
+					<ul class="ui-kit__tabs-menu">
+						<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+							<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+						</li>
+						<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+							<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="g-tab g-tab_open" data-tab-id="1.2">
+				<div class="g-tab__content">
+					{% include 'blocks/g-slider/g-slider.twig' %}
+				</div>
+			</div>
+			<div class="g-tab" data-tab-id="1.3">
+				<div class="g-tab__content">
+					<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-slider&quot;&gt;
+	{{ '{% for i in 0..9 %}' }}
+	&lt;div class=&quot;g-slider__item-wr&quot;&gt;
+		&lt;div class=&quot;g-slider__item&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	{{ '{% endfor %}' }}
+&lt;/div&gt;
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,50 @@
+<section class="section">
+	<div class="container">
+		<div class="_tabs-container">
+			<div class="ui-kit__wrapper">
+				<h2 class="section__title">
+					Radio
+				</h2>
+				<div class="g-tabs">
+					<ul class="ui-kit__tabs-menu">
+						<li class="ui-kit__tabs-item g-tabs__item g-tabs__item_active" onclick="o2.gTabs.open(this, 1.2)">
+							<a class="ui-kit__tabs-link g-tabs__link" href="javascript:void(0);">Visual</a>
+						</li>
+						<li class="ui-kit__tabs-item g-tabs__item" onclick="o2.gTabs.open(this, 1.3)">
+							<a class="g-tabs__link" href="javascript:void(0);">Show code</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="g-tab g-tab_open" data-tab-id="1.2">
+				<div class="g-tab__content">
+					{% include "/blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Нет"} %}
+					{% include "/blocks/g-radio/g-radio.twig" with { "name": "radio1", "labelText":"Да"} %}
+				</div>
+			</div>
+			<div class="g-tab" data-tab-id="1.3">
+				<div class="g-tab__content">
+					<pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-tab__content&quot;&gt;
+	&lt;label class=&quot;g-radio&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; class=&quot;g-radio__input&quot;&gt;
+		&lt;div class=&quot;g-radio__body&quot;&gt;
+			&lt;span class=&quot;g-radio__box&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;g-radio__text&quot;&gt;Нет&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/label&gt;
+		&lt;label class=&quot;g-radio&quot;&gt;
+		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; class=&quot;g-radio__input&quot;&gt;
+		&lt;div class=&quot;g-radio__body&quot;&gt;
+			&lt;span class=&quot;g-radio__box&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;g-radio__text&quot;&gt;Да&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
