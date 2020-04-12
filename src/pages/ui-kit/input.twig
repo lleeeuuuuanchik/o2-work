@@ -3,7 +3,7 @@
 		<div class="_tabs-container">
 			<div class="ui-kit__wrapper">
 				<h2 class="section__title">
-					Date picker
+					Input
 				</h2>
 				<div class="g-tabs">
 					<ul class="ui-kit__tabs-menu">
@@ -19,15 +19,22 @@
 
 			<div class="g-tab g-tab_open" data-tab-id="1.2">
 				<div class="g-tab__content">
-					{% include "/blocks/g-date-picker/g-date-picker.twig" %}
+					{% include "/blocks/g-input/g-input.twig" %}
 				</div>
 			</div>
 			<div class="g-tab" data-tab-id="1.3">
 				<div class="g-tab__content">
-					<pre class="prettyprint lang-html ui-kit__pretty">
-&lt;div class=&quot;g-input g-date-picker&quot;&gt;
-&#x9;&lt;input class=&quot;g-input__input&quot; type=&quot;text&quot; name=&quot;birthday&quot; placeholder=&quot;Select date&quot; value=&quot;&quot; /&gt;
-&lt;/div&gt;
+					<pre class="prettyprint lang-twig ui-kit__pretty">
+&lt;label class=&quot;g-input&quot;&gt;
+&#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input&quot; placeholder=&quot;Placeholder&quot;&gt;
+&#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
+&lt;/label&gt;
+
+//  вывод ошибки
+&lt;label class=&quot;g-input g-input--error&quot;&gt;
+&#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input&quot; placeholder=&quot;Placeholder&quot;&gt;
+&#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
+&lt;/label&gt;
 					</pre>
 				</div>
 			</div>

@@ -1,0 +1,22 @@
+.g-input--icon
+{
+	.g-input__input
+	{
+		padding-left: 42px;
+	}
+	.g-input__icon
+	{
+		position: absolute;
+		line-height: 0;
+		width: 14px;
+		height: 15px;
+		top: 50%;
+		left: 16px;
+		transform: translateY(-50%);
+		svg
+		{
+			widht: 100%;
+			fill: #677387;
+		}
+	}
+}

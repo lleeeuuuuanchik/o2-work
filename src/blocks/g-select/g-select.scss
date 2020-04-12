@@ -25,10 +25,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 9px 17px;
+	padding: 0 17px;
+	height: 44px;
 	width: rem(354);
 	cursor: pointer;
 	border: 1px solid rgba(103, 115, 135, 0.7);
+	outline-offset: 0px;
 	transition: .05s;
 	&:hover {border-color: #191C21; }
 }

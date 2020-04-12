@@ -18,12 +18,12 @@
 @import 'blocks/g-checkbox/g-checkbox';
 @import 'blocks/g-radio/g-radio';
 @import 'blocks/g-input/g-input';
-@import 'blocks/g-icon-input/g-icon-input';
+@import 'blocks/g-input/--icon';
 @import 'blocks/g-date-picker/g-date-picker';
 @import 'blocks/g-slider/g-slider';
 
 /* pages */
-@import 'pages/ui-kit';
+@import 'pages/ui-kit/ui-kit';
 
 * {
 	-webkit-box-sizing: border-box;

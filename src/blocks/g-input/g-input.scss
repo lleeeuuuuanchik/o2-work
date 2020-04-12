@@ -1,24 +1,8 @@
 .g-input
 {
-	display: block;
-	max-width: 354px;
+	display: inline-block;
 	position: relative;
 	margin-bottom: 10px;
-
-	&.g-input--error
-	{
-		input
-		{
-			display: inline-block;
-			border-color: #D01246;
-		}
-		.g-input__sub
-		{
-			display: block;
-			position: absolute;
-			bottom: -20px;
-		}
-	}
 }
 .g-input__input
 {
@@ -29,21 +13,28 @@
 	color: #191C21;
 	padding: 12px 18px;
 	border: 1px solid #a3a4a6;
-	transition: .2s;
-
+	outline-offset: 0px;
 	&:hover { border-color: #191C21; }
-
 	&:focus
 	{
-		border: 2px solid #191C21;
-		margin: -1px
+		border: 1px solid #191C21;
+		outline: 1px solid #191C21;
 	}
-
 	&::placeholder{color: rgba(25, 28, 33, 0.4)}
 }
-.g-input-icon__input
+.g-input--error
 {
-	padding-left: 42px;
+	.g-input__input
+	{
+		border: 1px solid #D01246;
+		outline: 1px solid #D01246;
+	}
+	.g-input__sub
+	{
+		display: block;
+		position: absolute;
+		margin-top: 2px;
+	}
 }
 .g-input__sub
 {
@@ -52,29 +43,4 @@
 	line-height: rem(13);
 	font-weight: $regular;
 	color: #D01246;
-}
-.g-input-icon__img
-{
-	position: absolute;
-	line-height: 0;
-	width: 14px;
-	height: 15px;
-	top: 50%;
-	left: 16px;
-	transform: translateY(-50%);
-	svg
-	{
-		widht: 100%;
-		fill: #677387;
-	}
-}
-.g-input_error
-{
-	.g-input__input { border: 2px solid #D01246; }
-	.g-input__sub_error
-	{
-		display: block;
-		position: absolute;
-		bottom: -15px;
-	}
 }
