@@ -650,7 +650,9 @@ li.L9 {
 
 /* blocks */
 
-.g-button {
+.g-button,
+input.g-button {
+  display: inline-block;
   font-size: 15px;
   line-height: 18px;
   color: #fff;
@@ -660,9 +662,11 @@ li.L9 {
   cursor: pointer;
   padding-right: 71px;
   padding-left: 71px;
+  border: 0px;
 }
 
-.g-button:hover {
+.g-button:hover,
+input.g-button:hover {
   background-color: rgba(103, 115, 135, 0.7);
 }
 
@@ -767,12 +771,12 @@ li.L9 {
   display: none;
 }
 
-.g-select--error .g-select__error {
+.g-select.error .g-select__error {
   display: block;
 }
 
-.g-select--error .g-select__selected,
-.g-select--error .g-select__selected:hover {
+.g-select.error .g-select__selected,
+.g-select.error .g-select__selected:hover {
   border: 1px solid #D01246;
   outline: 1px solid #D01246;
 }
@@ -1553,12 +1557,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   color: rgba(25, 28, 33, 0.4);
 }
 
-.g-input--error .g-input__input {
+.g-input.error .g-input__input {
   border: 1px solid #D01246;
   outline: 1px solid #D01246;
 }
 
-.g-input--error .g-input__sub {
+.g-input.error .g-input__sub {
   display: block;
   position: absolute;
   margin-top: 2px;

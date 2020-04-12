@@ -1,5 +1,6 @@
-.g-button
+.g-button, input.g-button
 {
+	display: inline-block;
 	font-size: 15px;
 	line-height: 18px;
 	color: #fff;
@@ -9,6 +10,7 @@
 	cursor: pointer;
 	padding-right: 71px;
 	padding-left: 71px;
+	border:0px;
 
 	&:hover{background-color: rgba(103, 115, 135, 0.7);}
 }

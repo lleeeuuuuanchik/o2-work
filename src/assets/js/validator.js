@@ -45,7 +45,8 @@ class O2Validator
 			phone(field)
 			{
 				let $input = $(field).find('input');
-				if($input.val() == '1')
+				const regex = /^((\+7|7|8)+([0-9]){10})$/;
+				if(regex.test($input.val()))
 					return true;
 				this.setMessage(field,'Телевон введен не корректно');
 				return false;
@@ -92,38 +93,5 @@ class O2Validator
 			$field.addClass('error');
 			this.setMessage($field[0],errors[fieldCode]);
 		}
-	}
-}
-
-
-
-// -----------
-o2.authForm =
-{
-	submit(instance)
-	{
-		let validator = new O2Validator(instance);
-		validator.callbacks.custom = this.customValidation;
-
-		if(!validator.validate())
-			return false;
-
-		// отправили запрос и якобы получили ошибку
-		setTimeout(function(){
-			validator.setErrors({
-				phone:'Сообщение ошибки',
-				email:'Сообщение ошибки'
-			});
-			validator.errors = [1,2,3];
-			validator.showGlobalErrors();
-
-		},500);
-		return false;
-	},
-	customValidation(field)
-	{
-		// return true если все ок
-		this.setMessage(field,'Что-то не так');
-		return false;
 	}
 }

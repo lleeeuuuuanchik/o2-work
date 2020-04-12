@@ -65,7 +65,7 @@ o2.gSelect =
 	selecttItem(instance)
 	{
 		let $select = $(instance).parents('._select');
-		$select.removeClass('g-select--error');
+		$select.removeClass('error');
 		$select.find('._option').removeClass('g-select__item--active');
 		$(instance).addClass('g-select__item--active');
 		let name = $(instance).text(),
