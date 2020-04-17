@@ -27,3 +27,10 @@ o2.authForm =
 		return false;
 	}
 }
+o2.uiKit =
+{
+	init()
+	{
+		PR.prettyPrint();
+	}
+}
