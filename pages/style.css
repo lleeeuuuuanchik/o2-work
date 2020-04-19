@@ -2207,6 +2207,7 @@ html {
   line-height: 17px;
   font-size: 13px;
   color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width: 564px) {

@@ -45,10 +45,10 @@ class O2Validator
 			phone(field)
 			{
 				let $input = $(field).find('input');
-				const regex = /^((\+7|7|8)+([0-9]){10})$/;
+				const regex = /^((\+7|7|8)+\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2})$/;
 				if(regex.test($input.val()))
 					return true;
-				this.setMessage(field,'Телевон введен не корректно');
+				this.setMessage(field,'Телефон введен не корректно');
 				return false;
 			},
 
