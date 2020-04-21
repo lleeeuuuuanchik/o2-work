@@ -2106,9 +2106,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .g-popup label {
   cursor: pointer;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 .g-popup__content,
@@ -2122,9 +2122,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .g-popup__background {
-  -webkit-transition: height .2s;
-  -o-transition: height .2s;
-  transition: height .2s;
+  -webkit-transition: height .3s;
+  -o-transition: height .3s;
+  transition: height .3s;
   z-index: 2;
 }
 
@@ -2153,9 +2153,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   background-color: rgba(0, 0, 0, 0.8);
   visibility: visible;
   opacity: 1;
-  -webkit-transition: height .2s;
-  -o-transition: height .2s;
-  transition: height .2s;
+  -webkit-transition: height .3s;
+  -o-transition: height .3s;
+  transition: height .3s;
 }
 
 #g-popup:checked ~ .g-popup__content {
@@ -2177,11 +2177,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform 500ms;
-  transition: -webkit-transform 500ms;
-  -o-transition: transform 500ms;
-  transition: transform 500ms;
-  transition: transform 500ms, -webkit-transform 500ms;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 
 #g-popup:checked ~ .g-popup__content .g-popup__close {
@@ -2190,9 +2190,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   right: 20px;
   font-size: 22px;
   color: rgba(0, 0, 0, 0.4);
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
 }
 
 #g-popup:checked ~ .g-popup__content .g-popup__close:hover,
