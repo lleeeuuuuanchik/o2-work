@@ -42,4 +42,5 @@ html
 	line-height: $mainLineHeight;
 	font-size: $mainFontSize;
 	color: $mainFontColor;
+	-webkit-font-smoothing: antialiased;
 }

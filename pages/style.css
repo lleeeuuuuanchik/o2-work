@@ -683,8 +683,6 @@ input.g-button:hover {
   color: white;
 }
 
-/* default styles */
-
 .g-tabs {
   display: inline-block;
 }
@@ -727,7 +725,7 @@ input.g-button:hover {
   color: #677387;
 }
 
-.g-tabs__item_active:after {
+.g-tabs__item.active:after {
   content: '';
   display: block;
   width: 100%;
@@ -739,7 +737,7 @@ input.g-button:hover {
   border-radius: 50px;
 }
 
-.g-tabs__item_active .g-tabs__link {
+.g-tabs__item.active .g-tabs__link {
   color: #191C21;
 }
 
@@ -749,12 +747,12 @@ input.g-button:hover {
   padding-right: 5px;
 }
 
-.g-tab {
+.g-tabs__content {
   display: none;
   font-size: 13px;
 }
 
-.g-tab_open {
+.g-tabs__content.open {
   display: block;
 }
 
@@ -2104,17 +2102,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 /* pages */
 
-p {
-  font-weight: bold;
-}
-
-.section {
+.ui-kit__section {
   padding-top: 30px;
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(103, 115, 135, 0.1);
 }
 
-.section__title {
+.ui-kit__title {
   font-size: 16px;
   line-height: 19px;
   font-weight: 500;
@@ -2129,6 +2123,7 @@ p {
   padding-left: 17px;
   background: rgba(103, 115, 135, 0.05);
   font-family: "Roboto-mono", sans-serif;
+  font-size: 13px;
   border: none;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -2137,24 +2132,31 @@ p {
   tab-size: 25px;
 }
 
-.ui-kit__tabs-item.g-tabs__item {
+.ui-kit__tabs-item {
+  font-size: 12px;
   line-height: 16px;
 }
 
-.ui-kit__tabs-item.g-tabs__item:not(:last-child) {
+.ui-kit__tabs-item a {
+  color: rgba(103, 115, 135, 0.7);
+}
+
+.ui-kit__tabs-item:not(:last-child) {
   margin-right: 17px;
 }
 
-.ui-kit__tabs-item.g-tabs__item:hover:after {
-  height: 1px;
+.ui-kit__tabs-item.active a,
+.ui-kit__tabs-item a:hover {
+  color: #677387;
+  text-decoration: underline;
 }
 
-.ui-kit__tabs-item.g-tabs__item_active:after {
-  height: 1px;
+.ui-kit__tabs-content {
+  display: none;
 }
 
-.g-tabs__link {
-  padding: 0;
+.ui-kit__tabs-content.open {
+  display: block;
 }
 
 .ui-kit__wrapper {
@@ -2205,6 +2207,7 @@ html {
   line-height: 17px;
   font-size: 13px;
   color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width: 564px) {
