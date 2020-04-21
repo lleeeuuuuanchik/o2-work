@@ -2100,6 +2100,109 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   left: -17px;
 }
 
+.ui-kit__section .ui-kit__title--popup {
+  margin-bottom: 30px;
+}
+
+.g-popup label {
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.g-popup__content,
+.g-popup__background {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.g-popup__background {
+  -webkit-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+  z-index: 2;
+}
+
+.g-popup__content {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -o-transition: transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  z-index: 3;
+}
+
+#g-popup {
+  display: none;
+}
+
+#g-popup:checked ~ .g-popup__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+
+#g-popup:checked ~ .g-popup__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -25%;
+  margin-left: -25%;
+  width: 50vw;
+  height: auto;
+  padding: 40px;
+  background-color: white;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: auto;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -o-transition: transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+}
+
+#g-popup:checked ~ .g-popup__content .g-popup__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+#g-popup:checked ~ .g-popup__content .g-popup__close:hover,
+#g-popup:checked ~ .g-popup__content .g-popup__close:focus {
+  color: #000;
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
 /* pages */
 
 .ui-kit__section {
