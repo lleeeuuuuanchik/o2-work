@@ -6,7 +6,7 @@ o2.initSlider = function ()
 		infinite: true,
 		slidesToShow: 5,
 		slidesToScroll: 1,
-		prevArrow: '<img src="../src/assets/svg/Ellipse 1.svg" class="prev-arrow">',
-		nextArrow: '<img src="../src/assets/svg/Ellipse 2.svg" class="next-arrow">'
+		prevArrow: '<div class="prev-arrow"></div>',
+		nextArrow: '<div class="next-arrow"></div>'
 	});
 }

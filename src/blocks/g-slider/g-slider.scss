@@ -16,5 +16,12 @@
 	display: block;
 	z-index: 2;
 }
-.next-arrow{right: 18px;}
+.next-arrow,.prev-arrow
+{
+	width:40px;
+	height:40px;
+	background: rgba(103, 115, 135, 0.4);
+	border-radius: 50%;
+	right: 18px;
+}
 .prev-arrow{left: -17px;}

@@ -638,20 +638,29 @@
         <section class="ui-kit__section">
             <div class="container">
                 <h2 class="ui-kit__title ui-kit__title--popup"> Popup </h2>
-                <div class="g-popup">
-                    <input id="g-popup" type="checkbox">
-                    <label class="g-popup__button g-button" for="g-popup">
-                        Show popup
-                    </label>
-                    <label class="g-popup__background" for="g-popup"></label>
+                <button class="g-button" onclick="o2.gPopup.open('_testpopup')"> Show popup </button>
+                <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
 
-                    <div class="g-popup__content">
-                        <label class="g-popup__close" for="g-popup">&#10005;</label>
+                <div class="_testpopup" style="display:none;">
+                    <div class="g-popup__content _popup-content">
+                        <div onclick="o2.gPopup.close()" class="g-popup__clsoe">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="4.94983" y1="4.94974" x2="12.0209" y2="12.0208" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
+                                <line x1="4.94983" y1="12.0208" x2="12.0209" y2="4.94975" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
+                            </svg> </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto earum, ex quis facere nostrum numquam alias perferendis tempora explicabo libero repellat enim quam, cum, quisquam quia voluptate natus distinctio nemo!</p>
                         <p>Voluptatum, aspernatur quisquam ab quos! Dicta adipisci blanditiis molestias incidunt ipsam delectus nihil maiores ea architecto, voluptates. Labore error accusantium odio unde distinctio inventore temporibus provident hic aliquam, atque, ipsa.</p>
                         <p>Quod autem nemo accusamus blanditiis perspiciatis enim aut quas saepe tempore. Aliquam ipsum maxime aliquid ratione a facilis corporis error odio accusantium reiciendis facere cumque, blanditiis praesentium nam iure voluptatibus.</p>
-                    </div> <!-- .g-popup__content -->
+                        <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+                    </div>
                 </div>
+
+                <div class="_testpopup-second" style="display:none;">
+                    <div class="g-popup__content _popup-content">
+                        <p>Просто сообщение - без крестика</p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
@@ -664,6 +673,7 @@
             </p>
         </div>
     </footer>
+    <div class="g-popup _overlay"></div>
     <script type="text/javascript" src="./main.min.js" defer="" async=""></script>
 </body>
 

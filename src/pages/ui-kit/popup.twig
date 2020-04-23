@@ -1,6 +1,26 @@
 <section class="ui-kit__section">
 	<div class="container">
 		<h2 class="ui-kit__title ui-kit__title--popup"> Popup </h2>
-		{% include '/blocks/g-popup/g-popup.twig'  %}
+		<button class="g-button" onclick="o2.gPopup.open('_testpopup')"> Show popup </button>
+		<button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+
+		<div class="_testpopup" style="display:none;">
+			<div class="g-popup__content _popup-content">
+				<div onclick="o2.gPopup.close()" class="g-popup__clsoe">
+					{% include '/assets/svg/close.svg' %}
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto earum, ex quis facere nostrum numquam alias perferendis tempora explicabo libero repellat enim quam, cum, quisquam quia voluptate natus distinctio nemo!</p>
+				<p>Voluptatum, aspernatur quisquam ab quos! Dicta adipisci blanditiis molestias incidunt ipsam delectus nihil maiores ea architecto, voluptates. Labore error accusantium odio unde distinctio inventore temporibus provident hic aliquam, atque, ipsa.</p>
+				<p>Quod autem nemo accusamus blanditiis perspiciatis enim aut quas saepe tempore. Aliquam ipsum maxime aliquid ratione a facilis corporis error odio accusantium reiciendis facere cumque, blanditiis praesentium nam iure voluptatibus.</p>
+				<button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+			</div>
+		</div>
+
+		<div class="_testpopup-second" style="display:none;">
+			<div class="g-popup__content _popup-content">
+				<p>Просто сообщение - без крестика</p>
+			</div>
+		</div>
+
 	</div>
 </section>
