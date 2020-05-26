@@ -2173,6 +2173,21 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   cursor: pointer;
 }
 
+.g-input-file {
+  width: 200px;
+}
+
+.g-input-file__file-inp {
+  display: none;
+}
+
+.g-input-file__file-nm {
+  padding: 10px;
+  border: 2px dashed red;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
 /* pages */
 
 .ui-kit__section {
