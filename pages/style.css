@@ -2188,6 +2188,84 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   border-radius: 4px;
 }
 
+.g-pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.g-pagination__arrow,
+.g-pagination__number {
+  border: 1px solid #000;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 22px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+.g-pagination__arrow:hover,
+.g-pagination__number:hover {
+  background-color: #ccc;
+  color: #fff;
+  border-color: transparent;
+}
+
+.g-pagination__number {
+  margin-right: 5px;
+}
+
+.g-pagination__number:last-child {
+  margin-right: 0;
+}
+
+.g-pagination__numbers {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.g-pagination__arrow:hover:before {
+  border-left: 17px solid #fff;
+}
+
+.g-pagination__arrow--left {
+  margin-right: 5px;
+}
+
+.g-pagination__arrow--right {
+  margin-left: 5px;
+}
+
+.g-pagination__arrow:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 32%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left: 17px solid #000;
+}
+
+.g-pagination__arrow--left:before {
+  left: 0;
+  right: 32%;
+  -webkit-transform: rotateZ(180deg) translateY(50%);
+  -ms-transform: rotate(180deg) translateY(50%);
+  transform: rotateZ(180deg) translateY(50%);
+}
+
 /* pages */
 
 .ui-kit__section {
@@ -2202,6 +2280,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   font-weight: 500;
   margin-bottom: 0;
   margin-right: 10px;
+}
+
+.ui-kit__title--pagination {
+  margin-bottom: 30px;
 }
 
 .ui-kit pre.prettyprint {
