@@ -8,6 +8,7 @@ o2.gPopup =
 		$('._overlay').addClass('open').html(popupHtml);
 		$('body').css({overflow:'hidden'});
 		this.setEscEvent();
+		console.log(popupHtml)
 
 		let $popup = $('._overlay').find('._popup-content')
 		let self = this;
