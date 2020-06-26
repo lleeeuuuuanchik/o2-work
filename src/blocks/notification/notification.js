@@ -1,0 +1,20 @@
+o2.notification =
+{
+	send()
+	{
+		$('.g-alert').addClass('success');
+		$('.g-alert__text').addClass('success__text')
+	},
+	close()
+	{
+		$('.g-alert').removeClass('success');
+		$('.g-alert').removeClass('error');
+		$('.g-alert__text').removeClass('success__text')
+		$('.g-alert__text').removeClass('error__text')
+	},
+	error()
+	{
+		$('.g-alert').addClass('error');
+		$('.g-alert__text').addClass('error__text')
+	}
+}

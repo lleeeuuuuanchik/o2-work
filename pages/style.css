@@ -2314,6 +2314,35 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   transform: rotateZ(180deg) translateY(50%);
 }
 
+.g-alert__item {
+  padding: 15px;
+  width: 400px;
+}
+
+.g-alert__item.success {
+  display: block;
+  background: rgba(0, 128, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.g-alert__item .success__text {
+  color: green;
+}
+
+.g-alert__item.error {
+  display: block;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.g-alert__item .error__text {
+  color: red;
+}
+
+.g-alert__description {
+  display: block;
+  margin-bottom: 10px;
+}
+
 /* pages */
 
 .ui-kit__section {
