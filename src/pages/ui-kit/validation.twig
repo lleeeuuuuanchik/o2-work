@@ -29,11 +29,61 @@
 				<div class="form-errors _global-errors"></div>
 				<br/>
 				<br/>
+				<label class="g-input _field" data-call="empty">
+					<textarea name="name" class="g-input__input g-input__input--textarea" placeholder="Placeholder"></textarea>
+					<div class="g-input__sub _error-msg">Error: invalid name</div>
+				</label>
+				<br/>
+				<br/>
+				<label class="g-input _field" data-call="selected">
+					<div class="g-select _select">
+						<input type="hidden" class="_selected-value" />
+						<div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+							<div class="g-select__selected-name _selected-text">Выберите страну</div>
+							<div class="g-select__arrow">
+								{% include "/assets/svg/arrod-down.svg" %}
+							</div>
+						</div>
+						<div class="g-select__list _options">
+							<ul class="g-select__items">
+								<li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+								<li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+								<li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+								<li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+								<li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+								<li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
+							</ul>
+						</div>
+					</div>
+					<div class="g-input__sub _error-msg">Error: invalid name</div>
+				</label>
+				<br/>
+				<br/>
+				<label class="g-input _field" data-call="checked">
+					<label class="g-checkbox">
+						<input type="checkbox" name="{{ name }}" class="g-checkbox__input">
+						<div class="g-checkbox__body">
+							<span class="g-checkbox__box"></span>
+							<span class="g-checkbox__text">{{ labelText }}</span>
+						</div>
+					</label>
+					<label class="g-checkbox">
+						<input type="checkbox" name="{{ name }}" class="g-checkbox__input">
+						<div class="g-checkbox__body">
+							<span class="g-checkbox__box"></span>
+							<span class="g-checkbox__text">{{ labelText }}</span>
+						</div>
+					</label>
+					<div class="g-input__sub _error-msg g-input__sub--width">Error: invalid name</div>
+				</label>
+				<br/>
+				<br/>
 				<input class="g-button" type="submit" value="Отправить"/>
 			</form>
 			<style>
 			.form-errors{padding:10px; border:1px solid red; display: none;}
 			.form-errors.show{display: block;}
+			.g-input__sub--width{width:120px;}
 			</style>
 		</div>
 		<div class="ui-kit__tabs-content" data-tab="1.3">

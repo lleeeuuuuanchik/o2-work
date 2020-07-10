@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "author": "o2",
   "license": "ISC",
   "devDependencies": {
@@ -30,10 +29,7 @@
     "gulp-svgmin": "^2.1.0",
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-uglify-es": "^1.0.4",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^6.0.0",
-    "imagemin-zopfli": "^6.0.0"
+    "gulp-uglify-es": "^1.0.4"
   },
   "dependencies": {
     "jquery": "^3.3.1"
