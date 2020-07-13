@@ -55,6 +55,17 @@ class O2Validator
 			empty(field)
 			{
 				let $input = $(field).find('input');
+				let $textarea = $(field).find('textarea');
+				if($input.val() == '' || $textarea.val() =='')
+				{
+					this.setMessage(field,'Заполните поле');
+					return false;
+				}
+				return true;
+			},
+			selected(field)
+			{
+				let $input = $(field).find('input');
 				if($input.val() == '')
 				{
 					this.setMessage(field,'Заполните поле');
@@ -62,9 +73,20 @@ class O2Validator
 				}
 				return true;
 			},
-
-			selected(){},
-			checked(){},
+			checked(field)
+			{
+				let $input = $(field).find('input');
+				let checker = false;
+				$input.each(function()
+				{
+					if($(this).prop('checked'))
+						checker = true
+				})
+				if(checker)
+					return true
+				this.setMessage(field,'Ничего не выбрано');
+		 		return false
+			},
 		};
 	}
 

@@ -2,7 +2,7 @@ var gulp             = require('gulp'),
 	sass             = require('gulp-sass'),
 	browserSync      = require('browser-sync'),
 	concat           = require('gulp-concat'),
-	uglify           = require('gulp-uglify')
+	uglify           = require('gulp-uglify'),
 	imagemin         = require('gulp-imagemin'),
 	// pngquant         = require('imagemin-pngquant'),
 	cache            = require('gulp-cache'),
@@ -10,6 +10,10 @@ var gulp             = require('gulp'),
 	babel            = require('gulp-babel'),
 	imageminZopfli   = require('imagemin-zopfli'),
 	// imageminMozjpeg  = require('imagemin-mozjpeg'),
+    // imgCompress      = require('imagemin-jpeg-recompress'),
+	cache            = require('gulp-cache'),
+	autoprefixer     = require('gulp-autoprefixer'),
+	babel            = require('gulp-babel'),
 	plumber          = require('gulp-plumber'),
 	twig             = require('gulp-twig'),
 	cheerio          = require('gulp-cheerio'),
@@ -85,6 +89,7 @@ gulp.task('twig', function () {
 gulp.task('browser-sync', () => {
 	browserSync({
 		server: {baseDir: './'},
+		startPath: './pages/ui-kit.html',
 		serveStaticOptions: {extensions: ["html"] },
 		ghostMode: {scroll: false },
 		notify: false,
@@ -101,18 +106,21 @@ gulp.task('watch', function()
 	gulp.watch('img/*', gulp.parallel(() => { browserSync.reload(); }));
 });
 
-// таск сжимает картинки без потери качества
-gulp.task('img', () => {
+// таск сжимает картинки
+gulp.task('img', function() {
 	return gulp.src(['src/assets/*.png', 'src/assets/*.jpg']) // откуда брать картинки
-	.pipe(cache(
-		imagemin([
-			pngquant({speed: 1, quality: 80 }),
-			imageminZopfli({more: true, iterations: 50 }),
-			imagemin.jpegtran({progressive: true }),
-			imageminMozjpeg({quality: 85 })
-		])
-	))
-	.pipe(gulp.dest('pages/img/'))
+	.pipe(imagemin([
+		imgCompress({
+			loops: 4,
+			min: 60,
+			max: 80,
+			quality: 'high'
+		}),
+		imagemin.gifsicle(),
+		imagemin.optipng(),
+		imagemin.svgo()
+	]))
+	.pipe(gulp.dest('pages/img/'));
 });
 
 gulp.task('svg-min', () => {
@@ -171,7 +179,7 @@ gulp.task('svg-min', () => {
 })
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', () => { console.log('builded');}))
+gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', async () => { console.log('builded');}))
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));
