@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "author": "o2",
   "license": "ISC",
   "devDependencies": {
@@ -31,11 +30,17 @@
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^1.0.4",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^6.0.0",
     "imagemin-zopfli": "^6.0.0"
   },
   "dependencies": {
     "jquery": "^3.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odvapro/front.git"
+  },
+  "bugs": {
+    "url": "https://github.com/odvapro/front/issues"
+  },
+  "homepage": "https://github.com/odvapro/front#readme"
 }
