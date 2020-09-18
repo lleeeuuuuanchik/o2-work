@@ -67,38 +67,3 @@
 	font-style: normal;
 	font-display: swap;
 }
-@font-face {
-    font-family: 'GT-Walsheim-Pro-black';
-    src: url('./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.eot');
-    src: url('./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.woff2') format('woff2'),
-        url('./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.woff') format('woff'),
-        url('./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'GT-Walsheim-Pro-Regular';
-    src: url('./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.eot');
-    src: url('./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.woff2') format('woff2'),
-        url('./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.woff') format('woff'),
-        url('./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'GT-Walsheim-Pro-bold';
-    src: url('./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.eot');
-    src: url('./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.woff2') format('woff2'),
-        url('./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.woff') format('woff'),
-        url('./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}

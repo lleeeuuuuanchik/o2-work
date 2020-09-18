@@ -78,33 +78,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'GT-Walsheim-Pro-black';
-  src: url("./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.eot");
-  src: url("./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.eot?#iefix") format("embedded-opentype"), url("./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.woff2") format("woff2"), url("./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.woff") format("woff"), url("./fonts/GT_Walshaim/Black/GTWalsheimPro-Black.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT-Walsheim-Pro-Regular';
-  src: url("./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.eot");
-  src: url("./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.woff2") format("woff2"), url("./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.woff") format("woff"), url("./fonts/GT_Walshaim/Regular/GTWalsheimPro-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT-Walsheim-Pro-bold';
-  src: url("./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.eot");
-  src: url("./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.woff2") format("woff2"), url("./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.woff") format("woff"), url("./fonts/GT_Walshaim/Bold/GTWalsheimPro-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
 /*  Переменные со шрифтами  */
 
 /*  Переменные с гарнитурами шрифтов  */
@@ -2466,105 +2439,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   background-color: rgba(103, 115, 135, 0.05);
 }
 
-.send {
-  font-family: 'GT-Walsheim-Pro-black';
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
-  color: white;
-  font-weight: bold;
-}
-
-.send .g-input {
-  display: block;
-}
-
-.send .g-input__input {
-  width: 360px;
-  height: 36px;
-  -webkit-border-radius: 23px;
-  border-radius: 23px;
-}
-
-.send .g-input__input:focus {
-  border: none;
-  outline: none;
-}
-
-.send .g-button {
-  background: #731982;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
-  font-size: 28px;
-  padding: 0;
-  width: 300px;
-  height: 53px;
-  line-height: 53px;
-  margin: 0 auto;
-  display: block;
-}
-
-.send .g-button:hover {
-  background: white;
-  color: #731982;
-}
-
-.send .form-errors {
-  margin-bottom: 20px;
-}
-
-.send .form-errors.show {
-  color: #731982;
-  text-align: center;
-}
-
-.send .g-input.error .g-input__input {
-  border: none;
-  outline: none;
-}
-
-.send__title {
-  font-size: 43px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 50px;
-  line-height: 47px;
-}
-
-.send__all {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 60px;
-}
-
-.send__all span {
-  width: 520px;
-  font-size: 16px;
-  font-family: 'GT-Walsheim-Pro-bold';
-}
-
-.send__text {
-  display: block;
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 13px;
-  font-family: 'GT-Walsheim-Pro-Regular';
-}
-
-.send__all-error {
-  color: #731982;
-}
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2661,30 +2535,6 @@ html {
 
   .daterangepicker .drp-calendar.left {
     clear: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .send__all {
-    display: block;
-    text-align: center;
-  }
-
-  .send__all span {
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5px;
-  }
-}
-
-@media (max-width: 410px) {
-  .send .g-input__input {
-    width: 100%;
-  }
-
-  .send .g-button {
-    width: 200px;
   }
 }
 
