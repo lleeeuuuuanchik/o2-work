@@ -4,14 +4,6 @@ var gulp             = require('gulp'),
 	concat           = require('gulp-concat'),
 	uglify           = require('gulp-uglify'),
 	imagemin         = require('gulp-imagemin'),
-	// pngquant         = require('imagemin-pngquant'),
-	cache            = require('gulp-cache'),
-	autoprefixer     = require('gulp-autoprefixer'),
-	babel            = require('gulp-babel'),
-	imageminZopfli   = require('imagemin-zopfli'),
-	// imageminMozjpeg  = require('imagemin-mozjpeg'),
-    // imgCompress      = require('imagemin-jpeg-recompress'),
-	cache            = require('gulp-cache'),
 	autoprefixer     = require('gulp-autoprefixer'),
 	babel            = require('gulp-babel'),
 	plumber          = require('gulp-plumber'),
@@ -20,6 +12,7 @@ var gulp             = require('gulp'),
 	path             = require('path'),
 	htmlbeautify     = require('gulp-html-beautify'),
 	svgmin           = require('gulp-svgmin'),
+	webp 			 = require('gulp-webp'),
 	gcmq             = require('gulp-group-css-media-queries');
 
 // таск для компиляции scss в css
@@ -41,7 +34,7 @@ gulp.task('scripts', () => {
 	return gulp.src(jsFiles)
 		.pipe(babel())
 		.pipe(concat('main.min.js'))
-		// .pipe(uglify()) // Сжимаем JS файл
+		.pipe(uglify())
 		.pipe(gulp.dest('pages'))
 		.pipe(browserSync.reload({stream: true}))
 });
@@ -108,18 +101,13 @@ gulp.task('watch', function()
 
 // таск сжимает картинки
 gulp.task('img', function() {
-	return gulp.src(['src/assets/*.png', 'src/assets/*.jpg']) // откуда брать картинки
+	return gulp.src(['src/assets/img/*.png', 'src/assets/img/*.jpg']) // откуда брать картинки
 	.pipe(imagemin([
-		imgCompress({
-			loops: 4,
-			min: 60,
-			max: 80,
-			quality: 'high'
-		}),
 		imagemin.gifsicle(),
 		imagemin.optipng(),
 		imagemin.svgo()
 	]))
+	.pipe(webp())
 	.pipe(gulp.dest('pages/img/'));
 });
 
