@@ -1,0 +1,80 @@
+/*  Общая типографика для всех страниц. здесь описываются общие свойства для текстовых блоков  */
+
+body
+{
+	font-family: $accent-font;
+	font-size: 16px;
+	line-height: 1.5;
+	min-height:100vh
+}
+
+ul
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	li
+	{
+		margin: 0;
+		padding: 0;
+	}
+}
+
+address
+{
+	font-style: normal;
+}
+
+h1
+{
+	font-size: 42px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 10px;
+	line-height: 24px;
+}
+
+h2
+{
+	font-size: 22px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 10px;
+	line-height: 24px;
+}
+
+h3
+{
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+
+h4
+{
+	font-size: 15px;
+	letter-spacing: 2.4px;;
+	line-height: 24px;
+	margin:0px 0 8px 0;
+}
+
+p
+{
+	margin-top: 10px;
+	color: $secondary-color;
+}
+
+b
+{
+	font-weight: 700;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus
+{
+	outline: 0;
+	text-decoration: none;
+}

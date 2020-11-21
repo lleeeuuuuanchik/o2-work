@@ -88,7 +88,7 @@ gulp.task('browser-sync', () =>
 {
 	browserSync({
 		server: {baseDir: './pages/'},
-		startPath: './index.html',
+		startPath: './ui-kit.html',
 		serveStaticOptions: {extensions: ["html"] },
 		ghostMode: {scroll: false },
 		notify: false,

@@ -1,0 +1,44 @@
+{
+  "name": "project",
+  "version": "1.0.2",
+  "description": "Gulp project for work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "o2",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "babel-core": "^6.26.3",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cheerio": "^0.6.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "3.0.0",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odvapro/front.git"
+  },
+  "bugs": {
+    "url": "https://github.com/odvapro/front/issues"
+  },
+  "homepage": "https://github.com/odvapro/front#readme"
+}

@@ -1,0 +1,50 @@
+/* mixins */
+@import 'base/mixins.scss';
+
+/* base */
+@import 'base/fonts';
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/default';
+@import 'base/prettify';
+
+/* blocks */
+@import 'blocks/g-button/g-button';
+@import 'blocks/footer/footer';
+@import 'blocks/g-tabs/g-tabs';
+@import 'blocks/g-select/g-select';
+@import 'blocks/g-range-slider/g-range-slider';
+@import 'blocks/g-checkbox/g-checkbox';
+@import 'blocks/g-radio/g-radio';
+@import 'blocks/g-input/g-input';
+@import 'blocks/g-input/--icon';
+@import 'blocks/g-date-picker/g-date-picker';
+@import 'blocks/g-slider/g-slider';
+@import 'blocks/g-popup/g-popup';
+@import 'blocks/g-input-file/g-input-file';
+@import 'blocks/g-pagination/g-pagination';
+@import 'blocks/notification/notification';
+
+/* pages */
+@import 'pages/ui-kit/ui-kit';
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+html
+{
+	line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+	-webkit-font-smoothing: antialiased;
+}
