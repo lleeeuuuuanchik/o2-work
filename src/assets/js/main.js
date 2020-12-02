@@ -1,12 +1,10 @@
-"use strict"
+"use strict";
 /**
  * инициализация всех инициализаций
  */
 $(document).ready(function()
 {
 	o2.init();
-
-	o2.uiKit.init();
 });
 
 /**
@@ -19,10 +17,6 @@ const o2 =
 	 */
 	init()
 	{
-		this.gRangeSlider.init();
-		this.gDatePicker.init();
-		this.innputMask.init()
-		this.initSlider()
 	},
 	/**
 	* отслеживание клика вне блока
@@ -44,4 +38,4 @@ const o2 =
 
 		return outsideChecker;
 	},
-}
+};

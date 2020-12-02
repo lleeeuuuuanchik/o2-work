@@ -80,24 +80,24 @@ class O2Validator
 				$input.each(function()
 				{
 					if($(this).prop('checked'))
-						checker = true
-				})
+						checker = true;
+				});
 				if(checker)
-					return true
+					return true;
 				this.setMessage(field,'Ничего не выбрано');
-		 		return false
+				return false;
 			},
 		};
 	}
 
 	setMessage(field,msg)
 	{
-		$(field).find('._error-msg').html(msg)
+		$(field).find('._error-msg').html(msg);
 	}
 
 	showGlobalErrors()
 	{
-		let errorsHtml = this.errors.join('</li><li>')
+		let errorsHtml = this.errors.join('</li><li>');
 		let $errorsBlock = $(this.formInstance).find('._global-errors');
 		$errorsBlock.html(`<ul><li>${errorsHtml}</li></ul>`);
 
