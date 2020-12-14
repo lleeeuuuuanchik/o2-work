@@ -49,7 +49,7 @@ var check =
 		return errors;
 	},
 
-	exceptions:['container','active','open'],
+	exceptions:['container','active','open','error'],
 
 	/**
 	 * return errors[]
