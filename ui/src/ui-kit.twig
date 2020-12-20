@@ -3,22 +3,28 @@
 
 {% block page %}
 	<div class="ui-kit">
-		{% include "/pages/ui-kit/select.twig" %}
-		{% include "/pages/ui-kit/range-slider.twig" %}
-		{% include "/pages/ui-kit/input.twig" %}
-		{% include "/pages/ui-kit/input-with-icon.twig" %}
-		{% include "/pages/ui-kit/input-masked.twig" %}
-		{% include "/pages/ui-kit/checkbox.twig" %}
-		{% include "/pages/ui-kit/radio.twig" %}
-		{% include "/pages/ui-kit/tabs.twig" %}
-		{% include "/pages/ui-kit/date-picker.twig" %}
-		{% include "/pages/ui-kit/adaptive.twig" %}
-		{% include "/pages/ui-kit/slider.twig" %}
-		{% include "/pages/ui-kit/button.twig" %}
-		{% include "/pages/ui-kit/validation.twig" %}
-		{% include '/pages/ui-kit/popup.twig' %}
-		{% include '/pages/ui-kit/input-file.twig' %}
-		{% include '/pages/ui-kit/pagination.twig' %}
-		{% include '/pages/ui-kit/notifications.twig' %}
+		<div class="ui-kit__sidebar">
+			<input type="text" placeholder="Поиск компонента" onkeyup="o2.uiKit.filterComponents(this)" />
+			<ul class="ui-kit__components-list _components-list"> </ul>
+		</div>
+		<div class="ui-kit__components">
+			{% include "/pages/ui-kit/select.twig" %}
+			{% include "/pages/ui-kit/range-slider.twig" %}
+			{% include "/pages/ui-kit/input.twig" %}
+			{% include "/pages/ui-kit/input-with-icon.twig" %}
+			{% include "/pages/ui-kit/input-masked.twig" %}
+			{% include "/pages/ui-kit/checkbox.twig" %}
+			{% include "/pages/ui-kit/radio.twig" %}
+			{% include "/pages/ui-kit/tabs.twig" %}
+			{% include "/pages/ui-kit/date-picker.twig" %}
+			{% include "/pages/ui-kit/adaptive.twig" %}
+			{% include "/pages/ui-kit/slider.twig" %}
+			{% include "/pages/ui-kit/button.twig" %}
+			{% include "/pages/ui-kit/validation.twig" %}
+			{% include '/pages/ui-kit/popup.twig' %}
+			{% include '/pages/ui-kit/input-file.twig' %}
+			{% include '/pages/ui-kit/pagination.twig' %}
+			{% include '/pages/ui-kit/notifications.twig' %}
+		</div>
 	</div>
 {% endblock %}

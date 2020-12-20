@@ -36,7 +36,7 @@ gulp.task('scripts', () =>
 	return gulp.src(jsFiles)
 		.pipe(babel())
 		.pipe(concat('main.min.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('pages'))
 		.pipe(browserSync.reload({stream: true}));
 });

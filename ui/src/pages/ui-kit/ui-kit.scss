@@ -1,3 +1,63 @@
+.ui-kit
+{
+	display: flex;
+	min-height: 100vh;
+	.container{width:auto;max-width:none;}
+	pre.prettyprint
+	{
+		padding-top: 17px;
+		padding-right: 17px;
+		padding-bottom: 0;
+		padding-left: 17px;
+		background: rgba(103, 115, 135, 0.05);
+		font-family: $accent-font;
+		font-size:13px;
+		border: none;
+		border-radius: 4px;
+		tab-size:25px;
+	}
+}
+.ui-kit__sidebar
+{
+	background: #F0F1F3;
+	padding:20px 15px;
+	flex-shrink: 0;
+	width:280px;
+	input
+	{
+		height:42px;
+		width:252px;
+		background: #fff;
+		padding:0 17px;
+		font-size:12px;
+		border:0px;
+		border-radius:4px;
+		margin-bottom: 32px;
+	}
+}
+.ui-kit__components-list
+{
+	margin-left:-15px;
+	margin-right: -15px;
+	li
+	{
+		padding-left:32px;
+		height:40px;
+		line-height:40px;
+		font-size:12px;
+		color: #191C21;
+		cursor:pointer;
+		&.active, &:hover
+		{
+			background: #E2E4E8;
+		}
+	}
+}
+.ui-kit__components
+{
+	flex: 1;
+}
+
 .ui-kit__section
 {
 	padding-top: 30px;
@@ -12,22 +72,6 @@
 	margin-bottom: 0;
 	margin-right: 10px;
 	&--pagination{margin-bottom: 30px;}
-}
-.ui-kit
-{
-	pre.prettyprint
-	{
-		padding-top: 17px;
-		padding-right: 17px;
-		padding-bottom: 0;
-		padding-left: 17px;
-		background: rgba(103, 115, 135, 0.05);
-		font-family: $accent-font;
-		font-size:13px;
-		border: none;
-		border-radius: 4px;
-		tab-size:25px;
-	}
 }
 .ui-kit__tabs-item
 {

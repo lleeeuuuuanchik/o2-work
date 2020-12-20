@@ -19,79 +19,75 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            img example <br />
-            <picture>
-                <source srcset="./img/logo.webp" type="image/webp">
-                <img src="./img/logo.png" alt="Logo" width="57px">
-            </picture>
-        </div>
-    </header>
     <div class="ui-kit">
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Select </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <div class="g-select _select">
-                        <input type="hidden" class="_selected-value" />
-                        <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
-                            <div class="g-select__selected-name _selected-text">Выберите страну</div>
-                            <div class="g-select__arrow">
-                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="g-select__error">Error: обязательное поле</div>
-                        <div class="g-select__list _options">
-                            <ul class="g-select__items">
-                                <li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
-                                <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
-                                <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
-                                <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
-                                <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
-                                <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
-                            </ul>
-                        </div>
+        <div class="ui-kit__sidebar">
+            <input type="text" placeholder="Поиск компонента" onkeyup="o2.uiKit.filterComponents(this)" />
+            <ul class="ui-kit__components-list _components-list"> </ul>
+        </div>
+        <div class="ui-kit__components">
+            <section class="ui-kit__section _select-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Select </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="g-select error _select">
-                        <input type="hidden" class="_selected-value" />
-                        <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
-                            <div class="g-select__selected-name _selected-text">Выберите страну</div>
-                            <div class="g-select__arrow">
-                                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
-                                </svg>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <div class="g-select _select">
+                            <input type="hidden" class="_selected-value" />
+                            <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+                                <div class="g-select__selected-name _selected-text">Выберите страну</div>
+                                <div class="g-select__arrow">
+                                    <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="g-select__error">Error: обязательное поле</div>
+                            <div class="g-select__list _options">
+                                <ul class="g-select__items">
+                                    <li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+                                    <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+                                    <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+                                    <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+                                    <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+                                    <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="g-select__error">Error: обязательное поле</div>
-                        <div class="g-select__list _options">
-                            <ul class="g-select__items">
-                                <li data-value="code-Australia" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Australia</li>
-                                <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
-                                <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
-                                <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
-                                <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
-                                <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
-                            </ul>
+
+                        <div class="g-select error _select">
+                            <input type="hidden" class="_selected-value" />
+                            <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+                                <div class="g-select__selected-name _selected-text">Выберите страну</div>
+                                <div class="g-select__arrow">
+                                    <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="g-select__error">Error: обязательное поле</div>
+                            <div class="g-select__list _options">
+                                <ul class="g-select__items">
+                                    <li data-value="code-Australia" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+                                    <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+                                    <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+                                    <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+                                    <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+                                    <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;div class=&quot;g-select _select&quot;&gt;
 &#x9;&lt;input type=&quot;hidden&quot; class=&quot;_selected-value&quot; /&gt;
 &#x9;&lt;div class=&quot;g-select__selected&quot; onclick=&quot;o2.gSelect.toggle(this)&quot;&gt;
@@ -113,84 +109,84 @@
 &#x9;&lt;/div&gt;
 &lt;/div&gt;
 			</pre>
-                </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Range slider </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-
-                    <div class="g-range-slider _range-slider-wrap">
-                        <div class="_range-slider" data-min="100" data-max="10000" data-start="1000,7000"></div>
-                        <input type="hidden" class="_min">
-                        <input type="hidden" class="_max">
-                        <div class="g-range-slider__labels">
-                            <div class="_label-from">0</div>
-                            <div class="_label-to">0</div>
-                        </div>
-                    </div> <br />
-
-                    <div class="g-range-slider _range-slider-wrap">
-                        <div class="_range-slider" data-min="1000" data-max="10000" data-start="2000"></div>
-                        <input type="hidden" class="_min">
-                        <input type="hidden" class="_max">
-                        <div class="g-range-slider__labels">
-                            <div class="_label-from">0</div>
-                            <div class="_label-to">0</div>
-                        </div>
                     </div>
                 </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-twig ui-kit__pretty">
+            </section>
+            <section class="ui-kit__section _range-slider-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Range slider </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+
+                        <div class="g-range-slider _range-slider-wrap">
+                            <div class="_range-slider" data-min="100" data-max="10000" data-start="1000,7000"></div>
+                            <input type="hidden" class="_min">
+                            <input type="hidden" class="_max">
+                            <div class="g-range-slider__labels">
+                                <div class="_label-from">0</div>
+                                <div class="_label-to">0</div>
+                            </div>
+                        </div> <br />
+
+                        <div class="g-range-slider _range-slider-wrap">
+                            <div class="_range-slider" data-min="1000" data-max="10000" data-start="2000"></div>
+                            <input type="hidden" class="_min">
+                            <input type="hidden" class="_max">
+                            <div class="g-range-slider__labels">
+                                <div class="_label-from">0</div>
+                                <div class="_label-to">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-twig ui-kit__pretty">
 // промежуток
 {% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 100, max: 10000, start: [1000,7000]} %}
 
 // одно значение
 {% include "./blocks/g-range-slider/g-range-slider.twig"  with {min: 1000, max: 10000, start: [2000]} %}
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Input </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _input-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Input </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <label class="g-input">
-                        <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                        <div class="g-input__sub">Error: invalid name</div>
-                    </label>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <label class="g-input">
+                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                            <div class="g-input__sub">Error: invalid name</div>
+                        </label>
 
 
-                    <label class="g-input error">
-                        <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                        <div class="g-input__sub">Error: invalid name</div>
-                    </label>
-                </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-twig ui-kit__pretty">
+                        <label class="g-input error">
+                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                            <div class="g-input__sub">Error: invalid name</div>
+                        </label>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-twig ui-kit__pretty">
 &lt;label class=&quot;g-input&quot;&gt;
 &#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input&quot; placeholder=&quot;Placeholder&quot;&gt;
 &#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
@@ -202,47 +198,47 @@
 &#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
 &lt;/label&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Input with icon </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _input-width-icon-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Input with icon </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <label class="g-input g-input--icon">
-                        <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                        <div class="g-input__icon">
-                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.823 15.3474L15.8228 15.3473L11.7811 11.144C12.7992 10.0396 13.4228 8.56499 13.4228 6.94721C13.4228 3.52968 10.6432 0.75 7.22562 0.75C3.80809 0.75 1.02841 3.52968 1.02841 6.94721C1.02841 10.3647 3.80809 13.1444 7.22562 13.1444C8.64235 13.1444 9.94927 12.666 10.9937 11.8636L15.0536 16.0858L15.2343 15.9131L15.054 16.0863L15.0538 16.0861C15.1589 16.1958 15.2994 16.25 15.4384 16.25C15.5715 16.25 15.7047 16.2002 15.8077 16.1014L15.808 16.1011C16.0203 15.8969 16.0266 15.5596 15.823 15.3474ZM7.22562 12.078C4.3966 12.078 2.09481 9.77623 2.09481 6.94721C2.09481 4.11819 4.3966 1.8164 7.22562 1.8164C10.0546 1.8164 12.3564 4.11819 12.3564 6.94721C12.3564 9.77622 10.0544 12.078 7.22562 12.078Z" stroke-width="0.5" />
-                            </svg>
-                        </div>
-                        <div class="g-input__sub">Error: invalid name</div>
-                    </label>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <label class="g-input g-input--icon">
+                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                            <div class="g-input__icon">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.823 15.3474L15.8228 15.3473L11.7811 11.144C12.7992 10.0396 13.4228 8.56499 13.4228 6.94721C13.4228 3.52968 10.6432 0.75 7.22562 0.75C3.80809 0.75 1.02841 3.52968 1.02841 6.94721C1.02841 10.3647 3.80809 13.1444 7.22562 13.1444C8.64235 13.1444 9.94927 12.666 10.9937 11.8636L15.0536 16.0858L15.2343 15.9131L15.054 16.0863L15.0538 16.0861C15.1589 16.1958 15.2994 16.25 15.4384 16.25C15.5715 16.25 15.7047 16.2002 15.8077 16.1014L15.808 16.1011C16.0203 15.8969 16.0266 15.5596 15.823 15.3474ZM7.22562 12.078C4.3966 12.078 2.09481 9.77623 2.09481 6.94721C2.09481 4.11819 4.3966 1.8164 7.22562 1.8164C10.0546 1.8164 12.3564 4.11819 12.3564 6.94721C12.3564 9.77622 10.0544 12.078 7.22562 12.078Z" stroke-width="0.5" />
+                                </svg>
+                            </div>
+                            <div class="g-input__sub">Error: invalid name</div>
+                        </label>
 
 
-                    <label class="g-input g-input--icon error">
-                        <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                        <div class="g-input__icon">
-                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.823 15.3474L15.8228 15.3473L11.7811 11.144C12.7992 10.0396 13.4228 8.56499 13.4228 6.94721C13.4228 3.52968 10.6432 0.75 7.22562 0.75C3.80809 0.75 1.02841 3.52968 1.02841 6.94721C1.02841 10.3647 3.80809 13.1444 7.22562 13.1444C8.64235 13.1444 9.94927 12.666 10.9937 11.8636L15.0536 16.0858L15.2343 15.9131L15.054 16.0863L15.0538 16.0861C15.1589 16.1958 15.2994 16.25 15.4384 16.25C15.5715 16.25 15.7047 16.2002 15.8077 16.1014L15.808 16.1011C16.0203 15.8969 16.0266 15.5596 15.823 15.3474ZM7.22562 12.078C4.3966 12.078 2.09481 9.77623 2.09481 6.94721C2.09481 4.11819 4.3966 1.8164 7.22562 1.8164C10.0546 1.8164 12.3564 4.11819 12.3564 6.94721C12.3564 9.77622 10.0544 12.078 7.22562 12.078Z" stroke-width="0.5" />
-                            </svg>
-                        </div>
-                        <div class="g-input__sub">Error: invalid name</div>
-                    </label>
-                </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+                        <label class="g-input g-input--icon error">
+                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                            <div class="g-input__icon">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.823 15.3474L15.8228 15.3473L11.7811 11.144C12.7992 10.0396 13.4228 8.56499 13.4228 6.94721C13.4228 3.52968 10.6432 0.75 7.22562 0.75C3.80809 0.75 1.02841 3.52968 1.02841 6.94721C1.02841 10.3647 3.80809 13.1444 7.22562 13.1444C8.64235 13.1444 9.94927 12.666 10.9937 11.8636L15.0536 16.0858L15.2343 15.9131L15.054 16.0863L15.0538 16.0861C15.1589 16.1958 15.2994 16.25 15.4384 16.25C15.5715 16.25 15.7047 16.2002 15.8077 16.1014L15.808 16.1011C16.0203 15.8969 16.0266 15.5596 15.823 15.3474ZM7.22562 12.078C4.3966 12.078 2.09481 9.77623 2.09481 6.94721C2.09481 4.11819 4.3966 1.8164 7.22562 1.8164C10.0546 1.8164 12.3564 4.11819 12.3564 6.94721C12.3564 9.77622 10.0544 12.078 7.22562 12.078Z" stroke-width="0.5" />
+                                </svg>
+                            </div>
+                            <div class="g-input__sub">Error: invalid name</div>
+                        </label>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;label class=&quot;g-input g-input--icon&quot;&gt;
 &#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input&quot; placeholder=&quot;Placeholder&quot;&gt;
 &#x9;&lt;div class=&quot;g-input__icon&quot;&gt;
@@ -260,35 +256,35 @@
 &#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid name&lt;/div&gt;
 &lt;/label&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Input masked </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _input-masked-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Input masked </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <label class="g-input">
-                        <input name="name" type="text" class="g-input__input _phone-mask" value="" placeholder="+7(___)___-__-__" autocomplete="off">
-                        <div class="g-input__sub">Error: invalid phone</div>
-                    </label>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <label class="g-input">
+                            <input name="name" type="text" class="g-input__input _phone-mask" value="" placeholder="+7(___)___-__-__" autocomplete="off">
+                            <div class="g-input__sub">Error: invalid phone</div>
+                        </label>
 
-                    <label class="g-input error">
-                        <input name="name" type="text" class="g-input__input _phone-mask" value="" placeholder="+7(___)___-__-__" autocomplete="off">
-                        <div class="g-input__sub">Error: invalid phone</div>
-                    </label> </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+                        <label class="g-input error">
+                            <input name="name" type="text" class="g-input__input _phone-mask" value="" placeholder="+7(___)___-__-__" autocomplete="off">
+                            <div class="g-input__sub">Error: invalid phone</div>
+                        </label> </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;label class=&quot;g-input&quot;&gt;
 &#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input _phone-mask&quot; value=&quot;&quot; placeholder=&quot;+7(___)___-__-__&quot; autocomplete=&quot;off&quot;&gt;
 &#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid phone&lt;/div&gt;
@@ -300,33 +296,33 @@
 &#x9;&lt;div class=&quot;g-input__sub&quot;&gt;Error: invalid phone&lt;/div&gt;
 &lt;/label&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Checkbox </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _checkbox-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Checkbox </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <label class="g-checkbox">
-                        <input type="checkbox" name="check" class="g-checkbox__input">
-                        <div class="g-checkbox__body">
-                            <span class="g-checkbox__box"></span>
-                            <span class="g-checkbox__text">Checkbox</span>
-                        </div>
-                    </label> </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <label class="g-checkbox">
+                            <input type="checkbox" name="check" class="g-checkbox__input">
+                            <div class="g-checkbox__body">
+                                <span class="g-checkbox__box"></span>
+                                <span class="g-checkbox__text">Checkbox</span>
+                            </div>
+                        </label> </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;label class=&quot;g-checkbox&quot;&gt;
 	&lt;input type=&quot;checkbox&quot; name=&quot;&quot; class=&quot;g-checkbox__input&quot;&gt;
 	&lt;div class=&quot;g-checkbox__body&quot;&gt;
@@ -335,39 +331,39 @@
 	&lt;/div&gt;
 &lt;/label&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Radio </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _radio-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Radio </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <label class="g-radio">
-                        <input type="radio" name="radio1" class="g-radio__input">
-                        <div class="g-radio__body">
-                            <span class="g-radio__box"></span>
-                            <span class="g-radio__text">Нет</span>
-                        </div>
-                    </label> <label class="g-radio">
-                        <input type="radio" name="radio1" class="g-radio__input">
-                        <div class="g-radio__body">
-                            <span class="g-radio__box"></span>
-                            <span class="g-radio__text">Да</span>
-                        </div>
-                    </label> </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <label class="g-radio">
+                            <input type="radio" name="radio1" class="g-radio__input">
+                            <div class="g-radio__body">
+                                <span class="g-radio__box"></span>
+                                <span class="g-radio__text">Нет</span>
+                            </div>
+                        </label> <label class="g-radio">
+                            <input type="radio" name="radio1" class="g-radio__input">
+                            <div class="g-radio__body">
+                                <span class="g-radio__box"></span>
+                                <span class="g-radio__text">Да</span>
+                            </div>
+                        </label> </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;div class=&quot;g-tab__content&quot;&gt;
 	&lt;label class=&quot;g-radio&quot;&gt;
 		&lt;input type=&quot;radio&quot; name=&quot;radio1&quot; class=&quot;g-radio__input&quot;&gt;
@@ -385,125 +381,128 @@
 	&lt;/label&gt;
 &lt;/div&gt;
 			</pre>
-                </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Tab </h2>
-                </div>
-                <div class="g-tabs _tabs-container">
-                    <ul class="g-tabs__menu">
-                        <li class="g-tabs__item _tab active" onclick="o2.gTabs.open(this, 1)">
-                            <a class="g-tabs__link" href="javascript:void(0);">Active</a>
-                        </li>
-                        <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 2)">
-                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
-                        </li>
-                        <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 3)">
-                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
-                        </li>
-                        <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 4)">
-                            <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
-                        </li>
-                    </ul>
-                    <div class="g-tabs__content open" data-tab="1"> Tab 1 content </div>
-                    <div class="g-tabs__content" data-tab="2"> Tab 2 content </div>
-                    <div class="g-tabs__content" data-tab="3"> Tab 3 content </div>
-                    <div class="g-tabs__content" data-tab="4"> Tab 4 content </div>
-                </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Date picker </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <div class="g-input g-date-picker">
-                        <input class="g-input__input" type="text" name="birthday" placeholder="Select date" value="" />
                     </div>
                 </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+            </section>
+            <section class="ui-kit__section _tabs-component">
+                <div class="container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Tab </h2>
+                    </div>
+                    <div class="g-tabs _tabs-container">
+                        <ul class="g-tabs__menu">
+                            <li class="g-tabs__item _tab active" onclick="o2.gTabs.open(this, 1)">
+                                <a class="g-tabs__link" href="javascript:void(0);">Active</a>
+                            </li>
+                            <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 2)">
+                                <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                            </li>
+                            <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 3)">
+                                <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                            </li>
+                            <li class="g-tabs__item _tab" onclick="o2.gTabs.open(this, 4)">
+                                <a class="g-tabs__link" href="javascript:void(0);">Inactive</a>
+                            </li>
+                        </ul>
+                        <div class="g-tabs__content open" data-tab="1"> Tab 1 content </div>
+                        <div class="g-tabs__content" data-tab="2"> Tab 2 content </div>
+                        <div class="g-tabs__content" data-tab="3"> Tab 3 content </div>
+                        <div class="g-tabs__content" data-tab="4"> Tab 4 content </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ui-kit__section _date-picker-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Date picker </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <div class="g-input g-date-picker">
+                            <input class="g-input__input" type="text" name="birthday" placeholder="Select date" value="" />
+                        </div>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;div class=&quot;g-input g-date-picker&quot;&gt;
 &#x9;&lt;input class=&quot;g-input__input&quot; type=&quot;text&quot; name=&quot;birthday&quot; placeholder=&quot;Select date&quot; value=&quot;&quot; /&gt;
 &lt;/div&gt;
 			</pre>
-                </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <h2 class="ui-kit__title"> Adaptive </h2>
-                <p>
-                    Используем гриды
-                    <a href="https://youtu.be/-fDqBEjfzGo">https://youtu.be/-fDqBEjfzGo</a><br>
-                    Подсказка
-                    <a href="http://grid.malven.co/">hhttp://grid.malven.co/</a>
-                </p>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Slider </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <div class="g-slider">
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
-                        <div class="g-slider__item-wr">
-                            <div class="g-slider__item"></div>
-                        </div>
                     </div>
                 </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+            </section>
+            <section class="ui-kit__section _adaptive-component">
+                <div class="container">
+                    <h2 class="ui-kit__title"> Adaptive </h2>
+                    <p>
+                        Используем гриды
+                        <a href="https://youtu.be/-fDqBEjfzGo">https://youtu.be/-fDqBEjfzGo</a><br>
+                        Подсказка
+                        <a href="http://grid.malven.co/">http://grid.malven.co/</a> <br />
+                        Пример того как использовать
+                        <a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/</a> <br />
+
+                    </p>
+                </div>
+            </section>
+            <section class="ui-kit__section _slider-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Slider </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <div class="g-slider">
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                            <div class="g-slider__item-wr">
+                                <div class="g-slider__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;div class=&quot;g-slider&quot;&gt;
 	{% for i in 0..9 %}
 	&lt;div class=&quot;g-slider__item-wr&quot;&gt;
@@ -512,133 +511,133 @@
 	{% endfor %}
 &lt;/div&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> Button </h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <button class="g-button">Button Text</button> </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-html ui-kit__pretty">
+            </section>
+            <section class="ui-kit__section _button-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Button </h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <button class="g-button">Button Text</button> </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-html ui-kit__pretty">
 &lt;button class=&quot;g-button '{'mod'}'&quot;&gt;Button Text&lt;/button&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container _tabs-container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title">Валидация форм</h2>
-                    <ul class="ui-kit__tabs-menu">
-                        <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
-                            <a href="javascript:void(0);">Visual</a>
-                        </li>
-                        <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
-                            <a href="javascript:void(0);">Show code</a>
-                        </li>
-                    </ul>
-                </div>
+            </section>
+            <section class="ui-kit__section _validation-component">
+                <div class="container _tabs-container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title">Валидация форм</h2>
+                        <ul class="ui-kit__tabs-menu">
+                            <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                                <a href="javascript:void(0);">Visual</a>
+                            </li>
+                            <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                                <a href="javascript:void(0);">Show code</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="ui-kit__tabs-content open" data-tab="1.2">
-                    <form onsubmit="return o2.authForm.submit(this)">
-                        <label class="g-input _field" data-call="empty">
-                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                            <div class="g-input__sub _error-msg">Error: invalid name</div>
-                        </label> <br /> <br />
-                        <label class="g-input _field" data-code="phone" data-call="empty phone">
-                            <input name="name" type="text" class="g-input__input  _phone-mask" placeholder="Placeholder">
-                            <div class="g-input__sub _error-msg">Error: invalid name</div>
-                        </label> <br /> <br />
-                        <label class="g-input _field" data-call="empty">
-                            <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
-                            <div class="g-input__sub _error-msg">Error: invalid name</div>
-                        </label>
-                        <div class="form-errors _global-errors"></div>
-                        <br />
-                        <br />
-                        <label class="g-input _field" data-call="empty">
-                            <textarea name="name" class="g-input__input g-input__input--textarea" placeholder="Placeholder"></textarea>
-                            <div class="g-input__sub _error-msg">Error: invalid name</div>
-                        </label>
-                        <br />
-                        <br />
-                        <label class="g-input _field" data-call="selected">
-                            <div class="g-select _select">
-                                <input type="hidden" class="_selected-value" />
-                                <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
-                                    <div class="g-select__selected-name _selected-text">Выберите страну</div>
-                                    <div class="g-select__arrow">
-                                        <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
-                                        </svg>
+                    <div class="ui-kit__tabs-content open" data-tab="1.2">
+                        <form onsubmit="return o2.authForm.submit(this)">
+                            <label class="g-input _field" data-call="empty">
+                                <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                                <div class="g-input__sub _error-msg">Error: invalid name</div>
+                            </label> <br /> <br />
+                            <label class="g-input _field" data-code="phone" data-call="empty phone">
+                                <input name="name" type="text" class="g-input__input  _phone-mask" placeholder="Placeholder">
+                                <div class="g-input__sub _error-msg">Error: invalid name</div>
+                            </label> <br /> <br />
+                            <label class="g-input _field" data-call="empty">
+                                <input name="name" type="text" class="g-input__input" placeholder="Placeholder">
+                                <div class="g-input__sub _error-msg">Error: invalid name</div>
+                            </label>
+                            <div class="form-errors _global-errors"></div>
+                            <br />
+                            <br />
+                            <label class="g-input _field" data-call="empty">
+                                <textarea name="name" class="g-input__input g-input__input--textarea" placeholder="Placeholder"></textarea>
+                                <div class="g-input__sub _error-msg">Error: invalid name</div>
+                            </label>
+                            <br />
+                            <br />
+                            <label class="g-input _field" data-call="selected">
+                                <div class="g-select _select">
+                                    <input type="hidden" class="_selected-value" />
+                                    <div class="g-select__selected" onclick="o2.gSelect.toggle(this)">
+                                        <div class="g-select__selected-name _selected-text">Выберите страну</div>
+                                        <div class="g-select__arrow">
+                                            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.6042 0.877323L11.6041 0.877358L6.49996 5.99154L1.38574 0.877323C1.20497 0.696556 0.9113 0.696556 0.730533 0.877323C0.549767 1.05809 0.549767 1.35176 0.730533 1.53253L6.16232 6.96431C6.25248 7.05448 6.36605 7.09988 6.48992 7.09988C6.60306 7.09988 6.72691 7.05492 6.81752 6.96431L12.2488 1.53305C12.4403 1.35222 12.4402 1.05811 12.2594 0.877323C12.0786 0.696556 11.7849 0.696557 11.6042 0.877323Z" fill="#191C21" stroke="#191C21" stroke-width="0.1" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="g-select__list _options">
+                                        <ul class="g-select__items">
+                                            <li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
+                                            <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
+                                            <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
+                                            <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
+                                            <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
+                                            <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="g-select__list _options">
-                                    <ul class="g-select__items">
-                                        <li data-value="code-Australia" class="g-select__item _option g-select__item--active" onclick="o2.gSelect.selecttItem(this)">Australia</li>
-                                        <li data-value="code-Argentina" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Argentina</li>
-                                        <li data-value="code-Belgium" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Belgium</li>
-                                        <li data-value="code-Canada" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Canada</li>
-                                        <li data-value="code-Italy" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">Italy</li>
-                                        <li data-value="code-New Zealand" class="g-select__item _option" onclick="o2.gSelect.selecttItem(this)">New Zealand</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="g-input__sub _error-msg">Error: invalid name</div>
-                        </label>
-                        <br />
-                        <br />
-                        <label class="g-input _field" data-call="checked">
-                            <label class="g-checkbox">
-                                <input type="checkbox" name="" class="g-checkbox__input">
-                                <div class="g-checkbox__body">
-                                    <span class="g-checkbox__box"></span>
-                                    <span class="g-checkbox__text"></span>
-                                </div>
+                                <div class="g-input__sub _error-msg">Error: invalid name</div>
                             </label>
-                            <label class="g-checkbox">
-                                <input type="checkbox" name="" class="g-checkbox__input">
-                                <div class="g-checkbox__body">
-                                    <span class="g-checkbox__box"></span>
-                                    <span class="g-checkbox__text"></span>
-                                </div>
+                            <br />
+                            <br />
+                            <label class="g-input _field" data-call="checked">
+                                <label class="g-checkbox">
+                                    <input type="checkbox" name="" class="g-checkbox__input">
+                                    <div class="g-checkbox__body">
+                                        <span class="g-checkbox__box"></span>
+                                        <span class="g-checkbox__text"></span>
+                                    </div>
+                                </label>
+                                <label class="g-checkbox">
+                                    <input type="checkbox" name="" class="g-checkbox__input">
+                                    <div class="g-checkbox__body">
+                                        <span class="g-checkbox__box"></span>
+                                        <span class="g-checkbox__text"></span>
+                                    </div>
+                                </label>
+                                <div class="g-input__sub _error-msg g-input__sub--width">Error: invalid name</div>
                             </label>
-                            <div class="g-input__sub _error-msg g-input__sub--width">Error: invalid name</div>
-                        </label>
-                        <br />
-                        <br />
-                        <input class="g-button" type="submit" value="Отправить" />
-                    </form>
-                    <style>
-                        .form-errors {
-                            padding: 10px;
-                            border: 1px solid red;
-                            display: none;
-                        }
+                            <br />
+                            <br />
+                            <input class="g-button" type="submit" value="Отправить" />
+                        </form>
+                        <style>
+                            .form-errors {
+                                padding: 10px;
+                                border: 1px solid red;
+                                display: none;
+                            }
 
-                        .form-errors.show {
-                            display: block;
-                        }
+                            .form-errors.show {
+                                display: block;
+                            }
 
-                        .g-input__sub--width {
-                            width: 120px;
-                        }
-                    </style>
-                </div>
-                <div class="ui-kit__tabs-content" data-tab="1.3">
-                    <pre class="prettyprint lang-twig ui-kit__pretty">
+                            .g-input__sub--width {
+                                width: 120px;
+                            }
+                        </style>
+                    </div>
+                    <div class="ui-kit__tabs-content" data-tab="1.3">
+                        <pre class="prettyprint lang-twig ui-kit__pretty">
 &lt;form onsubmit=&quot;return o2.authForm.submit(this)&quot;&gt;
 &#x9;&lt;label class=&quot;g-input _field&quot; data-call=&quot;empty&quot;&gt;
 &#x9;&#x9;&lt;input name=&quot;name&quot; type=&quot;text&quot; class=&quot;g-input__input&quot; placeholder=&quot;Placeholder&quot;&gt;
@@ -689,91 +688,88 @@
 &#x9;}
 &lt;/script&gt;
 			</pre>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <h2 class="ui-kit__title ui-kit__title--popup"> Popup </h2>
-                <button class="g-button" onclick="o2.gPopup.open('_testpopup')"> Show popup </button>
-                <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+            </section>
+            <section class="ui-kit__section _popup-component">
+                <div class="container">
+                    <h2 class="ui-kit__title ui-kit__title--popup"> Popup </h2>
+                    <button class="g-button" onclick="o2.gPopup.open('_testpopup')"> Show popup </button>
+                    <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
 
-                <div class="_testpopup" style="display:none;">
-                    <div class="g-popup__content _popup-content">
-                        <div onclick="o2.gPopup.close()" class="g-popup__clsoe">
-                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="4.94983" y1="4.94974" x2="12.0209" y2="12.0208" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
-                                <line x1="4.94983" y1="12.0208" x2="12.0209" y2="4.94975" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
-                            </svg> </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto earum, ex quis facere nostrum numquam alias perferendis tempora explicabo libero repellat enim quam, cum, quisquam quia voluptate natus distinctio nemo!</p>
-                        <p>Voluptatum, aspernatur quisquam ab quos! Dicta adipisci blanditiis molestias incidunt ipsam delectus nihil maiores ea architecto, voluptates. Labore error accusantium odio unde distinctio inventore temporibus provident hic aliquam, atque, ipsa.</p>
-                        <p>Quod autem nemo accusamus blanditiis perspiciatis enim aut quas saepe tempore. Aliquam ipsum maxime aliquid ratione a facilis corporis error odio accusantium reiciendis facere cumque, blanditiis praesentium nam iure voluptatibus.</p>
-                        <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+                    <div class="_testpopup" style="display:none;">
+                        <div class="g-popup__content _popup-content">
+                            <div onclick="o2.gPopup.close()" class="g-popup__clsoe">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4.94983" y1="4.94974" x2="12.0209" y2="12.0208" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
+                                    <line x1="4.94983" y1="12.0208" x2="12.0209" y2="4.94975" stroke="#191C21" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" />
+                                </svg> </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto earum, ex quis facere nostrum numquam alias perferendis tempora explicabo libero repellat enim quam, cum, quisquam quia voluptate natus distinctio nemo!</p>
+                            <p>Voluptatum, aspernatur quisquam ab quos! Dicta adipisci blanditiis molestias incidunt ipsam delectus nihil maiores ea architecto, voluptates. Labore error accusantium odio unde distinctio inventore temporibus provident hic aliquam, atque, ipsa.</p>
+                            <p>Quod autem nemo accusamus blanditiis perspiciatis enim aut quas saepe tempore. Aliquam ipsum maxime aliquid ratione a facilis corporis error odio accusantium reiciendis facere cumque, blanditiis praesentium nam iure voluptatibus.</p>
+                            <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="_testpopup-second" style="display:none;">
-                    <div class="g-popup__content _popup-content">
-                        <p>Просто сообщение - без крестика</p>
+                    <div class="_testpopup-second" style="display:none;">
+                        <div class="g-popup__content _popup-content">
+                            <p>Просто сообщение - без крестика</p>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> input-file </h2>
                 </div>
-                <div class="g-input-file__gallery"></div>
-                <label class="g-input-file__form">
-                    <input class="g-input-file__file-inp" id="g-input-file__file-inp" type="file" name="files" onclick="o2.gInputFile.fileSelection()" multiple>
-                    <div class="g-input-file__file-nm">Выберите файл</div>
-                </label>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <h2 class="ui-kit__title ui-kit__title--pagination"> Pagination </h2>
-                <div class="g-pagination">
-                    <div class="g-pagination__arrow g-pagination__arrow--left"></div>
-                    <div class="g-pagination__numbers">
-                        <div class="g-pagination__number">1</div>
-                        <div class="g-pagination__number">2</div>
-                        <div class="g-pagination__number">3</div>
-                        <div class="g-pagination__number">...</div>
-                        <div class="g-pagination__number">60</div>
+            </section>
+            <section class="ui-kit__section _input-file_component">
+                <div class="container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Input file </h2>
                     </div>
-                    <div class="g-pagination__arrow g-pagination__arrow--right">
+                    <div class="g-input-file__gallery"></div>
+                    <label class="g-input-file__form">
+                        <input class="g-input-file__file-inp" id="g-input-file__file-inp" type="file" name="files" onclick="o2.gInputFile.fileSelection()" multiple>
+                        <div class="g-input-file__file-nm">Выберите файл</div>
+                    </label>
+                </div>
+            </section>
+            <section class="ui-kit__section _pagination-component">
+                <div class="container">
+                    <h2 class="ui-kit__title ui-kit__title--pagination"> Pagination </h2>
+                    <div class="g-pagination">
+                        <div class="g-pagination__arrow g-pagination__arrow--left"></div>
+                        <div class="g-pagination__numbers">
+                            <div class="g-pagination__number">1</div>
+                            <div class="g-pagination__number">2</div>
+                            <div class="g-pagination__number">3</div>
+                            <div class="g-pagination__number">...</div>
+                            <div class="g-pagination__number">60</div>
+                        </div>
+                        <div class="g-pagination__arrow g-pagination__arrow--right">
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="ui-kit__section">
-            <div class="container">
-                <div class="ui-kit__wrapper">
-                    <h2 class="ui-kit__title"> notification </h2>
-                </div>
-                <div class="g-alert">
-                    <span class="g-alert__description">success</span>
-                    <div class="g-alert__item success">
-                        <span class="success__text">Данные были отпрвлены</span>
+            </section>
+            <section class="ui-kit__section _notifications-component">
+                <div class="container">
+                    <div class="ui-kit__wrapper">
+                        <h2 class="ui-kit__title"> Notification </h2>
                     </div>
-                    <span class="g-alert__description">error</span>
-                    <div class="g-alert__item error">
-                        <span class="error__text">Данные были отпрвлены</span>
+                    <div class="g-alert">
+                        <span class="g-alert__description">success</span>
+                        <div class="g-alert__item success">
+                            <span class="success__text">Данные были отпрвлены</span>
+                        </div>
+                        <span class="g-alert__description">error</span>
+                        <div class="g-alert__item error">
+                            <span class="error__text">Данные были отпрвлены</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 
 
-    <footer>
-        <div class="container">
-        </div>
-    </footer>
     <div class="g-popup _overlay"></div>
     <script type="text/javascript" src="./main.min.js" defer="" async=""></script>
 </body>
