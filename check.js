@@ -7,27 +7,45 @@ const fs = require('fs');
 
 var check =
 {
+	twigRegex: /class="([a-zA-Z0-9\-|_ ]*)"/g,
+	scssRegex: /\.([a-zA-Z0-9\-|_ ]*)\n/g,
 	start()
 	{
+		let twigErrors = null, scssErrors = null;
 		const tree = dirTree("./src/blocks/",{extensions:/\.twig$/},(item, PATH, stats) =>
 		{
-			fs.readFile(item.path, 'utf8', (err,data)=>
-			{
-				if (err)
-					return console.log(err);
+			const file = fs.readFileSync(item.path, 'utf8');
 
-				this.checkTwigFile(item,data);
-			});
+			if (!file)
+				process.exit(1);
+
+			twigErrors = this.checkFile(item, file, this.twigRegex);
 		});
-	},
+		scssErrors = this.checkScssFiles();
 
+		if ((scssErrors && scssErrors.length) || (twigErrors && twigErrors.length))
+			process.exit(1);
+	},
+	checkScssFiles()
+	{
+		let scssErrors = null;
+		const tree = dirTree("./src/blocks/",{extensions:/\.scss$/},(item, PATH, stats) =>
+		{
+			const file = fs.readFileSync(item.path, 'utf8');
+
+			if (!file)
+				process.exit(1);
+
+			scssErrors = this.checkFile(item, file, this.scssRegex);
+		});
+		return scssErrors;
+	},
 	/**
 	 * Console errors
 	 * return errors[]
 	 */
-	checkTwigFile(fileObject,fileContent)
+	checkFile(fileObject,fileContent,regex)
 	{
-		const regex = /class="([a-zA-Z0-9\-|_ ]*)"/g;
 		let m;
 		let errors = [];
 

@@ -4,8 +4,12 @@
   "description": "Gulp project for work",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "node check.js"
   },
+  "pre-commit": [
+    "check"
+  ],
   "author": "o2",
   "license": "ISC",
   "devDependencies": {
@@ -28,7 +32,8 @@
     "gulp-svgmin": "^2.1.0",
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-webp": "^4.0.1"
+    "gulp-webp": "^4.0.1",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "directory-tree": "^2.2.5",
