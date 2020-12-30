@@ -8,7 +8,8 @@ const fs = require('fs');
 var check =
 {
 	twigRegex: /class="([a-zA-Z0-9\-|_ ]*)"/g,
-	scssRegex: /\.([a-zA-Z0-9\-|_ ]*)\n/g,
+	scssRegex: /\.([a-zA-Z0-9\-|_]*)/g,
+	maxScssNextingLevel: 10,
 	start()
 	{
 		let twigErrors = null, scssErrors = null;
@@ -37,8 +38,34 @@ var check =
 				process.exit(1);
 
 			scssErrors = this.checkFile(item, file, this.scssRegex);
+			scssErrors.push(...this.checkNestingLevelError(item, file));
 		});
 		return scssErrors;
+	},
+	checkNestingLevelError(fileObject, fileContent)
+	{
+		let m;
+		let errors = [];
+		const regex = /{[^}].*?{.*?}/g;
+		const nesting = regex.exec(fileContent);
+
+		while ((m = regex.exec(fileContent.replace(/\s/g, ''))) !== null)
+		{
+			if (m.index === regex.lastIndex)
+				regex.lastIndex++;
+
+			if (!m[0])
+				continue;
+
+			let nestedLevels = m[0].match(this.scssRegex);
+			if (nestedLevels && nestedLevels.length > this.maxScssNextingLevel)
+			{
+				let error = `Max nesting level is ${this.maxScssNextingLevel}, found ${nestedLevels.length} Path "${fileObject.path}"`;
+				errors.push(error);
+				console.log(error);
+			}
+		}
+		return errors;
 	},
 	/**
 	 * Console errors
