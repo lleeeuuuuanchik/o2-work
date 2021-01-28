@@ -13,7 +13,8 @@ var gulp             = require('gulp'),
 	htmlbeautify     = require('gulp-html-beautify'),
 	svgmin           = require('gulp-svgmin'),
 	webp 			 = require('gulp-webp'),
-	gcmq             = require('gulp-group-css-media-queries');
+	gcmq             = require('gulp-group-css-media-queries'),
+	map 			 = require('map-stream');
 
 // таск для компиляции scss в css
 gulp.task('sass', () =>
@@ -100,6 +101,7 @@ gulp.task('watch', function()
 {
 	gulp.watch(['scss/**/*.scss','src/**/*.scss'], gulp.parallel('sass'));
 	gulp.watch('src/**/*.twig', gulp.parallel('twig'));
+	gulp.watch('src/**/*.twig', gulp.parallel('pages-list'));
 	gulp.watch(['src/**/*.js'], gulp.parallel('scripts'));
 	gulp.watch('src/**/*.js', gulp.parallel(() => { browserSync.reload(); }));
 	gulp.watch('img/*', gulp.parallel(() => { browserSync.reload(); }));
@@ -176,3 +178,31 @@ gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img'
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));
+
+gulp.task('pages-list', () =>
+{
+	let fileList = [];
+	let pathSetting = ['./pages/*.html', '!./pages/_pages.html'];
+	return gulp.src(pathSetting)
+		.pipe(
+			map(function(file, cb)
+			{
+				var f = file.path.replace(file.cwd, '.');
+				fileList.push((f).substr((f).lastIndexOf('/') + 1,(f).lastIndexOf('.') - 1));
+				cb(null, null);
+			}))
+		.on('end', () =>
+		{
+			gulp.src('./src/_pages.twig')
+				.pipe(
+					twig({
+						base:'./src/',
+						data:
+						{
+							fileList: fileList
+						}
+					})
+				)
+				.pipe(gulp.dest('./pages/'));
+		});
+});

@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "directory-tree": "^2.2.5",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "map-stream": "0.0.7"
   },
   "repository": {
     "type": "git",
