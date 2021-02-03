@@ -182,7 +182,7 @@ gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg
 gulp.task('pages-list', () =>
 {
 	let fileList = [];
-	let pathSetting = ['./pages/*.html', '!./pages/_pages.html'];
+	let pathSetting = ['./pages/*.html', '!./pages/pages.html'];
 	return gulp.src(pathSetting)
 		.pipe(
 			map(function(file, cb)
@@ -193,7 +193,7 @@ gulp.task('pages-list', () =>
 			}))
 		.on('end', () =>
 		{
-			gulp.src('./src/_pages.twig')
+			gulp.src('./src/pages.twig')
 				.pipe(
 					twig({
 						base:'./src/',
