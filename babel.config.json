@@ -5,7 +5,12 @@
 	"env": {
 		"test": {
 			"presets": [
-				"@babel/preset-env"
+				"@babel/preset-env",
+				{
+					"targets": {
+						"esmodules": true
+					}
+				}
 			],
 			"plugins": [
 				"@babel/plugin-transform-object-assign"
@@ -16,7 +21,10 @@
 				[
 					"@babel/preset-env",
 					{
-						"modules": false
+						"modules": false,
+						"targets": {
+							"esmodules": true
+						}
 					}
 				]
 			],
