@@ -53,24 +53,24 @@ gulp.task('scripts-build', () =>
 		.pipe(gulp.dest('pages'));
 });
 
+const htmlbeautifyOptions = {
+	indentSize: 4,
+	unformatted: [
+		'abbr', 'area', 'b', 'bdi', 'bdo', 'br', 'cite',
+		'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'ins', 'kbd', 'keygen', 'map', 'mark', 'math', 'meter', 'noscript',
+		'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'small',
+		'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
+		'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt', 'a'
+	],
+	"indent_level": 1,
+	"indent_with_tabs": true,
+};
+
 // приводим впорядок скомпилированный код после pug-a
 gulp.task('htmlbeautify', () =>
 {
-	var options = {
-		indentSize: 4,
-		unformatted: [
-			'abbr', 'area', 'b', 'bdi', 'bdo', 'br', 'cite',
-			'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'ins', 'kbd', 'keygen', 'map', 'mark', 'math', 'meter', 'noscript',
-			'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'small',
-			'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
-			'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt', 'a'
-		],
-		"indent_char": " ",
-		"indent_level": 1,
-		"indent_with_tabs": false,
-	};
 	gulp.src('./*.html')
-		.pipe(htmlbeautify(options))
+		.pipe(htmlbeautify(htmlbeautifyOptions))
 		.pipe(gulp.dest('./'));
 });
 
@@ -79,7 +79,7 @@ gulp.task('twig', function ()
 	return gulp.src(['./src/*.twig'])
 		.pipe(plumber())
 		.pipe(twig({base:'./src/'}))
-		.pipe(htmlbeautify())
+		.pipe(htmlbeautify(htmlbeautifyOptions))
 		.pipe(gulp.dest("pages/",))
 		.pipe(browserSync.reload({stream: true}));
 });
@@ -174,7 +174,7 @@ gulp.task('svg-min', () =>
 });
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', async () => { console.log('builded');}));
+gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', 'htmlbeautify', async () => { console.log('builded');}));
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));
