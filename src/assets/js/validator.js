@@ -3,30 +3,29 @@ class O2Validator
 	constructor(formInstance)
 	{
 		this.formInstance = formInstance;
-		this.initCallbacks();
 	}
 
 	validate()
 	{
 		this.errors = [];
 		let $formFields = $(this.formInstance).find('._field'),
-			hasErrors   = false,
-			self        = this;
-		$formFields.each(function(fieldIndex,field)
-		{
-			$(field).removeClass('error');
-			let callbacks = $(field).data('call');
-			if(typeof callbacks == 'undefined')
-				return true;
+			hasErrors   = false;
 
-			callbacks = callbacks.replace(/ +/g,' ').trim().split(' ');
-			for(let callback of callbacks)
+		$formFields.each((i, field) =>
+		{
+			const $field = $(field);
+
+			$field.removeClass('error');
+
+			const callbacks = O2Validator.parseCalls($field);
+			if(!callbacks) return true;
+
+			for (let callback of callbacks)
 			{
-				if(!self.callbacks[callback].call(self,field))
+				if(!O2Validator.callbacks[callback]($field))
 				{
 					hasErrors = true;
-					$(field).addClass('error');
-					return true;
+					$field.addClass('error');
 				}
 			}
 
@@ -35,69 +34,98 @@ class O2Validator
 		return !hasErrors;
 	}
 
-	initCallbacks()
+	static fieldValidate(fieldInstance)
 	{
-		this.callbacks =
-		{
-			/**
-			 * @return bool
-			 */
-			phone(field)
-			{
-				let $input = $(field).find('input');
-				const regex = /^((\+7|7|8)+\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2})$/;
-				if(regex.test($input.val()))
-					return true;
-				this.setMessage(field,'Телефон введен не корректно');
-				return false;
-			},
+		let $field = $(fieldInstance)
+		$field.removeClass('error');
 
-			empty(field)
+		let callbacks = O2Validator.parseCalls($field)
+		if(!callbacks) return true;
+
+		for (let callback of callbacks)
+		{
+			if (!O2Validator.callbacks[callback]($field))
 			{
-				let $input = $(field).find('input');
-				let $textarea = $(field).find('textarea');
-				if($input.val() == '' || $textarea.val() =='')
-				{
-					this.setMessage(field,'Заполните поле');
-					return false;
-				}
-				return true;
-			},
-			selected(field)
-			{
-				let $input = $(field).find('input');
-				if($input.val() == '')
-				{
-					this.setMessage(field,'Заполните поле');
-					return false;
-				}
-				return true;
-			},
-			checked(field)
-			{
-				let $input = $(field).find('input');
-				let checker = false;
-				$input.each(function()
-				{
-					if($(this).prop('checked'))
-						checker = true;
-				});
-				if(checker)
-					return true;
-				this.setMessage(field,'Ничего не выбрано');
+				$field.addClass('error');
 				return false;
-			},
-		};
+			}
+		}
+		return true
+
 	}
 
-	setMessage(field,msg)
+	static parseCalls($field)
 	{
-		$(field).find('._error-msg').html(msg);
+		const callbacks = $field.data('call');
+
+		return callbacks && callbacks.replace(/ +/g,' ').trim().split(' ')
+	}
+
+
+	static callbacks =
+	{
+		/**
+		 * @return bool
+		 */
+		phone($field)
+		{
+			let $input = $field.find('input');
+			const regex = /^((\+7|7|8)+\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2})$/;
+			if(regex.test($input.val()))
+				return true;
+			O2Validator.setMessage($field,'Телефон введен не корректно');
+			return false;
+		},
+
+		empty($field)
+		{
+			let $input = $field.find('input');
+			let $textarea = $field.find('textarea');
+			if($input.val() == '' || $textarea.val() =='')
+			{
+				O2Validator.setMessage($field,'Заполните поле');
+				return false;
+			}
+			return true;
+		},
+		selected($field)
+		{
+			let $input = $field.find('input');
+			if($input.val() == '')
+			{
+				O2Validator.setMessage($field,'Заполните поле');
+				return false;
+			}
+			return true;
+		},
+		checked($field)
+		{
+			let $input = $field.find('input');
+			let checker = false;
+			$input.each(function()
+			{
+				if($(this).prop('checked'))
+					checker = true
+			})
+			if(checker)
+				return true
+			O2Validator.setMessage($field,'Ничего не выбрано');
+			return false
+		},
+		email($field)
+		{
+			let $input = $field.find('input');
+			const regex = /\S+@\S+\.\S+/;
+			if(regex.test($input.val())) return true
+
+			O2Validator.setMessage($field,'Адрес почты введен не корректно');
+			return false;
+		}
 	}
 
 	showGlobalErrors()
 	{
-		let errorsHtml = this.errors.join('</li><li>');
+		let errorsHtml = this.errors.join('</li><li>')
 		let $errorsBlock = $(this.formInstance).find('._global-errors');
 		$errorsBlock.html(`<ul><li>${errorsHtml}</li></ul>`);
 
@@ -109,11 +137,16 @@ class O2Validator
 
 	setErrors(errors)
 	{
-		for(let fieldCode in errors)
+		for(fieldCode in errors)
 		{
 			let $field = $(this.formInstance).find(`._field[data-code="${fieldCode}"]`);
 			$field.addClass('error');
-			this.setMessage($field[0],errors[fieldCode]);
+			O2Validator.setMessage($field[0],errors[fieldCode]);
 		}
+	}
+
+	static setMessage($field, msg)
+	{
+		$field.find('._error-msg').html(msg)
 	}
 }
