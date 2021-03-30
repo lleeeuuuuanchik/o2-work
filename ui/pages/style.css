@@ -2345,6 +2345,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-bottom: 10px;
 }
 
+.g-yamap__map {
+  width: 700px;
+  height: 500px;
+}
+
 /* pages */
 
 .ui-kit {

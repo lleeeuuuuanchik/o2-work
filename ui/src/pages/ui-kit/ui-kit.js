@@ -51,6 +51,7 @@ o2.uiKit =
 		{name:'Pagination',class:'._pagination-component'},
 		{name:'Notifications',class:'._notifications-component'},
 		{name:'Input file',class:'._input-file_component'},
+		{name:'Yamap',class:'._yamap-component'},
 	],
 	init()
 	{
