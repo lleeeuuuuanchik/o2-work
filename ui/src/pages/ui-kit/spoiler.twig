@@ -1,0 +1,109 @@
+<section class="ui-kit__section _spoiler-component">
+    <div class="container">
+        <div class="container _tabs-container">
+            <div class="ui-kit__wrapper">
+                <h2 class="ui-kit__title"> Spoiler </h2>
+                <ul class="ui-kit__tabs-menu">
+                    <li class="ui-kit__tabs-item _tab active" onclick="o2.gTabs.open(this, 1.2)">
+                        <a href="javascript:void(0);">Visual</a>
+                    </li>
+                    <li class="ui-kit__tabs-item _tab" onclick="o2.gTabs.open(this, 1.3)">
+                        <a href="javascript:void(0);">Show code</a>
+                    </li>
+                </ul>
+            </div>
+
+        <div class="ui-kit__tabs-content open" data-tab="1.2">
+            {% include "blocks/g-spoiler/g-spoiler.twig" %}
+        </div>
+
+        <div class="ui-kit__tabs-content" data-tab="1.3">
+            <pre class="prettyprint lang-html ui-kit__pretty">
+&lt;div class=&quot;g-spoiler _g-spoiler&quot;&gt;
+    &lt;div class=&quot;g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this)&quot;&gt;
+            Title 1
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this)&quot;&gt;
+            Title 2
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 style=&quot;margin-top: 50px;&quot;&gt;Отображается максимум 1&lt;/h3&gt;
+
+&lt;div class=&quot;g-spoiler _g-spoiler&quot;&gt;
+    &lt;div class=&quot;g-spoiler__item _g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this, 'one')&quot;&gt;
+            Title 1
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;g-spoiler__item _g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this, 'one')&quot;&gt;
+            Title 2
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 style=&quot;margin-top: 50px;&quot;&gt;Отображается всегда только 1&lt;/h3&gt;
+
+&lt;div class=&quot;g-spoiler _g-spoiler&quot;&gt;
+    &lt;div class=&quot;g-spoiler__item _g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title g-spoiler__title--active&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this, 'onlyOne')&quot;&gt;
+            Title 1
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot; style=&quot;display: block;&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;g-spoiler__item _g-spoiler__item&quot;&gt;
+        &lt;div class=&quot;g-spoiler__title _g-spoiler__title&quot; onclick=&quot;o2.gSpoiler.spoilerToggle(this, 'onlyOne')&quot;&gt;
+            Title 2
+        &lt;/div&gt;
+        &lt;ul class=&quot;g-spoiler__list _g-spoiler__list&quot;&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 1&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 2&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 3&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 4&lt;/li&gt;
+            &lt;li class=&quot;g-spoiler__list-item&quot;&gt;Item 5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</section>

@@ -2350,6 +2350,105 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   height: 500px;
 }
 
+.g-spoiler {
+  width: 354px;
+  min-height: 44px;
+  border: 1px solid rgba(103, 115, 135, 0.7);
+}
+
+.g-spoiler__item {
+  border-bottom: 1px solid rgba(103, 115, 135, 0.7);
+}
+
+.g-spoiler__item:last-child {
+  border-bottom: none;
+}
+
+.g-spoiler__title {
+  height: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(103, 115, 135, 0);
+  padding: 0 15px;
+  position: relative;
+  -webkit-transition: border-bottom .3s ease;
+  -o-transition: border-bottom .3s ease;
+  transition: border-bottom .3s ease;
+}
+
+.g-spoiler__title::before,
+.g-spoiler__title::after {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background: rgba(103, 115, 135, 0.7);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.g-spoiler__title::before {
+  right: 28px;
+  -webkit-transform: translate(-50%) rotate(45deg);
+  -ms-transform: translate(-50%) rotate(45deg);
+  transform: translate(-50%) rotate(45deg);
+}
+
+.g-spoiler__title::after {
+  -webkit-transform: translate(-50%) rotate(-45deg);
+  -ms-transform: translate(-50%) rotate(-45deg);
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.g-spoiler__title--active {
+  border-bottom-color: rgba(103, 115, 135, 0.7);
+}
+
+.g-spoiler__title--active::before {
+  -webkit-transform: translate(-50%) rotate(-45deg);
+  -ms-transform: translate(-50%) rotate(-45deg);
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.g-spoiler__title--active::after {
+  -webkit-transform: translate(-50%) rotate(45deg);
+  -ms-transform: translate(-50%) rotate(45deg);
+  transform: translate(-50%) rotate(45deg);
+}
+
+.g-spoiler__list {
+  padding: 0 15px;
+  display: none;
+}
+
+.g-spoiler__list-item {
+  height: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(103, 115, 135, 0.7);
+}
+
+.g-spoiler__list-item:last-child {
+  border: none;
+}
+
 /* pages */
 
 .ui-kit {

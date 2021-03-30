@@ -52,6 +52,7 @@ o2.uiKit =
 		{name:'Notifications',class:'._notifications-component'},
 		{name:'Input file',class:'._input-file_component'},
 		{name:'Yamap',class:'._yamap-component'},
+		{name:'Spoiler',class:'._spoiler-component'},
 	],
 	init()
 	{
