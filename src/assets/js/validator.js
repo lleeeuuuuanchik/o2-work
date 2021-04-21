@@ -34,9 +34,9 @@ class O2Validator
 		return !hasErrors;
 	}
 
-	static fieldValidate(fieldInstance)
+	static fieldValidate(inputInstance)
 	{
-		let $field = $(fieldInstance)
+		let $field = $(inputInstance).parent('._field');
 		$field.removeClass('error');
 
 		let callbacks = O2Validator.parseCalls($field)

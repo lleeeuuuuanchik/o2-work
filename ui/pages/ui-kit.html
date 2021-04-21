@@ -700,6 +700,13 @@
                     <h2 class="ui-kit__title ui-kit__title--popup"> Popup </h2>
                     <button class="g-button" onclick="o2.gPopup.open('_testpopup')"> Show popup </button>
                     <button class="g-button" onclick="o2.gPopup.open('_testpopup-second')">show popup2</button>
+                    <h3>Правило использования попапов:</h3>
+                    <ul>
+                        <li>- Переносим g-popup c ui в наш проект</li>
+                        <li>- Подключаем его стили в style.scss</li>
+                        <li>- Подключаем попап в шаблоне {% include /blocks/g-popup/g-popup.twig  %}</li>
+                        <li>- Для каждого нового попапа создаем отдельный twig файл в /blocks/g-popup/ в нашем проекте</li>
+                    </ul>
 
                     <div class="_testpopup" style="display:none;">
                         <div class="g-popup__content _popup-content">
