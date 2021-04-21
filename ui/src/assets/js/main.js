@@ -21,8 +21,9 @@ const o2 =
 	{
 		this.gRangeSlider.init();
 		this.gDatePicker.init();
-		this.innputMask.init()
-		this.initSlider()
+		this.innputMask.init();
+		this.initSlider();
+		this.gYamap.init();
 	},
 	/**
 	* отслеживание клика вне блока
