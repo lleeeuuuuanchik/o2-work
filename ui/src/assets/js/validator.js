@@ -109,7 +109,7 @@ class O2Validator
 
 	setErrors(errors)
 	{
-		for(fieldCode in errors)
+		for(let fieldCode in errors)
 		{
 			let $field = $(this.formInstance).find(`._field[data-code="${fieldCode}"]`);
 			$field.addClass('error');
