@@ -5,78 +5,25 @@
 /* Mixins:
    ========================================================================== */
 
-/* Fonts Helpers:
-	 Read more: https://github.com/vedees/webpack-template/blob/master/README.md#add-fonts
-	 ========================================================================== */
-
-/*
-	By default template support only modern format fonts
-	Without svg. Only: .woff, .woffs
-	if ypu need svg comments lines bellow and uncomments "Fonts helper all format fonts"
-
-	Usage:
-	  1. Put your font to `src/assets/fonts/FOLDERNAME/FONTNAME`
-		FOLLOW: Files Required
-		Example: .woff, .woffs formats
-	  2. Go to fonts.scss
-	  3. Use mixon
-		Example: @include font-face("OpenSans", "../fonts/OpenSans/opensans");
-
-	  Required parameters: @family, @family
-	  Minor parameters: @weight, @style, @pipeline
-
-	  Example Base:
-		@include font-face("OpenSans", "../fonts/OpenSans/opensans");
-	  Example Situation:
-		@include font-face("OpenSans", "../fonts/OpenSans/opensansItalic", 400, italic);
-  */
-
 /* base */
 
-@font-face {
-  font-family: 'Roboto-mono';
-  src: url("./fonts/Roboto_mono/Light/RobotoMono-Light.eot");
-  src: url("./fonts/Roboto_mono/Light/RobotoMono-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto_mono/Light/RobotoMono-Light.woff2") format("woff2"), url("./fonts/Roboto_mono/Light/RobotoMono-Light.woff") format("woff"), url("./fonts/Roboto_mono/Light/RobotoMono-Light.svg#RobotoMono-Light") format("svg"), url("./fonts/Roboto_mono/Light/RobotoMono-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+/*
+Пример подключения
+-------------------
+@font-face
+{
+	font-family: 'Roboto-mono';
+	src: url('./fonts/Roboto_mono/Light/RobotoMono-Light.eot');
+	src: url('./fonts/Roboto_mono/Light/RobotoMono-Light.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/Roboto_mono/Light/RobotoMono-Light.woff2') format('woff2'),
+		url('./fonts/Roboto_mono/Light/RobotoMono-Light.woff') format('woff'),
+		url('./fonts/Roboto_mono/Light/RobotoMono-Light.svg#RobotoMono-Light') format('svg'),
+		url('./fonts/Roboto_mono/Light/RobotoMono-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-
-@font-face {
-  font-family: 'Roboto-mono';
-  src: url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.eot");
-  src: url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.woff2") format("woff2"), url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.woff") format("woff"), url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.svg#RobotoMono-Bold") format("svg"), url("./fonts/Roboto_mono/Bold/RobotoMono-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roboto-mono';
-  src: url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.eot");
-  src: url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.woff2") format("woff2"), url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.woff") format("woff"), url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.svg#RobotoMono-Thin") format("svg"), url("./fonts/Roboto_mono/Thin/RobotoMono-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roboto-mono';
-  src: url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.eot");
-  src: url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.woff2") format("woff2"), url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.woff") format("woff"), url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.svg#RobotoMono-Medium") format("svg"), url("./fonts/Roboto_mono/Medium/RobotoMono-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Roboto-mono';
-  src: url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.eot");
-  src: url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.woff2") format("woff2"), url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.woff") format("woff"), url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.svg#RobotoMono-Regular") format("svg"), url("./fonts/Roboto_mono/Regular/RobotoMono-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+*/
 
 /*  Переменные со шрифтами  */
 
@@ -616,40 +563,11 @@ a:focus {
   padding: 0 20px;
 }
 
-.pln {
-  color: #000;
-}
-
-pre.prettyprint {
-  padding: 2px;
-  border: 1px solid #888;
-}
-
-ol.linenums {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L5,
-li.L6,
-li.L7,
-li.L8 {
-  list-style-type: none;
-}
-
-li.L1,
-li.L3,
-li.L5,
-li.L7,
-li.L9 {
-  background: #eee;
-}
-
 /* blocks */
+
+/* Пример подключения*/
+
+/* @import 'blocks/component/component'; */
 
 /* pages */
 
@@ -670,100 +588,4 @@ html {
   font-size: 13px;
   color: #000;
   -webkit-font-smoothing: antialiased;
-}
-
-@media screen {
-  .str {
-    color: #080;
-  }
-
-  .kwd {
-    color: #008;
-  }
-
-  .com {
-    color: #800;
-  }
-
-  .typ {
-    color: #606;
-  }
-
-  .lit {
-    color: #066;
-  }
-
-  .clo,
-  .opn,
-  .pun {
-    color: #660;
-  }
-
-  .tag {
-    color: #008;
-  }
-
-  .atn {
-    color: #606;
-  }
-
-  .atv {
-    color: red;
-  }
-
-  .dec,
-  .var {
-    color: #606;
-  }
-
-  .fun {
-    color: red;
-  }
-}
-
-@media print, projection {
-  .kwd,
-  .tag,
-  .typ {
-    font-weight: 700;
-  }
-
-  .str {
-    color: #060;
-  }
-
-  .kwd {
-    color: #006;
-  }
-
-  .com {
-    color: #600;
-    font-style: italic;
-  }
-
-  .typ {
-    color: #404;
-  }
-
-  .lit {
-    color: #044;
-  }
-
-  .clo,
-  .opn,
-  .pun {
-    color: #440;
-  }
-
-  .tag {
-    color: #006;
-  }
-
-  .atn {
-    color: #404;
-  }
-
-  .atv {
-    color: red;
-  }
 }
