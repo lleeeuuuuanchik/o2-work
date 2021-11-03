@@ -44,17 +44,6 @@ gulp.task('scripts', () =>
 		.pipe(browserSync.reload({stream: true}));
 });
 
-// таск для сборки, транспалирования и сжатия скриптов
-gulp.task('scripts-build', () =>
-{
-	process.env.NODE_ENV = "release";
-	return gulp.src(jsFiles)
-		.pipe(babel())
-		.pipe(concat('main.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('pages'));
-});
-
 const htmlbeautifyOptions = {
 	indentSize: 4,
 	unformatted: [
@@ -202,7 +191,7 @@ gulp.task('pages-list', () =>
 
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', 'htmlbeautify', async () => { console.log('builded');}));
+gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts', 'img', 'htmlbeautify', async () => { console.log('builded');}));
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'pages-list', 'scripts',  () => { console.log('dev start');}));
