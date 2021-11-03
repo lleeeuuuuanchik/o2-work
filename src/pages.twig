@@ -1,11 +1,18 @@
 {% extends "layouts/layout.twig" %}
 
 {% block page %}
-<ol>
-	{% for page in fileList %}
-	<li>
-		<a href="http://localhost:3000/{{ page }}">{{ page }}</a>
-	</li>
-	{% endfor %}
-</ol>
+	<h3>Сверстанные странцы</h3>
+	<ul>
+		{% for page in fileList %}
+			<li>
+				<a href="http://localhost:3000/{{ page }}">{{ page }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<style>
+		h3{padding:30px 0;}
+		h3,ul{margin:0 auto;width:400px;}
+		ul li{padding:10px 15px; background:#efefef; margin-bottom:6px;}
+		ul li a{color:#333;}
+	</style>
 {% endblock %}

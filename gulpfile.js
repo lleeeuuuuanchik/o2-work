@@ -76,7 +76,7 @@ gulp.task('htmlbeautify', () =>
 
 gulp.task('twig', function ()
 {
-	return gulp.src(['./src/*.twig'])
+	return gulp.src(['./src/*.twig','!./src/pages.twig'])
 		.pipe(plumber())
 		.pipe(twig({base:'./src/'}))
 		.pipe(htmlbeautify(htmlbeautifyOptions))
@@ -173,36 +173,34 @@ gulp.task('svg-min', () =>
 		.pipe(gulp.dest('pages/svg'));
 });
 
-// сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', 'htmlbeautify', async () => { console.log('builded');}));
-
-// основной таск, который запускает вспомогательные
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));
-
+// собирает список сверстанных страниц
 gulp.task('pages-list', () =>
 {
 	let fileList = [];
 	let pathSetting = ['./pages/*.html', '!./pages/pages.html'];
 	return gulp.src(pathSetting)
-		.pipe(
-			map(function(file, cb)
-			{
-				var f = file.path.replace(file.cwd, '.');
-				fileList.push((f).substr((f).lastIndexOf('/') + 1,(f).lastIndexOf('.') - 1));
-				cb(null, null);
-			}))
+		.pipe(map(function(file, cb)
+		{
+			var f = file.path.replace(file.cwd, '.');
+			fileList.push((f).substr((f).lastIndexOf('/') + 1,(f).lastIndexOf('.') - 1));
+			cb(null, null);
+		}))
 		.on('end', () =>
 		{
 			gulp.src('./src/pages.twig')
 				.pipe(
 					twig({
 						base:'./src/',
-						data:
-						{
-							fileList: fileList
-						}
+						data: { fileList: fileList }
 					})
 				)
 				.pipe(gulp.dest('./pages/'));
 		});
 });
+
+
+// сборка проекта
+gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', 'htmlbeautify', async () => { console.log('builded');}));
+
+// основной таск, который запускает вспомогательные
+gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'pages-list', 'scripts',  () => { console.log('dev start');}));
