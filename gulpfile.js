@@ -57,14 +57,6 @@ const htmlbeautifyOptions = {
 	"indent_with_tabs": true,
 };
 
-// приводим впорядок скомпилированный код после pug-a
-gulp.task('htmlbeautify', () =>
-{
-	gulp.src('./*.html')
-		.pipe(htmlbeautify(htmlbeautifyOptions))
-		.pipe(gulp.dest('./'));
-});
-
 gulp.task('twig', function ()
 {
 	return gulp.src(['./src/*.twig','!./src/pages.twig'])
@@ -191,7 +183,7 @@ gulp.task('pages-list', () =>
 
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts', 'img', 'htmlbeautify', async () => { console.log('builded');}));
+gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts', 'img', async () => { console.log('builded');}));
 
 // основной таск, который запускает вспомогательные
 gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'pages-list', 'scripts',  () => { console.log('dev start');}));
