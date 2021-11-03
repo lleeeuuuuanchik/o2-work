@@ -1,28 +1,30 @@
-var gulp             = require('gulp'),
-	sass             = require('gulp-sass'),
-	browserSync      = require('browser-sync'),
-	concat           = require('gulp-concat'),
-	uglify           = require('gulp-uglify-es').default,
-	imagemin         = require('gulp-imagemin'),
-	autoprefixer     = require('gulp-autoprefixer'),
-	babel            = require('gulp-babel'),
-	plumber          = require('gulp-plumber'),
-	twig             = require('gulp-twig'),
-	cheerio          = require('gulp-cheerio'),
-	path             = require('path'),
-	htmlbeautify     = require('gulp-html-beautify'),
-	svgmin           = require('gulp-svgmin'),
-	webp 			 = require('gulp-webp'),
-	gcmq             = require('gulp-group-css-media-queries'),
-	map 			 = require('map-stream');
+const gulp		 = require('gulp'),
+	sass         = require('gulp-sass'),
+	browserSync  = require('browser-sync'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify-es').default,
+	imagemin     = require('gulp-imagemin'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleanCSS     = require('gulp-clean-css'),
+	babel        = require('gulp-babel'),
+	plumber      = require('gulp-plumber'),
+	twig         = require('gulp-twig'),
+	cheerio      = require('gulp-cheerio'),
+	path         = require('path'),
+	htmlbeautify = require('gulp-html-beautify'),
+	svgmin       = require('gulp-svgmin'),
+	webp         = require('gulp-webp'),
+	gcmq         = require('gulp-group-css-media-queries'),
+	map          = require('map-stream');
 
 // таск для компиляции scss в css
 gulp.task('sass', () =>
 {
 	return gulp.src('src/assets/scss/style.scss')
 		.pipe(sass({includePaths: ['src/']}).on('error', sass.logError))
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], {cascade: true}))
+		.pipe(autoprefixer(['last 10 versions', '> 1%'], {cascade: true}))
 		.pipe(gcmq())
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('pages'))
 		.pipe(browserSync.reload({stream: true}));
 });
