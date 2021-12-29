@@ -5,5 +5,9 @@
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
-	padding:0 20px;
+	padding: 0 20px;
+	@include mq(768px)
+	{
+		padding: 0 40px;
+	}
 }

@@ -78,3 +78,28 @@
 		url("#{$file-path}.woff2") format("woff2");
 	}
   }
+
+// mixin для медиа запросов
+// пример
+// .container
+// {
+//     padding: 0 20px;
+// 
+//     @include mq(768px)
+//     {
+//         padding: 0 40px;
+//     }
+// }
+@mixin mq($from, $to: false) {
+    @if $to {
+        @media (min-width: $from + 0px) and (max-width: $to + 0px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (min-width: $from + 0px) {
+            @content;
+        }
+    }
+}
