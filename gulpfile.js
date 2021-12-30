@@ -15,12 +15,16 @@ const gulp		 = require('gulp'),
 	svgmin       = require('gulp-svgmin'),
 	webp         = require('gulp-webp'),
 	gcmq         = require('gulp-group-css-media-queries'),
-	map          = require('map-stream');
+	map          = require('map-stream'),
+	header       = require('gulp-header');
 
 // таск для компиляции scss в css
 gulp.task('sass', () =>
 {
+	let baseDir = process.env.NODE_ENV === "release" ? '"/front/pages/"' : '""';
+
 	return gulp.src('src/assets/scss/style.scss')
+		.pipe(header('$base: ' + baseDir + ';'))
 		.pipe(sass({includePaths: ['src/']}).on('error', sass.logError))
 		.pipe(autoprefixer(['last 10 versions', '> 1%'], {cascade: true}))
 		.pipe(gcmq())
@@ -35,7 +39,6 @@ var jsFiles = ['src/assets/js/*.js', 'src/**/*.js'];
 // таск для объединения js файлов
 gulp.task('scripts', () =>
 {
-	process.env.NODE_ENV = "release";
 	return gulp.src(jsFiles)
 		.pipe(babel())
 		.pipe(concat('main.min.js'))
@@ -183,7 +186,7 @@ gulp.task('pages-list', () =>
 
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts', 'img', async () => { console.log('builded');}));
+gulp.task('build', gulp.series(async () => process.env.NODE_ENV = 'release', 'svg-min', 'sass', 'twig', 'scripts', 'img', async () => console.log('builded') ));
 
 // основной таск, который запускает вспомогательные
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'pages-list', 'scripts',  () => { console.log('dev start');}));
+gulp.task('default', gulp.parallel(() => process.env.NODE_ENV = 'development', 'watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'pages-list', 'scripts',  () => console.log('dev start') ));
