@@ -1,23 +1,26 @@
-var gulp             = require('gulp'),
-	sass             = require('gulp-sass'),
-	browserSync      = require('browser-sync'),
-	concat           = require('gulp-concat'),
-	uglify           = require('gulp-uglify'),
-	imagemin         = require('gulp-imagemin'),
-	autoprefixer     = require('gulp-autoprefixer'),
-	babel            = require('gulp-babel'),
-	plumber          = require('gulp-plumber'),
-	twig             = require('gulp-twig'),
-	cheerio          = require('gulp-cheerio'),
-	path             = require('path'),
-	htmlbeautify     = require('gulp-html-beautify'),
-	svgmin           = require('gulp-svgmin'),
-	webp 			 = require('gulp-webp'),
-	gcmq             = require('gulp-group-css-media-queries');
+var gulp         = require('gulp'),
+	sass         = require('gulp-sass'),
+	browserSync  = require('browser-sync'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify'),
+	imagemin     = require('gulp-imagemin'),
+	autoprefixer = require('gulp-autoprefixer'),
+	babel        = require('gulp-babel'),
+	plumber      = require('gulp-plumber'),
+	twig         = require('gulp-twig'),
+	cheerio      = require('gulp-cheerio'),
+	path         = require('path'),
+	htmlbeautify = require('gulp-html-beautify'),
+	svgmin       = require('gulp-svgmin'),
+	webp         = require('gulp-webp'),
+	gcmq         = require('gulp-group-css-media-queries'),
+	header       = require('gulp-header');
 
 // таск для компиляции scss в css
 gulp.task('sass', () =>
 {
+	let baseDir = process.env.NODE_ENV === "release" ? '"/front/pages/"' : '""';
+
 	return gulp.src('src/assets/scss/style.scss')
 		.pipe(sass({includePaths: ['src/']}).on('error', sass.logError))
 		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], {cascade: true}))
@@ -172,7 +175,7 @@ gulp.task('svg-min', () =>
 });
 
 // сборка проекта
-gulp.task('build', gulp.series('svg-min', 'sass', 'twig', 'scripts-build', 'img', async () => { console.log('builded');}));
+gulp.task('build', gulp.series(async () => process.env.NODE_ENV = 'release', 'svg-min', 'sass', 'twig', 'scripts-build', 'img', async () => { console.log('builded');}));
 
 // основной таск, который запускает вспомогательные
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));
+gulp.task('default', gulp.parallel(() => process.env.NODE_ENV = 'development', 'watch', 'browser-sync', 'sass', 'twig', 'svg-min', 'scripts', () => { console.log('dev start');}));

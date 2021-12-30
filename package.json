@@ -29,6 +29,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-header": "^2.0.9",
     "gulp-html-beautify": "^1.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
