@@ -34,7 +34,7 @@ gulp.task('sass', () =>
 });
 
 // файлы для сборки
-var jsFiles = ['src/assets/js/*.js', 'src/**/*.js'];
+var jsFiles = ['src/assets/js/jquery.min.js','src/assets/js/main.js','src/assets/js/*.js', 'src/**/*.js'];
 
 // таск для объединения js файлов
 gulp.task('scripts', () =>
