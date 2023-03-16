@@ -1,0 +1,54 @@
+.g-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	padding: 8px 13px;
+	border: none;
+	border: 1px solid #EEEEEE;
+	border-radius: 5px;
+	color: $mainFontColor;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 15px;
+	width: max-content;
+
+	@include mq($mobile)
+	{
+		padding: 10px 25px;
+		gap: 10px;
+		font-size: 14px;
+	}
+
+	&-img
+	{
+		width: 20px;
+		height: 20px;
+	}
+
+	&-flag
+	{
+		padding: 7px;
+		border: none;
+		border: 1px solid #EEEEEE;
+		border-radius: 5px;
+		color: $mainFontColor;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 15px;
+
+		@include mq($mobile) {
+		padding: 10px;
+		}
+	}
+
+	&--white
+	{
+		border: 1px solid #FFFFFF;
+		border-radius: 5px;
+		color: white;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}

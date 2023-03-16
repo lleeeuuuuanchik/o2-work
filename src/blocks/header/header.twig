@@ -1,3 +1,75 @@
-<header>
-	<div class="container"> </div>
-</header>
+{% block header %}
+	<header class="header">
+		<div class="header__top container">
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/location.svg" %}</div>
+				<span class="g-icon-wrapper-text g-icon-wrapper-text--opacity">Москва</span>
+			</div>
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/dilivery.svg" %}</div>
+				<span class="g-icon-wrapper-text g-icon-wrapper-text--opacity">Доставка и оплата</span>
+			</div>
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/adress.svg" %}</div>
+				<span class="g-icon-wrapper-text g-icon-wrapper-text--opacity">Адрес и часы работы</span>
+			</div>
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/mail.svg" %}</div>
+				<a href="mailto:market@estatut.ru" class="g-icon-wrapper-text g-icon-wrapper-text--bold">market@estatut.ru</a>
+			</div>
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/phone.svg" %}</div>
+				<a href="tel:+79686606550" class="g-icon-wrapper-text g-icon-wrapper-text--bold">8 (968) 660-65-50</a>
+			</div>
+		</div>
+		<hr class="header__hr">
+		<div class="header__bottom container">
+			<div class="header__bottom-wrapper-first">
+				<div class="header__bottom-burger">{% include "assets/svg/burger.svg" %}</div>
+				<img src="img/logo.png" alt="logo" class="header__bottom-logo">
+				<label class="header__bottom-input-inner">
+					<input type="text" class="header__bottom-input" placeholder="Что будем искать?">
+					<button class="header__bottom-button">
+						<div class="header__bottom-button-img">{% include "assets/svg/loop.svg" %}</div>
+						<span>Искать</span>
+					</button>
+				</label>
+				<div class="g-icon-wrapper">
+					<div class="g-icon-wrapper-img">{% include "assets/svg/flag.svg" %}</div>
+					<span class="g-icon-wrapper-text">Отложено</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<div class="g-icon-wrapper-img">{% include "assets/svg/smile.svg" %}</div>
+					<span class="g-icon-wrapper-text">Войти</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<div class="g-icon-wrapper-img">{% include "assets/svg/cart.svg" %}</div>
+					<span class="g-icon-wrapper-text">Корзина</span>
+					<span class="g-icon-wrapper-circle">10</span>
+				</div>
+			</div>
+			<div class="header__bottom-wrapper-second">
+				<div class="g-icon-wrapper">
+					<div class="g-icon-wrapper-img">{% include "assets/svg/burger.svg" %}</div>
+					<span class="g-icon-wrapper-text">Каталог</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<span class="g-icon-wrapper-text">Авторы</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<span class="g-icon-wrapper-text">Новинки</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<div class="g-icon-wrapper-img">{% include "assets/svg/discount.svg" %}</div>
+					<span class="g-icon-wrapper-text g-icon-wrapper-text--red">Скидки</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<span class="g-icon-wrapper-text">Партнёрам</span>
+				</div>
+				<div class="g-icon-wrapper">
+					<span class="g-icon-wrapper-text">Мы</span>
+				</div>
+			</div>
+		</div>
+	</header>
+{% endblock %}

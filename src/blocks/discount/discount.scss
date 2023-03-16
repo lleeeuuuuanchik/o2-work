@@ -1,0 +1,85 @@
+.discount
+{
+	margin-top: 10px;
+
+	@include mq($tablet) { margin-top: 30px; }
+}
+
+.discount__form-wrapper
+{
+	border-radius: 5px;
+	background: #0288D1;
+	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 10px;
+
+	@include mq($tablet)
+	{
+		padding: 35px 45px;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.g-button
+	{
+		width: 100%;
+
+		@include mq($tablet)
+		{
+			width: max-content;
+		}
+	}
+}
+
+.discount__form-inf
+{
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	color: #FFFFFF;
+	z-index: 0;
+
+	span
+	{
+		position: relative;
+		&:before
+		{
+			content: "";
+			background-image: url("svg/line3.svg");
+			background-repeat: no-repeat;
+			width: 70px;
+			height: 29px;
+			position: absolute;
+			z-index: -1;
+			left: -10px;
+			top: -3px;
+		}
+	}
+}
+
+.discount__form-input
+{
+	border: none;
+	background: #FFFFFF;
+	border-radius: 5px;
+	padding: 10px 15px;
+	width: 100%;
+	color: $mainFontColor;
+
+	@include mq($tablet)
+	{
+		min-width: 335px;
+		max-width: 418px;
+		width: 100%;
+	}
+
+	&::placeholder
+	{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: rgba(28, 41, 77, 0.5);
+	}
+}

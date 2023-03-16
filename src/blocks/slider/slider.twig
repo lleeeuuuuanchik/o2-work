@@ -1,0 +1,45 @@
+{% block slider %}
+	<div class="slider container">
+		<div class="slider__slider">
+			<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+			<div class="slider__slider-arrows-wrapper">
+				<button class="slider__slider-arrow">{% include "assets/svg/arrow-left.svg" %}</button>
+				<button class="slider__slider-arrow">{% include "assets/svg/arrow-right.svg" %}</button>
+			</div>
+			<div class="slider__slider-pagination-wrapper">
+				<div class="slider__slider-paginate slider__slider-paginate--active"></div>
+				<div class="slider__slider-paginate"></div>
+				<div class="slider__slider-paginate"></div>
+				<div class="slider__slider-paginate"></div>
+			</div>
+		</div>
+		<div class="slider__book">
+			<div class="slider__book-timer-wrapper">
+				<span class="slider__book-timer-inf">Книга дня</span>
+				<div class="slider__book-timer">08:56:31</div>
+			</div>
+			<img src="img/book1.jpg" alt="book" class="slider__book-img">
+			<p class="slider__book-genre">Корпоративное право</p>
+			<p class="slider__book-name">Инвестирование: способы, риски, субъекты : монография</p>
+			<p class="slider__book-author">Майфат А.В.</p>
+			<p class="slider__book-price">4 450 ₽</p>
+			<div class="slider__bood-buttons-wrapper">
+				<button class="g-button">
+					<div class="g-button-img">{% include "assets/svg/cart-orange.svg" %}</div>
+					В корзину
+				</button>
+				<button class="g-button-flag">
+					<div class="g-button-img">{% include "assets/svg/flag.svg" %}</div>
+				</button>
+			</div>
+		</div>
+		<div class="slider__inf slider__inf-first">
+			<p class="slider__inf-text"> <span>Бесплатно</span> доставим <br> ваш заказ при <br> покупке от 2000 ₽</p>
+			<div class="slider__inf-img">{% include "assets/svg/person1.svg" %}</div>
+		</div>
+		<div class="slider__inf slider__inf-second">
+			<p class="slider__inf-text">Скидка <br> при регистрации <br> до <span>15%</span></p>
+			<div class="slider__inf-img">{% include "assets/svg/person2.svg" %}</div>
+		</div>
+	</div>
+{% endblock %}

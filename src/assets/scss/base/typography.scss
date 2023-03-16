@@ -5,7 +5,10 @@ body
 	font-family: $accent-font;
 	font-size: 16px;
 	line-height: 1.5;
-	min-height:100vh
+	min-height:100vh;
+	background: #f9f9fa;
+	color: $mainFontColor;
+
 }
 
 ul
@@ -60,8 +63,7 @@ h4
 
 p
 {
-	margin-top: 10px;
-	color: $secondary-color;
+	margin-top: 0px;
 }
 
 b
@@ -77,4 +79,5 @@ a:focus
 {
 	outline: 0;
 	text-decoration: none;
+	color: $mainFontColor;
 }

@@ -1,0 +1,54 @@
+.g-icon-wrapper {
+	cursor: pointer;
+	position: relative;
+	width: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+
+	.g-icon-wrapper-img {
+		height: 20px;
+		width: 20px;
+	}
+
+	.g-icon-wrapper-text {
+		cursor: pointer;
+		font-weight: 400;
+		font-size: 14px;
+		color: $mainFontColor;
+
+		&--opacity
+		{
+			color: rgba(28, 41, 77, 0.8);
+		}
+
+		&--bold
+		{
+			font-weight: 500;
+			color: rgba(28, 41, 77, 0.8);
+		}
+
+		&--red
+		{
+			color: #FF283D;
+		}
+	}
+
+	.g-icon-wrapper-circle {
+		position: absolute;
+		top: -7px;
+		left: 12px;
+		width: 15px; height: 15px;
+		border-radius: 100px;
+		background-color: #FF7A00;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		font-size: 9px;
+		line-height: 11px;
+	}
+
+}

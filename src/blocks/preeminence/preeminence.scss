@@ -1,0 +1,154 @@
+.preeminence
+{
+	margin-top: 10px;
+	display: grid;
+	grid-columns-template: 1fr;
+	grid-rows-temlate: auto auto auto auto;
+	grid-gap: 10px;
+
+	@include mq($tablet)
+	{
+		margin-top: 30px;
+		grid-gap: 30px;
+		grid-columns-template: 1fr 1fr 1fr;
+		grid-rows-temlate: auto auto;
+	}
+
+	@include mq($widescreen)
+	{
+		grid-columns-template: 1fr 1fr 1fr 1fr;
+		grid-rows-temlate: auto;
+	}
+}
+
+.preeminence__wrapper
+{
+	border-radius: 5px;
+	position: relative;
+	height: 170px;
+	background-color: #fff;
+	padding: 20px 40px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+
+	@include mq(380px)
+	{
+		padding: 42px 20px;
+	}
+
+	@include mq($tablet)
+	{
+		height: 150px;
+		justify-content: center;
+	}
+
+	@include mq($widescreen)
+	{
+		gap: 5px;
+		justify-content: start;
+	}
+
+	&:nth-child(1)
+	{
+		grid-row: 1 / 2;
+
+		@include mq($tablet)
+		{
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
+
+		@include mq($widescreen)
+		{
+			grid-column: 1 / 2;
+		}
+	}
+
+	&:nth-child(2)
+	{
+		grid-row: 2 / 3;
+
+		@include mq($tablet)
+		{
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+		}
+
+		@include mq($widescreen)
+		{
+			grid-column: 2 / 3;
+		}
+	}
+
+	&:nth-child(3)
+	{
+		grid-row: 3 / 4;
+
+		@include mq($tablet)
+		{
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+		}
+
+		@include mq($widescreen)
+		{
+			grid-column: 3 / 4;
+			grid-row: 1 / 2;
+		}
+	}
+
+	&:nth-child(4)
+	{
+		grid-row: 4 / 5;
+
+		@include mq($tablet)
+		{
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+		}
+
+		@include mq($widescreen)
+		{
+			grid-column: 4 / 5;
+			grid-row: 1 / 2;
+		}
+	}
+}
+
+.preeminence__img {
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+
+	@include mq($tablet)
+	{
+		width: 60px;
+		height: 66px;
+	}
+}
+
+.preeminence__inner
+{
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.preeminence__name
+{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 25px;
+	color: $mainFontColor;
+}
+
+.preeminence__inf
+{
+	width: 153px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 19px;
+	color: #727272;
+}

@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "directory-tree": "^2.2.5",
+    "gulp-download": "0.0.1",
     "jquery": "^3.3.1",
     "map-stream": "0.0.7"
   },

@@ -8,9 +8,20 @@
 @import 'base/typography';
 @import 'base/default';
 
+
+// global
+@import 'blocks/g-icon-wrapper/g-icon-wrapper.scss';
+@import 'blocks/g-button/g-button.scss';
+
+
 /* blocks */
-/* Пример подключения*/
-/* @import 'blocks/component/component'; */
+@import 'blocks/header/header.scss';
+@import 'blocks/slider/slider.scss';
+@import 'blocks/books/books.scss';
+@import 'blocks/discount/discount.scss';
+@import 'blocks/preeminence/preeminence.scss';
+@import 'blocks/news/news.scss';
+@import 'blocks/footer/footer.scss';
 
 /* pages */
 /* @import 'index'; */

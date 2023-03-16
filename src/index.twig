@@ -1,18 +1,17 @@
 {% extends "layouts/layout.twig" %}
 
 {% block page %}
-	<div class="container">
-		<p>В самом начале - расписываем все компоненты, придумываем названия</p>
-		<p>Пример подключения картинки</p>
-		<picture>
-			<source srcset="img/logo.webp" type="image/webp">
-			<img src="img/logo.png" alt="Logo" width="57px">
-		</picture>
-	</div>
-	{#
+	{# {
 		Пример подключения файла
 		{% include '/blocks/component/component.twig' %}
 		Пример подключения svg
 		{% include '/assets/component/component.svg' %}
-	#}
+	   }  #}
+
+	{% include '/blocks/slider/slider.twig' %}
+	{% include '/blocks/books/books.twig' with {top: 'Новые поступления', bottom: "Показать все книги раздела"} %}
+	{% include '/blocks/discount/discount.twig' %}
+	{% include '/blocks/books/books.twig' with {top: 'Готовятся к выходу', bottom: "Показать все книги раздела"} %}
+	{% include '/blocks/preeminence/preeminence.twig' %}
+	{% include '/blocks/news/news.twig' %}
 {% endblock %}

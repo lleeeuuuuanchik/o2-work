@@ -1,8 +1,146 @@
-{# index.twig #}
-
 {% block footer %}
-	<footer>
+	<div class="footer__form-top">
 		<div class="container">
+			<div class="footer__social-wrapper">
+				<div class="footer__social-img">{% include "assets/svg/facebook.svg" %}</div>
+				<div class="footer__social-img">{% include "assets/svg/vk.svg" %}</div>
+				<div class="footer__social-img">{% include "assets/svg/instagram.svg" %}</div>
+			</div>
+		</div>
+	</div>
+
+	<hr class="footer__form-hr">
+
+	<div class="footer__form-bottom">
+		<div class="footer__form-bottom-wrapper container">
+			<img src="img/logo.png" class="footer__form-bottom-logo" alt="logo">
+			<form action="#" class="footer__form-bottom-input-inner">
+				<input type="text" class="footer__form-bottom-input" placeholder="Подписаться на рассылку">
+				<button type="submit" class="footer__form-bottom-button">
+					<div class="footer__form-bottom-button-img">{% include "assets/svg/plane.svg" %}</div>
+				</button>
+			</form>
+			<div class="footer__social-wrapper">
+				<div class="footer__social-img">{% include "assets/svg/facebook-gray.svg" %}</div>
+				<div class="footer__social-img">{% include "assets/svg/instagram-gray.svg" %}</div>
+				<div class="footer__social-img">{% include "assets/svg/twiter-gray.svg" %}</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer__mobile">
+		<div class="footer__mobile-wraper container">
+			<div class="footer__mobile-inner">
+				<p class="footer__mobile-name">Покупателям</p>
+				<div class="footer__mobile-img">{% include "assets/svg/arrowDown.svg" %}</div>
+			</div>
+			<hr class="footer__hr">
+		</div>
+		<div class="footer__mobile-wraper container">
+			<div class="footer__mobile-inner">
+				<p class="footer__mobile-name">Издательство</p>
+				<div class="footer__mobile-img">{% include "assets/svg/arrowDown.svg" %}</div>
+			</div>
+			<hr class="footer__hr">
+		</div>
+		<div class="footer__mobile-wraper container">
+			<div class="footer__mobile-inner">
+				<p class="footer__mobile-name">Книги</p>
+				<div class="footer__mobile-img">{% include "assets/svg/arrowDown.svg" %}</div>
+			</div>
+			<hr class="footer__hr">
+		</div>
+		<div class="footer__mobile-wraper container">
+			<div class="footer__mobile-inner">
+				<p class="footer__mobile-name">Прайс-лист</p>
+				<div class="footer__mobile-img">{% include "assets/svg/arrowDown.svg" %}</div>
+			</div>
+		</div>
+		<hr class="footer__hr">
+		<div class="footer__mobile-wraper container">
+			<p class="footer__mobile-name--gray">Политика конфиденциальности</p>
+			<p class="footer__mobile-name--gray">Договор оферты</p>
+		</div>
+		<hr class="footer__hr">
+		<div class="footer__mobile-wraper container">
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/phone.svg" %}</div>
+				<a href="tel:+79686606550" class="g-icon-wrapper-text g-icon-wrapper-text--bold">8 (968) 660-65-50</a>
+				<div class="g-icon-wrapper-img">{% include "assets/svg/warn.svg" %}</div>
+			</div>
+		</div>
+		<hr class="footer__hr">
+		<div class="footer__mobile-wraper container">
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/mail.svg" %}</div>
+				<a href="mailto:market@estatut.ru" class="g-icon-wrapper-text g-icon-wrapper-text--opacity">market@estatut.ru</a>
+			</div>
+		</div>
+		<hr class="footer__hr">
+		<div class="footer__mobile-wraper container">
+			<div class="g-icon-wrapper">
+				<div class="g-icon-wrapper-img">{% include "assets/svg/location.svg" %}</div>
+				<span class="g-icon-wrapper-text">ул. Лобачевского, 92, корп. 2 119454, г. Москва</span>
+			</div>
+		</div>
+		<hr class="footer__hr">
+		<div class="footer__mobile-wraper container">
+			<p class="footer__mobile-name--gray">© 2020 Издательство «Статут»</p>
+		</div>
+	</footer>
+
+	<footer class="footer__desctop">
+		<div class="container">
+			<div class="footer__desctop-nav-wrapper">
+				<nav class="footer__desctop-nav-inner">
+					<p class="footer__desctop-nav-title">Покупателям</p>
+					<p class="footer__desctop-nav-name">Наша почта</p>
+					<p class="footer__desctop-nav-name">Оплата и доставка</p>
+					<p class="footer__desctop-nav-name">Вопросы и ответы</p>
+				</nav>
+				<nav class="footer__desctop-nav-inner">
+					<p class="footer__desctop-nav-title">Издательство</p>
+					<p class="footer__desctop-nav-name">О компании</p>
+					<p class="footer__desctop-nav-name">Авторам</p>
+					<p class="footer__desctop-nav-name">Вакансии</p>
+					<p class="footer__desctop-nav-name">Контакты</p>
+				</nav>
+				<nav class="footer__desctop-nav-inner">
+					<p class="footer__desctop-nav-title">Книги</p>
+					<p class="footer__desctop-nav-name">Все категории</p>
+					<p class="footer__desctop-nav-name">Бестселлеры</p>
+					<p class="footer__desctop-nav-name">Новинки</p>
+					<p class="footer__desctop-nav-name">Скидки и акции</p>
+				</nav>
+				<nav class="footer__desctop-nav-inner">
+					<p class="footer__desctop-nav-title">Прайс-лист</p>
+					<div class="footer__desctop-nav-items-wrapper">
+						<div class="footer__desctop-nav-item-img">{% include "assets/svg/paper.svg" %}</div>
+						<div class="footer__desctop-nav-items-inner">
+							<p class="footer__desctop-nav-name">Скачать прайс-лист</p>
+							<p class="footer__desctop-nav-name--gray">PDF, 12 Mb </p>
+						</div>
+					</div>
+				</nav>
+				<nav class="footer__desctop-nav-inner">
+					<p class="footer__desctop-nav-title">Телефон и Email</p>
+					<div class="g-icon-wrapper">
+						<div class="g-icon-wrapper-img">{% include "assets/svg/mail.svg" %}</div>
+						<a href="mailto:market@estatut.ru" class="g-icon-wrapper-text">market@estatut.ru</a>
+					</div>
+					<div class="g-icon-wrapper">
+						<div class="g-icon-wrapper-img">{% include "assets/svg/phone.svg" %}</div>
+						<a href="tel:+79686606550" class="g-icon-wrapper-text">8 (968) 660-65-50</a>
+					</div>
+				</nav>
+			</div>
+			<hr class="footer__hr">
+			<div class="footer__desctop-inf-wrapper">
+				<p class="footer__desctop-nav-name--gray">© 2020 Издательство «Статут»</p>
+				<p class="footer__desctop-nav-name">ул. Лобачевского, 92, корп. 2 119454, г. Москва</p>
+				<p class="footer__desctop-nav-name">Политика конфиденциальности</p>
+				<p class="footer__desctop-nav-name">Договор оферты</p>
+			</div>
 		</div>
 	</footer>
 {% endblock %}

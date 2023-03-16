@@ -1,0 +1,297 @@
+.books {
+	margin-top: 10px;
+
+	@include mq($mobile) { margin-top: 30px; }
+}
+
+// head ------------------------------------------------
+
+.books__head
+{
+	background: white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 18px 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid rgba(28, 41, 77, 0.15);
+}
+
+.books__head-inf
+{
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 25px;
+	color: $mainFontColor;
+}
+
+.books__head-buttons-wrapper { display: flex; }
+
+.books__head-button
+{
+	height: max-content;
+	border: none;
+	padding: 10px;
+	border: 1px solid rgba(28, 41, 77, 0.15);
+
+	&:first-child
+	{
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-right: none;
+	}
+
+	&:last-child
+	{
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+}
+
+.books__head-button-img
+{
+	width: 10px;
+	height: 10px;
+	display: flex;
+}
+
+// middle ------------------------------------------------
+
+.books__middle
+{
+	background-color: white;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.books__middle-book-wrapper
+{
+	position: relative;
+	padding: 20px 10px;
+	border-right: 1px solid rgba(28, 41, 77, 0.15);
+
+	&:nth-child(2)
+	{
+		display: none;
+	}
+
+	&:nth-child(3)
+	{
+		display: none;
+	}
+
+	&:last-child
+	{
+		border: none;
+	}
+
+	@include mq(700px)
+	{
+		&:nth-child(2)
+		{
+			display: block;
+		}
+	}
+
+	@include mq($widescreen)
+	{
+		padding: 25px 34px 21px 34px;
+
+		&:nth-child(3)
+		{
+			display: block;
+		}
+
+	}
+}
+
+.books__middle-book-inf-inner
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+
+	&--absolute
+	{
+		position: absolute;
+		z-index: 2;
+		top: 20px;
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+	}
+}
+
+.books__middle-book-inf
+{
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 15px;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+
+	&--purple
+	{
+		background-color: #EEE9F7;
+		color: #AC8EE3;
+	}
+
+	&--red
+	{
+		width: 54px;
+		background-color: #FFEEEE;
+		color: #FF4F52;
+	}
+
+	&--yellow
+	{
+		width: 56px;
+		background-color: #FEF6DF;
+		color: #FBC02D;
+	}
+
+	&--blue
+	{
+		width: 144px;
+		background-color: #EBEDF7;
+		color: #7986CB;
+	}
+
+	&--green
+	{
+		background-color: #E2F6EC;
+		color: #3DC47E;
+	}
+}
+
+.books__middle-book-img-inner
+{
+	width: fit-content;
+    margin: 0 auto;
+}
+
+.books__middle-book-img
+{
+	width: 126px;
+	height: 180px;
+
+	@include mq($tablet)
+	{
+		width: 140px;
+		height: 200px;
+	}
+}
+
+.books__middle-book-genre
+{
+	margin-top: 15px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	color: rgba(28, 41, 77, 0.5);
+}
+
+.books__middle-book-name
+{
+	width: 156px;
+	margin-top: 8px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	color: $mainFontColor;
+
+	@include mq($tablet)
+	{
+		width: 223px;
+	}
+}
+
+.books__middle-book-author
+{
+	margin-top: 8px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: -0.1px;
+	color: $mainFontColor;
+	opacity: 0.8;
+}
+
+.books__middle-book-price-inner
+{
+	display: flex;
+	gap: 7px;
+	align-items: center;
+}
+
+.books__middle-book-price-old
+{
+	position: relative;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+	color: rgba(28, 41, 77, 0.5);
+
+	&:before {
+		content: '';
+		background-image: url("svg/declineLine.svg");
+		background-repeat: no-repeat;
+        width: 200px;
+	    height: 20px;
+	    position: absolute;
+	    z-index: 2;
+	    top: 5px;
+	    left: 0;
+	}
+}
+
+.books__middle-book-price-difference
+{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	color: #0DB98C;
+}
+
+.books__middle-book-price
+{
+	margin-top: 8px;
+	margin-bottom: 10px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 20px;
+	color: $mainFontColor;
+	&--red {
+		color: #FD3A3A;
+	}
+}
+
+.books__middle-buttons-wrapper
+{
+	margin-top: 12px;
+	display: flex;
+	gap: 10px;
+}
+
+// bottom ------------------------------------------------
+
+.books__bottom {
+		border: none;
+		width: 100%;
+		background-color: #fff;
+		padding: 10px;
+		border-top: 1px solid rgba(28, 41, 77, 0.15);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		color: $mainFontColor;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
