@@ -1,18 +1,42 @@
 {% block slider %}
 	<div class="slider container">
+	{# slider --------------------------- #}
+
 		<div class="slider__slider">
-			<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
-			<div class="slider__slider-arrows-wrapper">
-				<button class="slider__slider-arrow">{% include "assets/svg/arrow-left.svg" %}</button>
-				<button class="slider__slider-arrow">{% include "assets/svg/arrow-right.svg" %}</button>
+			<div class="slider__slider-items">
+				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
 			</div>
+
+
+			<div class="slider__slider-arrows-wrapper">
+				<button onclick="o2.slider.prev()" class="slider__slider-arrow">
+					{% include "assets/svg/arrow-left.svg" %}
+				</button>
+				<button onclick="o2.slider.next()" class="slider__slider-arrow">
+					{% include "assets/svg/arrow-right.svg" %}
+				</button>
+			</div>
+
+
 			<div class="slider__slider-pagination-wrapper">
-				<div class="slider__slider-paginate slider__slider-paginate--active"></div>
-				<div class="slider__slider-paginate"></div>
-				<div class="slider__slider-paginate"></div>
-				<div class="slider__slider-paginate"></div>
+				<div
+					class="slider__slider-paginate slider__slider-paginate--active"
+				 	onclick='o2.slider.pagginationSlider(0)'>
+				</div>
+				<div
+					class="slider__slider-paginate"
+					onclick='o2.slider.pagginationSlider(1)'>
+				</div>
+				<div
+					class="slider__slider-paginate"
+					onclick='o2.slider.pagginationSlider(2)'>
+				</div>
 			</div>
 		</div>
+
+	{# endSlider --------------------------- #}
 		<div class="slider__book">
 			<div class="slider__book-timer-wrapper">
 				<span class="slider__book-timer-inf">Книга дня</span>

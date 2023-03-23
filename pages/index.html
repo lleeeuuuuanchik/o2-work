@@ -134,27 +134,43 @@
 
 
 		<div class="slider container">
+
+
 			<div class="slider__slider">
-				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+				<div class="slider__slider-items">
+					<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+					<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+					<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
+				</div>
+
+
 				<div class="slider__slider-arrows-wrapper">
-					<button class="slider__slider-arrow"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<button onclick="o2.slider.prev()" class="slider__slider-arrow">
+						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M40 5C40 2.23858 37.7614 0 35 0H5C2.23858 0 0 2.23858 0 5V35C0 37.7614 2.23858 40 5 40H35C37.7614 40 40 37.7614 40 35V5Z" fill="white" fill-opacity="0.85" />
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M23.0893 14.4111C22.7639 14.0856 22.2362 14.0856 21.9108 14.4111L16.9108 19.4111C16.5853 19.7365 16.5853 20.2641 16.9108 20.5896L21.9108 25.5896C22.2362 25.915 22.7639 25.915 23.0893 25.5896C23.4147 25.2641 23.4147 24.7365 23.0893 24.4111L18.6786 20.0003L23.0893 15.5896C23.4147 15.2641 23.4147 14.7365 23.0893 14.4111Z" fill="#2A3D48" fill-opacity="0.5" />
 						</svg>
 					</button>
-					<button class="slider__slider-arrow"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<button onclick="o2.slider.next()" class="slider__slider-arrow">
+						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 2.23858 2.23858 0 5 0H35C37.7614 0 40 2.23858 40 5V35C40 37.7614 37.7614 40 35 40H5C2.23858 40 0 37.7614 0 35V5Z" fill="white" fill-opacity="0.85" />
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M16.9107 14.4111C17.2361 14.0856 17.7638 14.0856 18.0892 14.4111L23.0892 19.4111C23.4147 19.7365 23.4147 20.2641 23.0892 20.5896L18.0892 25.5896C17.7638 25.915 17.2361 25.915 16.9107 25.5896C16.5853 25.2641 16.5853 24.7365 16.9107 24.4111L21.3214 20.0003L16.9107 15.5896C16.5853 15.2641 16.5853 14.7365 16.9107 14.4111Z" fill="#1C294D" />
 						</svg>
 					</button>
 				</div>
+
+
 				<div class="slider__slider-pagination-wrapper">
-					<div class="slider__slider-paginate slider__slider-paginate--active"></div>
-					<div class="slider__slider-paginate"></div>
-					<div class="slider__slider-paginate"></div>
-					<div class="slider__slider-paginate"></div>
+					<div class="slider__slider-paginate slider__slider-paginate--active" onclick='o2.slider.pagginationSlider(0)'>
+					</div>
+					<div class="slider__slider-paginate" onclick='o2.slider.pagginationSlider(1)'>
+					</div>
+					<div class="slider__slider-paginate" onclick='o2.slider.pagginationSlider(2)'>
+					</div>
 				</div>
 			</div>
+
+
 			<div class="slider__book">
 				<div class="slider__book-timer-wrapper">
 					<span class="slider__book-timer-inf">Книга дня</span>

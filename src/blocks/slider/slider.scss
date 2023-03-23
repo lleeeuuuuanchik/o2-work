@@ -31,6 +31,7 @@
 	grid-column: 1 / 2;
 	grid-row: 1 / 2;
 	border-radius: 5px;
+	overflow-x: hidden;
 
 	@include mq($tablet) {
 		grid-column: 1 / 2;
@@ -42,20 +43,31 @@
 		max-width: 750px;
 		height: 350px;
 	}
+}
 
+.slider__slider-items
+{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+	width: max-content;
+	height: 100%;
 }
 
 .slider__slider-img
 {
+	display: flex;
 	border-radius: 5px;
-	position: absolute;
-	z-index: -1;
 	width: 100%; height: 100%;
 	object-fit: cover;
+	transition: 1s ease;
 }
 
 .slider__slider-arrows-wrapper
 {
+	position: absolute;
+	top: 0; left: 0;
 	display: none;
 	padding: 20px;
 	width: 100%; height: 100%;
@@ -87,7 +99,7 @@
 {
 	cursor: pointer;
 	width: 25px;
-	height: 2px;
+	height: 5px;
 	border-radius: 2px;
 	background-color: white;
 	opacity: 0.5;
