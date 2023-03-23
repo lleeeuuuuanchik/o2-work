@@ -8,6 +8,14 @@ o2.slider =
 
 	init()
 	{
+		this.resize();
+		addEventListener("resize", this.resize);
+	},
+
+	resize()
+	{
+		let sliderWidth = document.querySelector('.slider__slider');
+		o2.slider.sliderImgs.forEach(item => item.style.width = `${sliderWidth.offsetWidth}px`)
 	},
 
 	next()

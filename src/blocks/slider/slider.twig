@@ -1,15 +1,13 @@
 {% block slider %}
 	<div class="slider container">
 	{# slider --------------------------- #}
-
 		<div class="slider__slider">
 			<div class="slider__slider-items">
 				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
 				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
 				<img src="img/slider-img.jpg" alt="slider-img" class="slider__slider-img">
 			</div>
-
-
+			{# arrows #}
 			<div class="slider__slider-arrows-wrapper">
 				<button onclick="o2.slider.prev()" class="slider__slider-arrow">
 					{% include "assets/svg/arrow-left.svg" %}
@@ -18,8 +16,7 @@
 					{% include "assets/svg/arrow-right.svg" %}
 				</button>
 			</div>
-
-
+			{# pagination #}
 			<div class="slider__slider-pagination-wrapper">
 				<div
 					class="slider__slider-paginate slider__slider-paginate--active"
@@ -35,7 +32,6 @@
 				</div>
 			</div>
 		</div>
-
 	{# endSlider --------------------------- #}
 		<div class="slider__book">
 			<div class="slider__book-timer-wrapper">
